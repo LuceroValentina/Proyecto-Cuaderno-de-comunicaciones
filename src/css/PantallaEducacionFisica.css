@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Racing+Sans+One&display=swap');
+.container {
+    align-items: center;
+}
+
+.titulo {
+    text-align: center;
+    font-family: "Racing Sans One", sans-serif;
+    color: #0c0555;
+    font-weight: 400;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+}
+
+.boton {
+    width: 200px;
+    height: 60px;
+    background-color: #180F7D;
+    color: #ffffff;
+    font-family: "Noto sans", sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    margin-left: 10px;
+}
+.volver{
+    width: 200px;
+    height: 60px;
+    background-color: #180F7D;
+    color: #ffffff;
+    font-family: "Noto sans", sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    margin-top: 500px;
+    margin-left: 10px;
+}

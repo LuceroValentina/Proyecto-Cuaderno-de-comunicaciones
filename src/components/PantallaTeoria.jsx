@@ -18,6 +18,13 @@ const PantallaTeoria = () => {
              <button className="boton">Horarios de Clases</button>
             <button className="boton">Vestimenta</button>
             </div>
+            <div className="cantenedorBotones">
+                <button className="boton">Resumen Cuatrimestre</button>
+                <button className="boton">Calificaciones</button>
+                <button className="boton">Periodos Exámenes</button>
+                <button className="boton">Clases de Consultas</button>
+                <button className="boton">Inasistencias</button>
+            </div>
             <div className="botones_blancos">
                 <button className="crear">Crear</button>
                 <button className="firmar">Firmar</button>
