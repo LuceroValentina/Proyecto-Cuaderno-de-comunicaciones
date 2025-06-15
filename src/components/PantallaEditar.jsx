@@ -22,7 +22,37 @@ const PantallaEditar = () => {
 
             </div>
             
-            <div className="tabla"></div>
+            <div className="tabla">
+                <div class="fila header">
+                    <div class="celda">DNI</div>
+                    <div class="celda">NOMBRES</div>
+                    <div class="celda">APELLIDOS</div>
+                </div>
+            
+                <div class="fila">
+                    <div class="celda">12345678</div>
+                    <div class="celda">Pedro Enrique</div>
+                    <div class="celda">Herrera</div>
+                </div>
+            
+                <div class="fila">
+                    <div class="celda">.</div>
+                    <div class="celda"></div>
+                    <div class="celda"></div>
+                </div>
+            
+                <div class="fila">
+                    <div class="celda">.</div>
+                    <div class="celda"></div>
+                    <div class="celda"></div>
+                </div>
+            
+                <div class="fila">
+                    <div class="celda">.</div>
+                    <div class="celda"></div>
+                    <div class="celda"></div>
+                </div>
+            </div>
         </div>
     );
 }

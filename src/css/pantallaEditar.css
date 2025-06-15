@@ -64,3 +64,27 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.tabla {
+    width: 90%;
+    max-width: 1280px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    font-family: "Noto Sans", sans-serif;
+    text-align: center;
+}
+
+.fila {
+    display: contents;
+}
+
+.celda {
+    padding: 10px;
+    border: 1px solid #0c0555;
+}
+
+.header .celda {
+    font-weight: bold;
+}
