@@ -23,34 +23,34 @@ const PantallaEditar = () => {
             </div>
             
             <div className="tabla">
-                <div class="fila header">
-                    <div class="celda">DNI</div>
-                    <div class="celda">NOMBRES</div>
-                    <div class="celda">APELLIDOS</div>
+                <div className="fila header">
+                    <div className="celda">DNI</div>
+                    <div className="celda">NOMBRES</div>
+                    <div className="celda">APELLIDOS</div>
                 </div>
             
-                <div class="fila">
-                    <div class="celda">12345678</div>
-                    <div class="celda">Pedro Enrique</div>
-                    <div class="celda">Herrera</div>
+                <div className="fila">
+                    <div className="celda">12345678</div>
+                    <div className="celda">Pedro Enrique</div>
+                    <div className="celda">Herrera</div>
                 </div>
             
-                <div class="fila">
-                    <div class="celda">.</div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
+                <div className="fila">
+                    <div className="celda">.</div>
+                    <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             
-                <div class="fila">
-                    <div class="celda">.</div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
+                <div className="fila">
+                    <div className="celda">.</div>
+                    <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             
-                <div class="fila">
-                    <div class="celda">.</div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
+                <div className="fila">
+                    <div className="celda">.</div>
+                    <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             </div>
         </div>
