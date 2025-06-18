@@ -6,9 +6,9 @@ import PantallaEditar from './components/PantallaEditar';
 
 function App() {
   return (
-    <div>
+    <div className='fondo'>
+      &nbsp;
       <PantallaInicio/>
-
     </div>
   );
 }//Para acceder a la pestaña biblioteca <PantallaBiblioteca/> y borrar <PantallaInicio/>

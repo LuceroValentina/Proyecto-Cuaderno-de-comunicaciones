@@ -3,6 +3,7 @@ import "../css/PantallaInicio.css";
 
 const PantallaInicio = () => {
     return (
+        <div>
         <div className="cuadrado_acceso">
             <div className="contenido">
             <h1 className="titulo_acceder">Acceder con:</h1>
@@ -11,6 +12,7 @@ const PantallaInicio = () => {
                 Continuar con Google   
             </button>
             </div>
+        </div>
         </div>
     );
 }
