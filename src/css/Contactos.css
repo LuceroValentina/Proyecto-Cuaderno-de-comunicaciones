@@ -1,0 +1,62 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: #a8cdff;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+  }
+  
+  .contact-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1,5rem; /* o directamente 0 si lo querés bien pegado */
+    color: #180f7d;
+  }
+  
+  
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: #0c0555;
+  }
+  
+  .contact-item img {
+    width: 65px;
+    height: 60px;
+  }
+  
+  .contact-item a {
+    color: #0c0555;
+    text-decoration: none;
+  }
+  
+  .contact-phone {
+    font-weight: bold;
+  }
+  
+  .volver-button {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #3d6490;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+  }
+  
+  .volver-button:hover {
+    background-color: #003d80;
+  }
+  
