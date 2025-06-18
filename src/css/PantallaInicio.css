@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Racing+Sans+One&display=swap');
-body {
-    background-color: #A8CDFF;
-}
-
 .cuadrado_acceso {
     display: grid;
     justify-content: center;

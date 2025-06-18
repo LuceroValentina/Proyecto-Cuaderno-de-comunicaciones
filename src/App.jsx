@@ -8,7 +8,7 @@ function App() {
   return (
     <div className='fondo'>
       &nbsp;
-      <PantallaInicio/>
+      <PantallaTeoria/>
     </div>
   );
 }//Para acceder a la pestaña biblioteca <PantallaBiblioteca/> y borrar <PantallaInicio/>
