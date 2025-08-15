@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import "../css/PantallaInicio.css";
+import "../css/Elementos.css";
 
 const PantallaInicio = () => {
     return (

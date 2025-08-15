@@ -10,28 +10,6 @@
     font-weight: 400;
 }
 
-.botones {
-    display: flex;
-    justify-content: center;
-}
-
-.boton {
-    width: 200px;
-    height: 60px;
-    background-color: #180F7D;
-    color: #ffffff;
-    font-family: "Noto sans", sans-serif;
-    font-size: medium;
-    font-weight: bold;
-    border: none;
-    border-radius: 15px;
-    margin-left: 10px;
-}
-
-.boton:hover {
-    box-shadow: 5px 5px 5px rgba(255, 255, 255);
-}
-
 .botones_blancos {
     display: grid;
     grid-template-columns: 60px;

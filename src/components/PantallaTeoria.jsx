@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/PantallaTeoria.css";
+import "../css/Elementos.css";
 
 const PantallaTeoria = () => {
 

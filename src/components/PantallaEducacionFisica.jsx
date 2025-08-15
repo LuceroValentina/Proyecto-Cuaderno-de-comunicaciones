@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/PantallaEducacionFisica.css";
+import "../css/Elementos.css";
 
 const PantallaEducacionFisica = () => {
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import "../css/Contactos.css";
+import "../css/Elementos.css";
 import icono_facebook from '../iconos/icono_facebook.png';
 import icono_web from '../iconos/icono_web.png';
 import icono_instagram from '../iconos/icono_instagram.png';

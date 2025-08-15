@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/PantallaTaller.css";
+import "../css/Elementos.css";
 
 const PantallaTaller = () => {
 

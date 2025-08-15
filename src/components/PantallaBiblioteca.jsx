@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/PantallaBiblioteca.css";
+import "../css/Elementos.css";
 
 const PantallaBiblioteca = () => {
 

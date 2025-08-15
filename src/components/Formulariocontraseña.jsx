@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {useNavigate} from "react-router-dom";
 import "../css/Formulariocontraseña.css";
+import "../css/Elementos.css";
 
 const Formulariocontraseña = ({ titulo = "Formulario Contraseña" }) => {
     const [contraseña, setContraseña] = useState('');

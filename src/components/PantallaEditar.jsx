@@ -1,5 +1,7 @@
 import React from "react";
 import "../css/pantallaEditar.css";
+import "../css/Elementos.css";
+
 const PantallaEditar = () => {
     return (
         <div className="container">
