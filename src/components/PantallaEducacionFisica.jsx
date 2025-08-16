@@ -11,10 +11,10 @@ const PantallaEducacionFisica = () => {
                 Educacion Física
             </h1>
             </div>
-            <div className="botones">
-            <button className="boton">Información General</button>
-            <button className="boton">Normas</button>
-            <button className="boton">Ficha médica</button>
+            <div className="botonesOscuros">
+            <button className="botonOscuro">Información General</button>
+            <button className="botonOscuro">Normas</button>
+            <button className="botonOscuro">Ficha médica</button>
             </div>
             <div className="boton-volver">
                 <button className="volver">Volver</button>

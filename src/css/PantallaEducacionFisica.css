@@ -10,24 +10,7 @@
     font-weight: 400;
 }
 
-.botones {
-    display: flex;
-    justify-content: center;
-}
-
-.boton {
-    width: 200px;
-    height: 60px;
-    background-color: #180F7D;
-    color: #ffffff;
-    font-family: "Noto sans", sans-serif;
-    font-size: medium;
-    font-weight: bold;
-    border: none;
-    border-radius: 15px;
-    margin-left: 10px;
-}
-.volver{
+.volver {
     width: 200px;
     height: 60px;
     background-color: #180F7D;

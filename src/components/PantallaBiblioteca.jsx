@@ -11,13 +11,13 @@ const PantallaBiblioteca = () => {
                 Biblioteca
             </h1>
             </div>
-            <div className="botones">
-            <button className="boton">Reglamento</button>
-            <button className="boton">Préstamos</button>
+            <div className="botonesOscuros">
+            <button className="botonOscuro">Reglamento</button>
+            <button className="botonOscuro">Préstamos</button>
             </div>
-            <div className="botones_blancos">
-                <button className="crear">Crear</button>
-                <button className="firmar">Firmar</button>
+            <div className="botonesClaros">
+                <button className="botonClaro">Crear</button>
+                <button className="botonClaro">Firmar</button>
             </div>
         </div>
     );

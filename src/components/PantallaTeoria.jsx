@@ -12,23 +12,23 @@ const PantallaTeoria = () => {
             </h1>
             </div>
             <div className="botones">
-            <button className="boton">Retiros</button>
-            <button className="boton">Evaluaciones y TPS</button>
-             <button className="boton">Comunicación General</button>
-            <button className="boton">Registros de Firmas</button>
-             <button className="boton">Horarios de Clases</button>
-            <button className="boton">Vestimenta</button>
+            <button className="botonOscuro">Retiros</button>
+            <button className="botonOscuro">Evaluaciones y TPS</button>
+            <button className="botonOscuro">Comunicación General</button>
+            <button className="botonOscuro">Registros de Firmas</button>
+            <button className="botonOscuro">Horarios de Clases</button>
+            <button className="botonOscuro">Vestimenta</button>
             </div>
-            <div className="cantenedorBotones">
-                <button className="boton">Resumen Cuatrimestre</button>
-                <button className="boton">Calificaciones</button>
-                <button className="boton">Periodos Exámenes</button>
-                <button className="boton">Clases de Consultas</button>
-                <button className="boton">Inasistencias</button>
+            <div className="cantenedorbotones">
+                <button className="botonOscuro">Resumen Cuatrimestre</button>
+                <button className="botonOscuro">Calificaciones</button>
+                <button className="botonOscuro">Periodos Exámenes</button>
+                <button className="botonOscuro">Clases de Consultas</button>
+                <button className="botonOscuro">Inasistencias</button>
             </div>
-            <div className="botones_blancos">
-                <button className="crear">Crear</button>
-                <button className="firmar">Firmar</button>
+            <div className="botonesClaros">
+                <button className="botonClaro">Crear</button>
+                <button className="botonClaro">Firmar</button>
             </div>
         </div>
     );

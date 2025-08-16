@@ -16,10 +16,10 @@ const PantallaEditar = () => {
                     </div>
                 </div>
 
-                <div className="botones">
-                    <button className="boton">Agregar</button>
-                    <button className="boton">Modificar</button>
-                    <button className="boton">Eliminar</button>
+                <div className="botonesEd">
+                    <button className="botonEd">Agregar</button>
+                    <button className="botonEd">Modificar</button>
+                    <button className="botonEd">Eliminar</button>
                 </div>
 
             </div>

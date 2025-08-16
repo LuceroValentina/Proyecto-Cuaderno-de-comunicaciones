@@ -11,18 +11,18 @@ const PantallaTaller = () => {
                 Taller
             </h1>
             </div>
-            <div className="botones">
-            <button className="boton">Comunicacion General</button>
-            <button className="boton">Normas</button>
-             <button className="boton">Retiros</button>
-            <button className="boton">Calificaciones Evaluaciones</button>
-             <button className="boton">Calificaciones TPS</button>
-            <button className="boton">Calificaciones Generales</button>
+            <div className="botonesOscuros">
+                <button className="botonOscuro">Comunicacion General</button>
+                <button className="botonOscuro">Normas</button>
+                <button className="botonOscuro">Retiros</button>
+                <button className="botonOscuro">Calificaciones Evaluaciones</button>
+                <button className="botonOscuro">Calificaciones TPS</button>
+                <button className="botonOscuro">Calificaciones Generales</button>
             </div>
            
-            <div className="botones_blancos">
-                <button className="crear">Crear</button>
-                <button className="firmar">Firmar</button>
+            <div className="botonesClaros">
+                <button className="botonClaro">Crear</button>
+                <button className="botonClaro">Firmar</button>
             </div>
             <div className="boton-volver">
                 <button className="volver">Volver</button>

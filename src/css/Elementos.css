@@ -35,3 +35,30 @@
 .botonOscuro:hover {
     box-shadow: 5px 5px 5px rgba(255, 255, 255);
 }
+
+.botonesClaros {
+    display: grid;
+    grid-template-columns: 60px;
+    grid-template-rows: 70px 70px;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.botonClaro {
+    background-color: #ffffff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    font-family: "Noto Sans", sans-serif;
+    color: #A8CDFF;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonClaro:hover {
+    box-shadow: 2px 2px 2px rgba(24, 15, 125, 1);
+}
