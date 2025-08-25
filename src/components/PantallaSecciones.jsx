@@ -1,11 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../css/Elementos.css";
+import "../css/PantallaSecciones.css";
 
 const PantallaSecciones = () => {
     const navigate = useNavigate();
     return (
-        <div className='container'>
+        <div className='container-secciones'>
+            <h1 className='titulo'>Seleccione la Sección:</h1>
+        <div className='container-botones'>
             <button className="botonOscuro" onClick={() => navigate("/seccion_teoria")}>
                 Teoría
             </button>
@@ -18,9 +21,11 @@ const PantallaSecciones = () => {
             <button className="botonOscuro" onClick={() => navigate("/seccion_edfisica")}>
                 Ed.física
             </button>        
-            <button className="botonOscuro" onClick={() => navigate("/seccion_contactos")}>
+            
+            </div>   
+            <button className="contactanos" onClick={() => navigate("/seccion_contactos")}>
             Contactanos
-            </button>     
+            </button>  
         </div>
     );
 }

@@ -1,0 +1,47 @@
+.container-secciones{
+    display: block;
+flex-direction: column;  /* apila título, grid y botón */
+    align-items: center;     /* centra todo horizontalmente */
+        justify-content: center;
+    text-align: center;
+    gap: 40px;
+    margin-top: 95px;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.titulo {
+    margin-left: 50px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #0d0b4d;
+}
+
+.container-botones {
+    display: grid;
+    grid-template-columns: repeat(2, 180px);
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 25px;
+   
+}
+
+.contactanos {
+    display: block;
+    margin-top: 40px;
+    width: 200px;
+    height: 60px;
+    background-color: #180F7D;
+    color: #ffffff;
+    font-family: "Noto sans", sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    margin:auto;
+}
+
+.contactanos:hover {
+    box-shadow: 5px 5px 5px rgba(255, 255, 255);
+}
