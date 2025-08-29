@@ -55,8 +55,9 @@ const PantallaEditar = () => {
                     <div className="celda"></div>
                 </div>
             </div>
+            <button class="boton-volver" onClick={() => window.history.back()}>Volver</button>
+
         </div>
     );
-    <button class="boton-volver" onClick={() => window.history.back()}>Volver</button>
 }
 export default PantallaEditar;

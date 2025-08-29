@@ -16,21 +16,21 @@ const contacts = [
 ];
 
 const Contactos = () => (
-  <div class="contact-container">
+  <div className="seccion-contactos">
     <h1>Contactos</h1>
-    <div class="contact-list">
+    <div className="lista-contactos">
       {contacts.map((contact, index) => (
-        <div class="contact-item" key={index}>
+        <div className="contact-item" key={index}>
           <img src={contact.icon} alt="icono" />
           {contact.link ? (
             <a href={contact.link} target="_blank" rel="noopener noreferrer">{contact.label}</a>
           ) : (
-            <span class="contact-phone">{contact.label}</span>
+            <span className="telefono-contacto">{contact.label}</span>
           )}
         </div>
       ))}
     </div>
-    <button class="boton-volver" onClick={() => window.history.back()}>Volver</button>
+    <button className="boton-volver" onClick={() => window.history.back()}>Volver</button>
   </div>
 );
 export default Contactos;

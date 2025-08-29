@@ -27,6 +27,7 @@ const PantallaTaller = () => {
             <div className="boton-volver">
                 <button className="volver">Volver</button>
             </div>
+            <button className="boton-volver" onClick={() => window.history.back()}>Volver</button>
         </div>
     );
 }

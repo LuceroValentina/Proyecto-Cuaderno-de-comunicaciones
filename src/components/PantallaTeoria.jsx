@@ -53,6 +53,7 @@ const PantallaTeoria = () => {
                 <button className="botonClaro">Crear</button>
                 <button className="botonClaro">Firmar</button>
             </div>
+            <button className="boton-volver" onClick={() => window.history.back()}>Volver</button>
         </div>
     );
 }
