@@ -21,8 +21,8 @@ export default function HorariodeClases() {
 
 
     return (
-        <div className='flex items-center justify-center min-h-screen bg-gray-100'>
-            <form className="w-1/2 min-w-[300px] max-w-sm h-130 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4">
+        <div className='flex items-center justify-center min-h-screen '>
+            <form className="w-1/2 min-w-[300px] max-w-sm bg-gray-100 h-140 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4">
                 <div className="font-bold text-xl mb-2 ">Horarios de Clases</div>
 
                 {/* Select de horas */}
