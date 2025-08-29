@@ -22,7 +22,7 @@ const PantallaInicio = () => {
 
     const handleGoogleLogin = async () => {
         setError("");
-        const provider = new GoogleAuthProvider();
+            const provider = new GoogleAuthProvider();
 
         try {
             const result = await signInWithPopup(auth, provider);
