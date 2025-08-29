@@ -21,5 +21,6 @@ const PantallaBiblioteca = () => {
             </div>
         </div>
     );
+    <button class="boton-volver" onClick={() => window.history.back()}>Volver</button>
 }
 export default PantallaBiblioteca;
