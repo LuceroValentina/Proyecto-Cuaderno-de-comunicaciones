@@ -6,7 +6,9 @@ import PantallaEditar from './components/PantallaEditar';
 import PantallaTaller from './components/PantallaTaller';
 import PantallaSecciones from './components/PantallaSecciones';
 import PantallaEducacionFisica from './components/PantallaEducacionFisica';
+import PantallaHorarioClases from './components/PantallaHorarioClases';
 //import Contactos from './components/Contactos';
+import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
         <Route path="/seccion_taller" element={<PantallaTaller/>} />
         <Route path="/seccion_biblioteca" element={<PantallaBiblioteca/>} />
         <Route path="/seccion_edfisica" element={<PantallaEducacionFisica/>} />
+        <Route path="/horariosteoria" element={<PantallaHorarioClases/>} />
+
         {/*<Route path="/seccion_contactos" element={<Contactos/>} />*/}
       </Routes>
     </BrowserRouter>
