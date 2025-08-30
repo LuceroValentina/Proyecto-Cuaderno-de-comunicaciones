@@ -1,4 +1,4 @@
-.contact-container {
+.seccion-contactos {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -9,20 +9,20 @@
     position: relative;
 }
 
-.contact-container h1 {
+.seccion-contactos  h1 {
     font-size: 2rem;
     margin-bottom: 1, 5rem;
     /* o directamente 0 si lo querés bien pegado */
     color: #180f7d;
 }
 
-.contact-list {
+.lista-contactos {
     display: flex;
     flex-direction: column;
     gap: 4rem;
 }
 
-.contact-item {
+.contacto {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -30,16 +30,16 @@
     color: #0c0555;
 }
 
-.contact-item img {
+.contacto img {
     width: 65px;
     height: 60px;
 }
 
-.contact-item a {
+.contacto a {
     color: #0c0555;
     text-decoration: none;
 }
 
-.contact-phone {
+.telefono-contacto {
     font-weight: bold;
 }

@@ -104,7 +104,8 @@ export default function HorariodeClases() {
 
                 </div>
             </form>
-
+            <button className="boton-volver" onClick={() => window.history.back()}>Volver</button>
+            
         </div>
     );
 }

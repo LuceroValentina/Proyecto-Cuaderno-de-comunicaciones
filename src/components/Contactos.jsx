@@ -20,7 +20,7 @@ const Contactos = () => (
     <h1>Contactos</h1>
     <div className="lista-contactos">
       {contacts.map((contact, index) => (
-        <div className="contact-item" key={index}>
+        <div className="contacto" key={index}>
           <img src={contact.icon} alt="icono" />
           {contact.link ? (
             <a href={contact.link} target="_blank" rel="noopener noreferrer">{contact.label}</a>
