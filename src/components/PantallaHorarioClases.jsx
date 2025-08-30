@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function HorariodeClases() {
+    const navigate = useNavigate();
     const horas = ['1', '2', '3', '4', '5', '6', '7'];
     const turnos = ['Turno Mañana', 'Turno Tarde', 'Turno Vespertino'];
     const horariovesp = ['18:00-18:40', '18:40-19:20', '18:00-19:20', '19:30-20:50', '19:30-20:10', '20:10-20:50', '21:00-21:40', '21:40-22:20', '21:00-22:20', '22:20-23:00'];
@@ -24,8 +26,6 @@ export default function HorariodeClases() {
         <div className='flex items-center justify-center min-h-screen '>
             <form className="w-1/2 min-w-[300px] max-w-sm bg-gray-100 h-140 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4">
                 <div className="font-bold text-xl mb-2 ">Horarios de Clases</div>
-
-                {/* Select de horas */}
                 <div className="space-y-4 w-40" >
                     <div>
                         <label className="block mb-1 text-sm font-medium text-gray-700">
@@ -44,8 +44,6 @@ export default function HorariodeClases() {
                         </select>
 
                     </div>
-
-                    {/* Select de turnos */}
                     <div>
                         <label className="block mb-1 text-sm font-medium text-gray-700">
                             Seleccioná el turno:
@@ -104,8 +102,13 @@ export default function HorariodeClases() {
 
                 </div>
             </form>
-            <button className="boton-volver" onClick={() => window.history.back()}>Volver</button>
-            
+            <button
+                onClick={() => navigate("/seccion_teoria")}
+                className="absolute bottom-8 right-8 px-6 py-3 bg-[#3d6490] text-white rounded cursor-pointer"
+            >
+                Volver
+            </button>
+
         </div>
     );
 }
