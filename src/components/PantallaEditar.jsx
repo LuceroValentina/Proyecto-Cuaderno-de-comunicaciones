@@ -55,7 +55,7 @@ const PantallaEditar = () => {
                     <div className="celda"></div>
                 </div>
             </div>
-            <button class="boton-volver" onClick={() => window.history.back()}>Volver</button>
+            <button onClick={() => navigate("/secciones")}className="absolute bottom-8 right-8 px-6 py-3 bg-[#3d6490] text-white rounded cursor-pointer">Volver</button>
 
         </div>
     );
