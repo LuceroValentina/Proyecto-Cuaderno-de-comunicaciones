@@ -38,13 +38,10 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.57.1",
-    "eslint-config-react-app": "^7.0.1",
-<<<<<<< HEAD
-    "react-scripts": "^0.0.0"
-=======
-    "react-scripts": "^5.0.1",
-    "tailwindcss": "^3.4.17"
->>>>>>> bc655f197f118a0917db0aae6c7e25095ad02b3f
-  }
+  "eslint": "^8.57.1",
+  "eslint-config-react-app": "^7.0.1",
+  "react-scripts": "^5.0.1",
+  "tailwindcss": "^3.4.17"
+}
+
 }
