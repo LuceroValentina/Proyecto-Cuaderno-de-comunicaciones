@@ -1,8 +1,11 @@
 import React from "react";
 import "../css/PantallaBiblioteca.css";
 import "../css/Elementos.css";
+import { useNavigate } from "react-router-dom";
+
 
 const PantallaBiblioteca = () => {
+    const navigate = useNavigate();
 
     return (
         <div className="container">

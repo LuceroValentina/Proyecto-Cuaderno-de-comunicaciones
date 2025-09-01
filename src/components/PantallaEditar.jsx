@@ -1,8 +1,12 @@
 import React from "react";
 import "../css/pantallaEditar.css";
 import "../css/Elementos.css";
+import { useNavigate } from "react-router-dom";
+
 
 const PantallaEditar = () => {
+        const navigate = useNavigate();
+
     return (
         <div className="container">
             <div className="arriba">

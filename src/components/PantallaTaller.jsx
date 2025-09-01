@@ -1,9 +1,11 @@
 import React from "react";
 import "../css/PantallaTaller.css";
 import "../css/Elementos.css";
+import { useNavigate } from "react-router-dom";
+
 
 const PantallaTaller = () => {
-
+    const navigate = useNavigate();
     return (
         <div className="container">
             <div className="titulo">

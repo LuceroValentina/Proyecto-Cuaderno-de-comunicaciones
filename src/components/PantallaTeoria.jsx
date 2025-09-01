@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "../css/PantallaTeoria.css";
 import "../css/Elementos.css";
+import { useNavigate } from "react-router-dom";
+
 
 const PantallaTeoria = () => {
+    const navigate = useNavigate();
     const [activo, setActivo] = useState(false);
     return (
         <div className="container">
@@ -58,7 +61,7 @@ const PantallaTeoria = () => {
                 <button className="botonClaro">Crear</button>
                 <button className="botonClaro">Firmar</button>
             </div>
-            <button onClick={() => navigate("/secciones")}className="absolute bottom-8 right-8 px-6 py-3 bg-[#3d6490] text-white rounded cursor-pointer">Volver</button>
+            <button onClick={() => navigate("/secciones")} className="absolute bottom-8 right-8 px-6 py-3 bg-[#3d6490] text-white rounded cursor-pointer">Volver</button>
 
         </div>
     );
