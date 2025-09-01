@@ -10,7 +10,9 @@ const PantallaTeoria = () => {
     return (
         <div className="container">
             <h1 className="titulo">Teoría</h1>
-            <button className="boton-abrir" onClick={() => setActivo(!activo)}>Abrir</button>
+            <button className="boton-abrir" onClick={() => setActivo(!activo)}>
+                <img src="/imagenes/flecha_menuabrir.png" alt="" />
+                </button>
             <div className={`container-menu ${activo ? "activo" : ""}`}>
                 <div className="container-items">
                     <h2 className="subtitulo">Menú</h2>
@@ -55,7 +57,8 @@ const PantallaTeoria = () => {
                     </ul>
                 </div>
                 <button className="boton-cerrar" onClick={() => setActivo(!activo)}>
-                    Cerrar</button>
+                    <img src="/imagenes/flecha_menucerrar.png" alt="" />
+                </button>
             </div>
             <div className="botonesClaros">
                 <button className="botonClaro">Crear</button>
