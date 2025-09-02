@@ -6,7 +6,10 @@ export default function HorarioContraturno() {
     const [selectedDia, setSelectedDia] = useState(dias[0]);
     const [texto, setTexto] = useState("");
     const navigate = useNavigate();
-    
+    const [opcion, setOpcion] = useState("");
+    const [selectActivo, setSelectActivo] = useState(false);
+    const [horariosTaller, sethorariosTaller] = useState("");
+
     return (
         <div className='flex items-center justify-center min-h-screen '>
             <form className="w-1/2 min-w-[300px] max-w-sm h-130 bg-gray-100 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4">
@@ -30,12 +33,48 @@ export default function HorarioContraturno() {
                         </select>
                     </div>
                     <div>
+                        <label className="block mb-1 text-sm font-medium text-gray-700">
+                            ¿Taller o Ed.fisica?
+                        </label>
+                        <select
+                            className="block w-full rounded-md border border-gray-300 bg-white py-2 px-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 focus:outline-none"
+                            value={opcion}
+                            onChange={(e) => {
+                                setOpcion(e.target.value);
+
+                                if (e.target.value === 'Taller') {
+                                    setSelectActivo(true);
+                                } else {
+                                    setSelectActivo(false);
+                                }
+                            }}
+                        >
+                            <option value="">--Selecciona--</option>
+                            <option value="Taller">Taller</option>
+                            <option value="Ed.fisica">Ed.fisica</option>
+
+                        </select>
+                    </div>
+                    <div>
+                        <select value={horariosTaller}
+                            onChange={(e) => sethorariosTaller(e.target.value)}
+                            disabled={!selectActivo} className="block w-full rounded-md border border-gray-300 bg-white py-2 px-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 focus:outline-none">
+                            <option value="">--Selecciona Horario--</option>
+                            <option value="manana">8:00-11:20</option>
+                            <option value="tarde">13:30-16:50</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label className="block mb-1 text-sm font-medium text-gray-700">
+                            Horario de Ed.física:
+                        </label>
                         <textarea
                             value={texto}
                             onChange={(e) => setTexto(e.target.value)}
+                            disabled={selectActivo}
                             placeholder="Escriba el horario"
-                            className="w-full p-2 border rounded-md"
-                            rows="5"
+                            className="w-full p-2 border rounded-md border-gray-400 "
+                            rows="3"
                         />
                     </div>
                     <div className='flex justify-center'>
