@@ -66,7 +66,12 @@ const PantallaTeoria = () => {
                 <button className="botonClaro">Crear</button>
                 <button className="botonClaro">Firmar</button>
             </div>
-            <button onClick={() => navigate("/secciones")} className="absolute bottom-8 right-8 px-6 py-3 bg-[#3d6490] text-white rounded cursor-pointer">Volver</button>
+            <button
+                className="fixed top-6 right-6 px-6 py-3 bg-[#3d6490] text-white rounded-lg shadow-lg cursor-pointer"
+            >
+                Volver
+            </button>
+
 
         </div>
     );
