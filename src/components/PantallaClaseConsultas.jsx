@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 export default function HorariodeClases() {
+    const navigate = useNavigate();
     const dpto = ['Ciclo Superior', 'Ciencias Naturales', 'Ciencias Sociales', 'Dibujo', 'Ed.Física', 'Idioma', 'Lengua y Literatura', 'Matemática y Física'];
     const materia = ['De la especialidad', 'Biología y Química', 'Historia, Geografía y Ed.Cívica', 'Dibujo Técnico', 'Ed.Física', 'Inglés', 'Lengua y Literatura', 'Matemática y Física'];
     const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
@@ -8,10 +10,12 @@ export default function HorariodeClases() {
     const [selectedDpto, setSelectedDpto] = useState(dpto[0]);
     const [selectedMaterias, setSelectedMaterias] = useState(materia[0]);
     const [selectedDia, setSelectedDia] = useState(dias[0]);
+    const [texto, setTexto] = useState("");
+
 
     return (
-        <div className='flex items-center justify-center min-h-screen bg-gray-100'>
-            <form className="w-1/2 min-w-[300px] max-w-sm h-130 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4">
+        <div className='flex items-center justify-center min-h-screen '>
+            <form className="w-1/2 min-w-[300px] bg-gray-100 max-w-sm h-130 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4">
                 <div className="font-bold text-xl mb-2 ">Horarios de Clases de Consulta</div>
 
 
@@ -66,14 +70,23 @@ export default function HorariodeClases() {
                             ))}
                         </select>
                     </div>
-
+                    <div>
+                        <label className="block mb-1 text-sm font-medium text-gray-700">
+                            Ingrese la hora:
+                        </label>
+                        <textarea
+                            value={texto}
+                            onChange={(e) => setTexto(e.target.value)}
+                            placeholder="Escriba la hora"
+                            className="w-full p-2 border rounded-md border-gray-400"
+                            rows="2"
+                        />
+                    </div>
                     <div className='flex justify-center'>
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
                             Enviar
                         </button>
                     </div>
-
-
 
                 </div>
             </form>

@@ -7,6 +7,8 @@ import PantallaTaller from './components/PantallaTaller';
 import PantallaSecciones from './components/PantallaSecciones';
 import PantallaEducacionFisica from './components/PantallaEducacionFisica';
 import PantallaHorarioClases from './components/PantallaHorarioClases';
+import PantallaHorarioContraturno from './components/PantallaHorarioContraturno';
+import PantallaClaseConsultas from './components/PantallaClaseConsultas';
 import Contactos from './components/Contactos';
 import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -24,11 +26,12 @@ function App() {
           <Route path="/seccion_biblioteca" element={<PantallaBiblioteca />} />
           <Route path="/seccion_edfisica" element={<PantallaEducacionFisica />} />
           <Route path="/horariosteoria" element={<PantallaHorarioClases />} />
-
+          <Route path="/horarioscontraturnos" element={<PantallaHorarioContraturno />} />
+          <Route path="/horariosclasesconsultas" element={<PantallaClaseConsultas />} />
           <Route path="/seccion_contactos" element={<Contactos/>} />
         </Routes>
       </BrowserRouter>
     </div>
   );
-}//Para acceder a la pestaña biblioteca <PantallaBiblioteca/> y borrar <PantallaInicio/>
+}
 export default App;

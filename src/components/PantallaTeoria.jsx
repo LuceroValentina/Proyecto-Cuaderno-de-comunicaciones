@@ -12,7 +12,7 @@ const PantallaTeoria = () => {
             <h1 className="titulo">Teoría</h1>
             <button className="boton-abrir" onClick={() => setActivo(!activo)}>
                 <img src="/imagenes/flecha_menuabrir.png" alt="" />
-                </button>
+            </button>
             <div className={`container-menu ${activo ? "activo" : ""}`}>
                 <div className="container-items">
                     <h2 className="subtitulo">Menú</h2>
@@ -24,7 +24,9 @@ const PantallaTeoria = () => {
                         <li className="container-submenu">Horarios de Clase
                             <ul className="submenu">
                                 <li className="lista-submenu"><a href="/horariosteoria" className="item">Horarios de Clase</a></li>
-                                <li className="lista-submenu"><a href="#" className="item">Horarios Contraturno</a></li>
+                                <li className="lista-submenu"><a href="/horarioscontraturnos" className="item">H. Contraturno</a></li>
+                                <li className="lista-submenu"><a href="/horariosclasesconsultas" className="item">H. Consultas</a></li>
+
                             </ul>
                         </li>
                         <li className="lista"><a href="#" className="item">Vestimenta</a></li>

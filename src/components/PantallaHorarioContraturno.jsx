@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function HorarioContraturno() {
-
     const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
     const [selectedDia, setSelectedDia] = useState(dias[0]);
     const [texto, setTexto] = useState("");
+    const navigate = useNavigate();
+    
     return (
-        <div className='flex items-center justify-center min-h-screen bg-gray-100'>
-            <form className="w-1/2 min-w-[300px] max-w-sm h-130 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4">
+        <div className='flex items-center justify-center min-h-screen '>
+            <form className="w-1/2 min-w-[300px] max-w-sm h-130 bg-gray-100 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4">
                 <div className="font-bold text-xl mb-2 ">Horarios de Contraturno</div>
 
                 <div className="space-y-4 w-40" >
@@ -31,7 +33,7 @@ export default function HorarioContraturno() {
                         <textarea
                             value={texto}
                             onChange={(e) => setTexto(e.target.value)}
-                            placeholder="Escriba el taller que corresponda"
+                            placeholder="Escriba el horario"
                             className="w-full p-2 border rounded-md"
                             rows="5"
                         />
