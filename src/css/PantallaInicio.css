@@ -22,6 +22,8 @@
     color: #ffffff;
     font-family: "Noto Sans", sans-serif;
     text-align: center;
+    font-size: 35px;
+    margin-top: 15px;
 }
 
 
@@ -37,7 +39,7 @@
     font-weight: bold;
     align-items: center;
     margin: auto;
-    margin-top: 25px;
+    margin-top: 70px;
 }
 
 .logo {
