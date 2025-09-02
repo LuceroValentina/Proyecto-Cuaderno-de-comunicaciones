@@ -8,18 +8,18 @@ export default function FormularioMensaje() {
     const [fecha, setFecha] = useState("");
     const [mensaje, setMensaje] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log({ nombre, fecha, mensaje });
-    };
+    //const handleSubmit = (e) => {
+    //    e.preventDefault();
+    //    console.log({ nombre, fecha, mensaje });
+    //}; manejar el formulario despues cuando se conecte mejor
 
     return (
         <div className='flex items-center justify-center min-h-screen'>
             <form 
-                onSubmit={handleSubmit}
-                className="w-1/2 min-w-[300px] max-w-sm bg-gray-100 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4"
-            >
-                <div className="font-bold text-xl mb-2">Formulario de Mensaje</div>
+                //onSubmit={handleSubmit}
+                className="w-1/2 min-w-[300px] max-w-sm bg-gray-100 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4">
+                
+                <div className="font-bold text-xl mb-2">Comunicación General</div>
                 <div className="space-y-4 w-60">
 
                     <div>
