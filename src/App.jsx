@@ -13,6 +13,7 @@ import Contactos from './components/Contactos';
 import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FormularioMensaje from './components/FormularioCrearNota';
+import Registrodefirmas from './components/Registrodefirmas';
 
 function App() {
   return (
@@ -29,8 +30,10 @@ function App() {
           <Route path="/horariosteoria" element={<PantallaHorarioClases />} />
           <Route path="/horarioscontraturnos" element={<PantallaHorarioContraturno />} />
           <Route path="/horariosclasesconsultas" element={<PantallaClaseConsultas />} />
-          <Route path="/seccion_contactos" element={<Contactos/>} />
+          <Route path="/seccion_contactos" element={<Contactos />} />
           <Route path="/crear_nota" element={<FormularioMensaje />} />
+          <Route path="/registro_firmas" element={<Registrodefirmas />} />
+
         </Routes>
       </BrowserRouter>
     </div>

@@ -20,7 +20,7 @@ const PantallaTeoria = () => {
                         <li className="lista"><a href="#" className="item">Retiros</a></li>
                         <li className="lista"><a href="#" className="item">Evaluaciones y TPS</a></li>
                         <li className="lista"><a href="/crear_nota" className="item">Comunicación General</a></li>
-                        <li className="lista"><a href="#" className="item">Registro de firmas</a></li>
+                        <li className="lista"><a href="/registro_firmas" className="item">Registro de firmas</a></li>
                         <li className="container-submenu">Horarios de Clase
                             <ul className="submenu">
                                 <li className="lista-submenu"><a href="/horariosteoria" className="item">Horarios de Clase</a></li>
