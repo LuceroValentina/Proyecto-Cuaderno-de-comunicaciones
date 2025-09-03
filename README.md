@@ -1,5 +1,10 @@
 # Proyecto: Cuaderno de Comunicaciones
-### Integrantes: Valentina Lucero, Brisa Hernández, Florencia Sanchez, Guadalupe Carrasquera y Delfina Carrasco.
+### Integrantes: 
+**Valentina Lucero -** Frontend  
+**Brisa Hernández -** Documentación  
+**Florencia Sanchez-** Diseño  
+**Guadalupe Carrasquera-** Backend  
+**Delfina Carrasco-** Frontend  
 
 ---
 
@@ -14,12 +19,11 @@ Para el desarrollo de este diseño la herramienta utilizada fue Canva.
 ---
 
 ### Descripción breve de cada pantalla:
-- **Pantalla de Inicio de sesión:** Los usuarios deberán iniciar sesión con su correo Google.
-- **Pantalla de Acceso:** Se les pedirá una contraseña a los usuarios para poder distinguir entre administrador, alumno y padre, de acuerdo con esto serán redirigidos a la siguiente ventana y funcionalidades.
-- **Secciones:** Para los usuarios comunes se tienen botones de las partes generales del cuaderno: teoría, taller, educación física y biblioteca, cada botón dirigirá a la respectiva pantalla, además del botón que lleva a la parte de contactos. Para los administradores esto cambia, y las opciones de biblioteca y contactos ya no estarán. También se añadirán botones para agregar/editar/eliminar alumnos.
+- **Pantalla de Inicio de sesión:** Los usuarios deberán iniciar sesión con su correo Google, su tipo de usuario ya estará definido desde su creación, de acuerdo con esto serán redirigidos a la siguiente ventana y funcionalidades.
+- **Secciones:** Para los usuarios comunes se tienen botones de las partes generales del cuaderno: teoría, taller, educación física y biblioteca, cada botón dirigirá a la respectiva pantalla, además del botón que lleva a la parte de contactos. Para los administradores, preceptores y profesores esto cambia, y las opciones de biblioteca y contactos ya no estarán. También se añadirán botones para agregar/editar/eliminar alumnos en el caso de los dos primeros.
 - **Editar alumno:** Le permite al administrador agregar, modificar y eliminar un alumno, buscándolo mediante su DNI. 
-- **Contactos:** Se pueden ver los contactos telefónicos, las redes de la escuela y la ubicación de la misma, los textos al lado de los logos redirigen directamente a la red social correspondiente. Abajo a la izquierda está el botón de volver, que devuelve a la pantalla de secciones, este funciona de la misma manera en todas las pantallas.
-- **Teoría:** En la parte superior se encuentra el nombre de la sección y justo debajo un botón que despliega un panel, mediante el cual se accede a cada botón las páginas, hay botones que son del tipo desplegable encontrándose más opciones. Dependiendo del año del alumno serán las subsecciones que le aparecerán, es lo mismo para administradores.
+- **Contactos:** Se pueden ver los contactos telefónicos, las redes de la escuela y la ubicación de la misma, los textos al lado de los logos redirigen directamente a la red social correspondiente. Abajo a la derecha está el botón de volver, que devuelve a la pantalla anterior, este funciona de la misma manera en todas las pantallas.
+- **Teoría:** En la parte superior se encuentra el nombre de la sección y abajo a la izquierda una flecha que despliega un panel, mediante el cual se accede a cada botón las páginas, hay botones que son del tipo desplegable encontrándose más opciones. Dependiendo del año del alumno serán las subsecciones que le aparecerán, es lo mismo para administradores.
 Abajo a la derecha se encuentran los botones para firmar y crear notificaciones, en el caso de usuarios comunes se pedirá un código que solo tendrán los padres para verificar que los alumnos no sean los que firman, las firmas serán almacenadas en los registros y al apretar el botón se harán de manera automática, luego de la verificación. Estos botones funcionan igual en todas las pantallas donde aparecen.
 - **Taller:** Tiene la misma manera de funcionar que la página de teoría, solo que cambia la sección, de igual manera los de ciclo básico y superior tendrán distinta forma de calificación, ya que ciclo básico tiene rotaciones y ciclo superior cuatrimestres.
 - **Ed.Física:** A diferencia de las otras secciones, en esta pantalla no se tiene que firmar o escribir nada más que la ficha médica, esta se completa directamente tipo formulario.
