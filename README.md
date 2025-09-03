@@ -1,10 +1,10 @@
 # Proyecto: Cuaderno de Comunicaciones
 ### Integrantes: 
-**Valentina Lucero -** Frontend
-**Brisa Hernández -** Documentación
-**Florencia Sanchez-** Diseño
-**Guadalupe Carrasquera-** Backend
-**Delfina Carrasco-** Frontend
+**Valentina Lucero -** Frontend  
+**Brisa Hernández -** Documentación  
+**Florencia Sanchez-** Diseño  
+**Guadalupe Carrasquera-** Backend  
+**Delfina Carrasco-** Frontend  
 
 ---
 
