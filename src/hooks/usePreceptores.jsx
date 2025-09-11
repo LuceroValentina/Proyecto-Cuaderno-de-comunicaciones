@@ -1,9 +1,9 @@
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 
-export const crearAlumnos = async ({ id, nombre, apellido, dni, telefono, direccion, genero, ciclo, turno }) => {
+export const crearPreceptores = async ({ id, nombre, apellido, dni, telefono, direccion, genero, curso, turno }) => {
     try {
-        await addDoc(collection(db, 'alumnos'), {
+        await addDoc(collection(db, 'preceptores'), {
             id, 
             nombre,
             apellido,
@@ -11,12 +11,12 @@ export const crearAlumnos = async ({ id, nombre, apellido, dni, telefono, direcc
             telefono,
             direccion, 
             genero,
-            ciclo,
+            curso,
             turno
         });
         return true;
     } catch (error) {
-        console.error("Error al crear Alumno:", error);
+        console.error("Error al crear preceptor:", error);
         return false;
     }
 };
