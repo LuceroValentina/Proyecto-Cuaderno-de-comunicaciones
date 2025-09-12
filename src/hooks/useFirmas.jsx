@@ -3,7 +3,7 @@ import { db } from '../firebase/firebase';
 
 export const crearFirmas = async ({ id, firma, aclaracion, responsable }) => {
     try {
-        await addDoc(collection(db, 'usuarios'), {
+        await addDoc(collection(db, 'firmas'), {
             id, 
             firma,
             aclaracion,

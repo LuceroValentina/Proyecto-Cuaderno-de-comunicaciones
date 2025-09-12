@@ -3,7 +3,7 @@ import { db } from '../firebase/firebase';
 
 export const crearAdmins = async ({ id, nombre, apellido, telefono, direccion, rol }) => {
     try {
-        await addDoc(collection(db, 'usuarios'), {
+        await addDoc(collection(db, 'admins'), {
             id, 
             nombre,
             apellido,
