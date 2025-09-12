@@ -14,6 +14,8 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FormularioMensaje from './components/FormularioCrearNota';
 import Registrodefirmas from './components/Registrodefirmas';
+import AltaPreceptor from './components/AltaPreceptor';
+
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
           <Route path="/seccion_contactos" element={<Contactos />} />
           <Route path="/crear_nota" element={<FormularioMensaje />} />
           <Route path="/registro_firmas" element={<Registrodefirmas />} />
+          <Route path="/nuevo" element={< AltaPreceptor />} />
 
         </Routes>
       </BrowserRouter>
