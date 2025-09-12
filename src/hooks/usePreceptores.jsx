@@ -1,10 +1,9 @@
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 
-export const crearPreceptores = async ({ id, nombre, apellido, dni, telefono, direccion, genero, curso, turno }) => {
+export const crearPreceptor = async ({ nombre, apellido, dni, telefono, direccion, genero, curso, turno }) => {
     try {
         await addDoc(collection(db, 'preceptores'), {
-            id, 
             nombre,
             apellido,
             dni,
