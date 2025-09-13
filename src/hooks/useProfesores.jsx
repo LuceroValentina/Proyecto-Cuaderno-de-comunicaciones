@@ -1,4 +1,4 @@
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, onSnapshot, doc} from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 
 export const crearProfesor = async ({ nombre, apellido, dni, telefono, direccion, genero, materia, curso }) => {
@@ -19,3 +19,9 @@ export const crearProfesor = async ({ nombre, apellido, dni, telefono, direccion
         return false;
     }
 };
+function listenById(id, cb, errCb) {
+    const ref = doc(db, "profesores", id);
+    return onSnapshot(ref, (d) => {
+        cb(d.exists() ? { id: d.id, ...d.data() } : null);
+    }, errCb);
+}
