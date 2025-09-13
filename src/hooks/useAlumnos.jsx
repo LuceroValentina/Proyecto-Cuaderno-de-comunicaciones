@@ -1,7 +1,7 @@
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 
-export const crearAlumnos = async ({ nombre, apellido, dni, telefono, direccion, genero, ciclo, turno }) => {
+export const crearAlumno = async ({ nombre, apellido, dni, telefono, direccion, genero, ciclo, turno, curso }) => {
     try {
         await addDoc(collection(db, 'alumnos'), {
             nombre,
@@ -11,7 +11,8 @@ export const crearAlumnos = async ({ nombre, apellido, dni, telefono, direccion,
             direccion, 
             genero,
             ciclo,
-            turno
+            turno,
+            curso
         });
         return true;
     } catch (error) {
