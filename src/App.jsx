@@ -18,7 +18,9 @@ import AltaPreceptor from './components/AltaPreceptor';
 import AltaAlumno from './components/AltaAlumno';
 import AltaProfesor from './components/AltaProfesor';
 
+
 function App() {
+ 
   return (
     <div className='fondo'>
       &nbsp;
@@ -39,7 +41,7 @@ function App() {
           <Route path="/altapreceptor" element={< AltaPreceptor />} />
           <Route path="/altaalumno" element={< AltaAlumno />} />
           <Route path="/altaprofesor" element={< AltaProfesor />} />
-
+          
         </Routes>
       </BrowserRouter>
     </div>

@@ -3,7 +3,7 @@ import { db } from '../firebase/firebase';
 
 export const crearAlumno = async ({ nombre, apellido, dni, telefono, direccion, genero, ciclo, turno, curso }) => {
     try {
-        await addDoc(collection(db, 'alumnos'), {
+        const docRef = await addDoc(collection(db, 'alumnos'), {
             nombre,
             apellido,
             dni,
@@ -14,6 +14,7 @@ export const crearAlumno = async ({ nombre, apellido, dni, telefono, direccion, 
             turno,
             curso
         });
+        console.log("Alumno creado con ID:", docRef.id);
         return true;
     } catch (error) {
         console.error("Error al crear Alumno:", error);
