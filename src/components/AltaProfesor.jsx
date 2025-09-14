@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, Typography, Grid, Paper } from '@mui/material';
+import { TextField, Button, Typography, Stack, Paper } from '@mui/material';
 //import { collection, addDoc } from 'firebase/firestore';
 //import { db } from '../firebase/firebase';
 import { crearProfesor } from '../hooks/useProfesores';
@@ -41,28 +41,26 @@ const AltaProfesor = () => {
     };
 
     return (
-        <Paper sx={{ p: 4, mt: 3 }}>
-            <Typography variant="h6" gutterBottom>Alta de Profesor</Typography>
-            <form onSubmit={handleSubmit}>
-                <Grid container spacing={2}>
-                    {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'genero', 'materia','curso'].map((field) => (
-                        <Grid item xs={12} sm={6} key={field}>
-                            <TextField
-                                label={field.charAt(0).toUpperCase() + field.slice(1)}
-                                name={field}
-                                value={form[field]}
-                                onChange={handleChange}
-                                fullWidth
-                                required
-                            />
-                        </Grid>
-                    ))}
-                    <Grid item xs={12}>
-                        <Button type="submit" variant="contained" color="primary">Guardar</Button>
-                    </Grid>
-                </Grid>
-            </form>
-        </Paper>
+        <Paper sx={{ p: 2, mt: 3, maxWidth: 500, margin: 'auto', backgroundColor: 'white' }}>
+                    <Typography textAlign="center" variant="h6" gutterBottom>Alta de Profesor</Typography>
+                    <form onSubmit={handleSubmit}>
+                        <Stack spacing={2}  alignItems="center">
+                            {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'genero', 'materia','curso'].map((field) => (
+                                <TextField
+                                    key={field}
+                                    label={field.charAt(0).toUpperCase() + field.slice(1)}
+                                    name={field}
+                                    value={form[field]}
+                                    onChange={handleChange}
+                                    fullWidth
+                                    required
+                                    sx={{ backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 1, width: 300, '& .MuiInputBase-root': { height: 40 } }}
+                                />
+                            ))}
+                            <Button type="submit" variant="contained" color="primary">Guardar</Button>
+                        </Stack>
+                    </form>
+                </Paper>
     );
 };
 
