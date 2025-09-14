@@ -19,6 +19,7 @@ import AltaAlumno from './components/AltaAlumno';
 import AltaProfesor from './components/AltaProfesor';
 import AltaClasedeConsulta from './components/AltaClasedeConsulta';
 import AltaDia from './components/AltaDia';
+import AltaCalendario from './components/AltaCalendario';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
           <Route path="/altaprofesor" element={< AltaProfesor />} />
           <Route path="/altaclasedeconsulta" element={< AltaClasedeConsulta />} />
           <Route path="/altadia" element={< AltaDia />} />
+          <Route path="/altacalendario" element={< AltaCalendario />} />
           
         </Routes>
       </BrowserRouter>
