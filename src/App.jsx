@@ -20,10 +20,13 @@ import AltaProfesor from './components/AltaProfesor';
 import AltaClasedeConsulta from './components/AltaClasedeConsulta';
 import AltaDia from './components/AltaDia';
 import AltaCalendario from './components/AltaCalendario';
+import ListarAlumnos from './components/ListarAlumnos';
+import ListarPreceptores from './components/ListarPreceptores';
+import ListarProfesores from './components/ListarProfesores';
 
 
 function App() {
- 
+
   return (
     <div className='fondo'>
       &nbsp;
@@ -47,7 +50,9 @@ function App() {
           <Route path="/altaclasedeconsulta" element={< AltaClasedeConsulta />} />
           <Route path="/altadia" element={< AltaDia />} />
           <Route path="/altacalendario" element={< AltaCalendario />} />
-          
+          <Route path="/listaralumno" element={< ListarAlumnos />} />
+          <Route path="/listarprofesor" element={< ListarProfesores />} />
+          <Route path="/listarpreceptor" element={< ListarPreceptores />} />
         </Routes>
       </BrowserRouter>
     </div>

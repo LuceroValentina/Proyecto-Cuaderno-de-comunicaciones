@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase";
+import { Box, Paper, Typography, List, ListItem, ListItemText } from "@mui/material";
+
 
 export default function ListarProfesores() {
     const [datos, setDatos] = useState([]);
@@ -22,23 +24,47 @@ export default function ListarProfesores() {
     }, []);
 
     return (
-        <div className="listado">
-            <h2>Listado de datos</h2>
-            <ul>
-                {datos.map((item) => (
-                    <li key={item.id}>
-                        Nombre: {item.nombre || "-"}
-                        Apellido: {item.apellido || "-"}
-                        DNI: {item.dni || "-"}
-                        Telefono: {item.telefono || "-"}
-                        Direccion: {item.direccion || "-"}
-                        Genero: {item.genero || "-"}
-                        Materia: {item.materia || "-"}
-                        Curso: {item.curso || "-"}
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <Box
+            sx={{
+                minHeight: "100vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+        >
+            <Paper sx={{
+                p: 4,
+                width: "50vw",
+                height: "60vh",
+                backgroundColor: "white",
+                overflow: "auto",
+            }}>
+                < Typography textAlign="center" variant="h6" gutterBottom>Lista de datos Profesores</Typography>
+                <List>
+                    {datos.map((item) => (
+                        <ListItem
+                            key={item.id}
+                            sx={{ bgcolor: "grey.100", borderRadius: 2, mb: 1 }}
+                        >
+                            <ListItemText
+                                secondary={
+                                    <>
+                                        Nombre: {item.nombre} <br />
+                                        Apellido: {item.apellido} <br />
+                                        DNI: {item.dni} <br />
+                                        Teléfono: {item.telefono} <br />
+                                        Dirección: {item.direccion} <br />
+                                        Género: {item.genero} <br />
+                                        Materia: {item.materia} <br />
+                                        Curso: {item.curso}<br />
+                                    </>
+                                }
+                            />
+                        </ListItem>
+                    ))}
+                </List>
+            </Paper></Box >
+
     );
 
 }

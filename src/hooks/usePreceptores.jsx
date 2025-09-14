@@ -3,7 +3,7 @@ import { collection, addDoc, onSnapshot, doc } from 'firebase/firestore';
 
 export const crearPreceptor = async ({ nombre, apellido, dni, telefono, direccion, genero, curso, turno }) => {
     try {
-        await addDoc(collection(db, 'preceptores'), {
+        const docRef = await addDoc(collection(db, 'preceptores'), {
             nombre,
             apellido,
             dni,
@@ -13,11 +13,11 @@ export const crearPreceptor = async ({ nombre, apellido, dni, telefono, direccio
             curso,
             turno
         });
+        console.log("Preceptor creado con ID:", docRef.id);
         return true;
     } catch (error) {
-        console.error("Error al crear preceptor:", error);
+        console.error("Error al crear Preceptor:", error);
         return false;
-
     }
 };
 function listenById(id, cb, errCb) {
@@ -26,3 +26,4 @@ function listenById(id, cb, errCb) {
         cb(d.exists() ? { id: d.id, ...d.data() } : null);
     }, errCb);
 }
+

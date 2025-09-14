@@ -3,8 +3,8 @@ import { db } from '../firebase/firebase';
 
 export const crearProfesor = async ({ nombre, apellido, dni, telefono, direccion, genero, materia, curso }) => {
     try {
-        await addDoc(collection(db, 'profesores'), {
-            nombre,
+        const docRef = await addDoc(collection(db, 'profesores'), {
+           nombre,
             apellido,
             dni,
             telefono,
@@ -13,6 +13,7 @@ export const crearProfesor = async ({ nombre, apellido, dni, telefono, direccion
             materia,
             curso
         });
+        console.log("Profesor creado con ID:", docRef.id);
         return true;
     } catch (error) {
         console.error("Error al crear Profesor:", error);
@@ -25,3 +26,5 @@ function listenById(id, cb, errCb) {
         cb(d.exists() ? { id: d.id, ...d.data() } : null);
     }, errCb);
 }
+
+
