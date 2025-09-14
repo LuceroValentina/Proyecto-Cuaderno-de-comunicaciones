@@ -17,7 +17,8 @@ import Registrodefirmas from './components/Registrodefirmas';
 import AltaPreceptor from './components/AltaPreceptor';
 import AltaAlumno from './components/AltaAlumno';
 import AltaProfesor from './components/AltaProfesor';
-import AltaClasedeConsulta from './components/AltaClasedeConsulta'
+import AltaClasedeConsulta from './components/AltaClasedeConsulta';
+import AltaDia from './components/AltaDia';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/altaalumno" element={< AltaAlumno />} />
           <Route path="/altaprofesor" element={< AltaProfesor />} />
           <Route path="/altaclasedeconsulta" element={< AltaClasedeConsulta />} />
+          <Route path="/altadia" element={< AltaDia />} />
           
         </Routes>
       </BrowserRouter>

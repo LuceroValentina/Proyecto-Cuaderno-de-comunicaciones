@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import { TextField, Button, Typography, Stack, Paper } from '@mui/material';
 //import { collection, addDoc } from 'firebase/firestore';
 //import { db } from '../firebase/firebase';
-import { crearClasedeConsulta } from '../hooks/useClasedeconsulta';
+import { crearDia } from '../hooks/useDia';
 
-const AltaClasedeConsulta = () => {
+const AltaDia = () => {
     const [form, setForm] = useState({
         dia: "",
-        horario: "",
-        matria: "",
-        profesor: ""
+        mes: ""
     });
 
     const handleChange = (e) => {
@@ -18,26 +16,24 @@ const AltaClasedeConsulta = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const clasedeconsultaGuardada = await crearClasedeConsulta(form);
-        if (clasedeconsultaGuardada) {
-            alert("clase de consulta dada de alta correctamente");
+        const diaGuardado = await crearDia(form);
+        if (diaGuardado) {
+            alert("dia dado de alta correctamente");
             setForm({
                 dia: "",
-                horario: "",
-                matria: "",
-                profesor: "" 
+                mes: "" 
             });
         } else {
-            alert("Error al dar de alta al clase de consulta");
+            alert("Error al dar de alta el dia ");
         }
     };
 
     return (
         <Paper sx={{ p: 2, mt: 3, maxWidth: 450, margin: 'auto', backgroundColor: 'white' }}>
-            <Typography textAlign="center" variant="h6" gutterBottom>Alta de Clase de consulta</Typography>
+            <Typography textAlign="center" variant="h6" gutterBottom>Alta de Dia</Typography>
             <form onSubmit={handleSubmit}>
                 <Stack spacing={2}  alignItems="center">
-                    {['dia', 'horario', 'materia', 'profesor'].map((field) => (
+                    {['dia', 'mes'].map((field) => (
                         <TextField
                             key={field}
                             label={field.charAt(0).toUpperCase() + field.slice(1)}
@@ -56,4 +52,4 @@ const AltaClasedeConsulta = () => {
     );
 };
 
-export default AltaClasedeConsulta;
+export default AltaDia;
