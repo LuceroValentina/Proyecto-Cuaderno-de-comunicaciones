@@ -1,10 +1,9 @@
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 
-export const crearFirmas = async ({ id, firma, aclaracion, responsable }) => {
+export const crearFirma = async ({ firma, aclaracion, responsable }) => {
     try {
         await addDoc(collection(db, 'firmas'), {
-            id, 
             firma,
             aclaracion,
             responsable
