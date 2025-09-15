@@ -15,3 +15,9 @@ export const crearFirmas = async ({ id, firma, aclaracion, responsable }) => {
         return false;
     }
 };
+function listenById(id, cb, errCb) {
+    const ref = doc(db, "firmas", id);
+    return onSnapshot(ref, (d) => {
+        cb(d.exists() ? { id: d.id, ...d.data() } : null);
+    }, errCb);
+}

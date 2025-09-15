@@ -1,19 +1,26 @@
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 
-export const crearTutores = async ({ id, nombre, apellido, telefono, direccion, parentesco }) => {
+export const crearTutores = async ({ nombre, apellido, telefono, direccion, parentesco }) => {
     try {
         await addDoc(collection(db, 'tutores'), {
-            id, 
             nombre,
             apellido,
             telefono,
             direccion, 
             parentesco
         });
+        console.log("Tutor creado con ID:", docRef.id);
         return true;
     } catch (error) {
-        console.error("Error al crear Tutor:", error);
+        console.error("Error al crear Profesor:", error);
         return false;
     }
 };
+function listenById(id, cb, errCb) {
+    const ref = doc(db, "tutores", id);
+    return onSnapshot(ref, (d) => {
+        cb(d.exists() ? { id: d.id, ...d.data() } : null);
+    }, errCb);
+}
+    
