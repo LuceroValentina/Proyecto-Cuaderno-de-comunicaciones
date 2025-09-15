@@ -11,7 +11,7 @@ texto
 
 return true;
 } catch(error){
-console.error("Error al crear notas:", error);
+console.error("Error al crear calificacion:", error);
 return false;
 }
 
