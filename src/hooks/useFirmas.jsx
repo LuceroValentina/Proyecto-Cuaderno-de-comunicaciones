@@ -9,6 +9,7 @@ export const crearFirmas = async ({ id, firma, aclaracion, responsable }) => {
             aclaracion,
             responsable
         });
+        console.log("Firma creada bajo el id:", docRef.id);
         return true;
     } catch (error) {
         console.error("Error al crear la firma.", error);

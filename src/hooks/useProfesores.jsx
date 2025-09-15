@@ -4,7 +4,7 @@ import { db } from '../firebase/firebase';
 export const crearProfesor = async ({ nombre, apellido, dni, telefono, direccion, genero, materia, curso }) => {
     try {
         const docRef = await addDoc(collection(db, 'profesores'), {
-           nombre,
+            nombre,
             apellido,
             dni,
             telefono,

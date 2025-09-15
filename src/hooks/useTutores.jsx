@@ -10,7 +10,7 @@ export const crearTutores = async ({ nombre, apellido, telefono, direccion, pare
             direccion, 
             parentesco
         });
-        console.log("Tutor creado con ID:", docRef.id);
+        console.log("Tutor creado bajo el id:", docRef.id);
         return true;
     } catch (error) {
         console.error("Error al crear Profesor:", error);
