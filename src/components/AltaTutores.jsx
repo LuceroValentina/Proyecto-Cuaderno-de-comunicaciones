@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import { TextField, Button, Typography, Stack, Paper } from '@mui/material';
 //import { collection, addDoc } from 'firebase/firestore';
 //import { db } from '../firebase/firebase';
-import { crearAdmin } from '../hooks/useAdmins';
+import { crearTutor } from '../hooks/useTutores';
 
-const AltaAdmin = () => {
+const AltaTutor = () => {
     const [form, setForm] = useState({
         nombre: "",
         apellido: "",
-        dni: "",
         telefono: "",
         direccion: "",
-        rol: ""
+        parentesco: ""
     });
 
     const handleChange = (e) => {
@@ -20,28 +19,27 @@ const AltaAdmin = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const adminGuardado = await crearAdmin(form);
-        if (adminGuardado) {
-            alert("Admin dado de alta correctamente");
+        const tutorGuardado = await crearTutor(form);
+        if (tutorGuardado) {
+            alert("Tutor dado de alta correctamente");
             setForm({
                 nombre: "",
                 apellido: "",
-                dni: "",
                 telefono: "",
                 direccion: "",
-                rol: ""
+                parentesco: ""
             });
         } else {
-            alert("Error al dar de alta al admin");
+            alert("Error al dar de alta al tutor");
         }
     };
 
     return (
         <Paper sx={{ p: 2, mt: 3, maxWidth: 500, margin: 'auto', backgroundColor: 'white' }}>
-                    <Typography textAlign="center" variant="h6" gutterBottom>Alta de Admin</Typography>
+                    <Typography textAlign="center" variant="h6" gutterBottom>Alta de Profesor</Typography>
                     <form onSubmit={handleSubmit}>
                         <Stack spacing={2}  alignItems="center">
-                            {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'rol'].map((field) => (
+                            {['nombre', 'apellido', 'telefono', 'direccion', 'parentesco'].map((field) => (
                                 <TextField
                                     key={field}
                                     label={field.charAt(0).toUpperCase() + field.slice(1)}
@@ -60,4 +58,4 @@ const AltaAdmin = () => {
     );
 };
 
-export default AltaAdmin;
+export default AltaTutor;
