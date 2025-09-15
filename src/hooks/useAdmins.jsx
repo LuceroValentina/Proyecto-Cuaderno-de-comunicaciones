@@ -1,11 +1,12 @@
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 
-export const crearAdmins = async ({ nombre, apellido, telefono, direccion, rol }) => {
+export const crearAdmins = async ({ nombre, apellido, dni, telefono, direccion, rol }) => {
     try {
         await addDoc(collection(db, 'admins'), {
             nombre,
             apellido,
+            dni,
             telefono,
             direccion, 
             rol

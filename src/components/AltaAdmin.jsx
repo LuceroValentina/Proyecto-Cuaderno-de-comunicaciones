@@ -11,9 +11,7 @@ const AltaAdmin = () => {
         dni: "",
         telefono: "",
         direccion: "",
-        genero: "",
-        materia: "",
-        curso: ""
+        rol: ""
     });
 
     const handleChange = (e) => {
@@ -22,30 +20,28 @@ const AltaAdmin = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const profesorGuardado = await crearProfesor(form);
-        if (profesorGuardado) {
-            alert("Profesor dado de alta correctamente");
+        const adminGuardado = await crearAdmin(form);
+        if (adminGuardado) {
+            alert("Admin dado de alta correctamente");
             setForm({
                 nombre: "",
                 apellido: "",
                 dni: "",
                 telefono: "",
                 direccion: "",
-                genero: "",
-                materia: "",
-                curso: ""
+                rol: ""
             });
         } else {
-            alert("Error al dar de alta al profesor");
+            alert("Error al dar de alta al admin");
         }
     };
 
     return (
         <Paper sx={{ p: 2, mt: 3, maxWidth: 500, margin: 'auto', backgroundColor: 'white' }}>
-                    <Typography textAlign="center" variant="h6" gutterBottom>Alta de Profesor</Typography>
+                    <Typography textAlign="center" variant="h6" gutterBottom>Alta de Admin</Typography>
                     <form onSubmit={handleSubmit}>
                         <Stack spacing={2}  alignItems="center">
-                            {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'genero', 'materia','curso'].map((field) => (
+                            {['nombre', 'apellido', 'dni', 'telefono', 'direccion','rol'].map((field) => (
                                 <TextField
                                     key={field}
                                     label={field.charAt(0).toUpperCase() + field.slice(1)}
@@ -64,4 +60,4 @@ const AltaAdmin = () => {
     );
 };
 
-export default AltaProfesor;
+export default AltaAdmin;
