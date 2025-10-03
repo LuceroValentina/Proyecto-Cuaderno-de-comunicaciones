@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { Box, Paper, Typography, List, ListItem, ListItemText } from "@mui/material";
+import { Link } from "react-router-dom";
+
 
 
 export default function ListarPreceptores() {
@@ -42,27 +44,28 @@ export default function ListarPreceptores() {
                 < Typography textAlign="center" variant="h6" gutterBottom>Lista de datos Preceptores</Typography>
                 <List>
                     {datos.map((item) => (
-                        <ListItem
-                            key={item.id}
-                            sx={{ bgcolor: "grey.100", borderRadius: 2, mb: 1 }}
-                        >
-                            <ListItemText
-                                secondary={
-                                    <>
-                                        Nombre: {item.nombre} <br />
-                                        Apellido: {item.apellido} <br />
-                                        DNI: {item.dni} <br />
-                                        Teléfono: {item.telefono} <br />
-                                        Dirección: {item.direccion} <br />
-                                        Género: {item.genero} <br />
-                                        Curso: {item.curso}<br />
-                                        Turno: {item.turno} 
-                                    </>
-                                }
-                            />
-                        </ListItem>
+                        
+
+                            <ListItem
+                                key={item.id}
+                                sx={{ bgcolor: "grey.100", borderRadius: 2, mb: 1, textDecoration: "none", color: "inherit" }}
+                            >
+                                <ListItemText
+                                    secondary={
+                                        <>
+                                            <span> Nombre y Apellido: {`${item.nombre} ${item.apellido}`} </span>
+                                            <span>Curso: {item.curso} </span>
+                                            <span>
+                                                <Link to={`/detallepreceptor/${item.id}`} style={{ textDecoration: "none", color: "#1976d2" }}>
+                                                    Ver detalle
+                                                </Link>
+                                            </span>
+                                        </>
+                                    }
+                                />
+                            </ListItem>
                     ))}
-                </List>
+                        </List>
             </Paper></Box >
 
     );

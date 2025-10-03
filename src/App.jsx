@@ -24,6 +24,8 @@ import ListarAlumnos from './components/ListarAlumnos';
 import ListarPreceptores from './components/ListarPreceptores';
 import ListarProfesores from './components/ListarProfesores';
 import DetalleAlumnos from './components/DetalleAlumnos';
+import DetallePreceptores from './components/DetallePreceptores';
+import DetalleProfesores from './components/DetalleProfesores';
 
 
 function App() {
@@ -55,6 +57,8 @@ function App() {
           <Route path="/listarprofesor" element={< ListarProfesores />} />
           <Route path="/listarpreceptor" element={< ListarPreceptores />} />
           <Route path="/detallealumno/:id" element={<DetalleAlumnos />} />
+          <Route path="/detallepreceptor/:id" element={<DetallePreceptores />} />
+          <Route path="/detalleprofesor/:id" element={<DetalleProfesores />} />
 
         </Routes>
       </BrowserRouter>

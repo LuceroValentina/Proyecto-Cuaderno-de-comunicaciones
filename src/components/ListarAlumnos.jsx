@@ -45,8 +45,6 @@ export default function ListarAlumnos() {
                     {datos.map((item) => (
                         <ListItem
                             key={item.id}
-                            component={Link}
-                            to={`/detalle-alumno/${item.id}`}
                             sx={{ bgcolor: "grey.100", borderRadius: 2, mb: 1, textDecoration: "none", color: "inherit" }}
                         >
                             <ListItemText

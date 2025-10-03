@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { Box, Paper, Typography, List, ListItem, ListItemText } from "@mui/material";
+import { Link } from "react-router-dom";
+
 
 
 export default function ListarProfesores() {
@@ -44,19 +46,18 @@ export default function ListarProfesores() {
                     {datos.map((item) => (
                         <ListItem
                             key={item.id}
-                            sx={{ bgcolor: "grey.100", borderRadius: 2, mb: 1 }}
+                            sx={{ bgcolor: "grey.100", borderRadius: 2, mb: 1, textDecoration: "none", color: "inherit" }}
                         >
                             <ListItemText
                                 secondary={
                                     <>
-                                        Nombre: {item.nombre} <br />
-                                        Apellido: {item.apellido} <br />
-                                        DNI: {item.dni} <br />
-                                        Teléfono: {item.telefono} <br />
-                                        Dirección: {item.direccion} <br />
-                                        Género: {item.genero} <br />
-                                        Materia: {item.materia} <br />
-                                        Curso: {item.curso}<br />
+                                        <span> Nombre y Apellido: {`${item.nombre} ${item.apellido}`} </span>
+                                        <span>Curso: {item.curso} </span>
+                                        <span>
+                                            <Link to={`/detalleprofesor/${item.id}`} style={{ textDecoration: "none", color: "#1976d2" }}>
+                                                Ver detalle
+                                            </Link>
+                                        </span>
                                     </>
                                 }
                             />
