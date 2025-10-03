@@ -23,6 +23,7 @@ import AltaCalendario from './components/AltaCalendario';
 import ListarAlumnos from './components/ListarAlumnos';
 import ListarPreceptores from './components/ListarPreceptores';
 import ListarProfesores from './components/ListarProfesores';
+import DetalleAlumnos from './components/DetalleAlumnos';
 
 
 function App() {
@@ -53,6 +54,8 @@ function App() {
           <Route path="/listaralumno" element={< ListarAlumnos />} />
           <Route path="/listarprofesor" element={< ListarProfesores />} />
           <Route path="/listarpreceptor" element={< ListarPreceptores />} />
+          <Route path="/detallealumnos" element={< DetalleAlumnos />} />
+
         </Routes>
       </BrowserRouter>
     </div>
