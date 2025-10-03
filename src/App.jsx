@@ -54,7 +54,7 @@ function App() {
           <Route path="/listaralumno" element={< ListarAlumnos />} />
           <Route path="/listarprofesor" element={< ListarProfesores />} />
           <Route path="/listarpreceptor" element={< ListarPreceptores />} />
-          <Route path="/detallealumnos" element={< DetalleAlumnos />} />
+          <Route path="/detallealumno/:id" element={<DetalleAlumnos />} />
 
         </Routes>
       </BrowserRouter>
