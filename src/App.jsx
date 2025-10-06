@@ -28,6 +28,9 @@ import DetallePreceptores from './components/DetallePreceptores';
 import DetalleProfesores from './components/DetalleProfesores';
 import DetalleCalendario from './components/DetalleCalendario';
 import DetalleClasedeConsulta from './components/DetalleClasedeConsulta';
+import ListarDia from './components/ListarDia';
+import ListarCalendario from './components/ListarCalendario';
+import ListarClasedeConsulta from './components/ListarClasedeConsulta';
 
 
 function App() {
@@ -64,6 +67,9 @@ function App() {
           <Route path="/detallecalendario/:id" element={<DetalleCalendario />} />
           <Route path="/detalleprofesor/:id" element={<DetalleProfesores />} />
           <Route path="/detalleclasedeconsulta/:id" element={<DetalleClasedeConsulta />} />
+          <Route path="/listardia" element={< ListarDia />} />
+          <Route path="/listarcalendario" element={< ListarCalendario />} />
+          <Route path="/listarclasedeconsulta" element={< ListarClasedeConsulta />} />
 
         </Routes>
       </BrowserRouter>
