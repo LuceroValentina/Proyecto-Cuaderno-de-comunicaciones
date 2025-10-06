@@ -26,6 +26,8 @@ import ListarProfesores from './components/ListarProfesores';
 import DetalleAlumnos from './components/DetalleAlumnos';
 import DetallePreceptores from './components/DetallePreceptores';
 import DetalleProfesores from './components/DetalleProfesores';
+import DetalleCalendario from './components/DetalleCalendario';
+import DetalleClasedeConsulta from './components/DetalleClasedeConsulta';
 
 
 function App() {
@@ -59,6 +61,9 @@ function App() {
           <Route path="/detallealumno/:id" element={<DetalleAlumnos />} />
           <Route path="/detallepreceptor/:id" element={<DetallePreceptores />} />
           <Route path="/detalleprofesor/:id" element={<DetalleProfesores />} />
+          <Route path="/detallecalendario/:id" element={<DetalleCalendario />} />
+          <Route path="/detalleprofesor/:id" element={<DetalleProfesores />} />
+          <Route path="/detalleclasedeconsulta/:id" element={<DetalleClasedeConsulta />} />
 
         </Routes>
       </BrowserRouter>
