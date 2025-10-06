@@ -3,7 +3,7 @@ import { db } from '../firebase/firebase';
 
 export const crearClasedeConsulta = async ({ dia, horario, materia, profesor }) => {
   try {
-    await addDoc(collection(db, 'clase de consulta'), {//dia, clace de consulta, calendario
+    await addDoc(collection(db, 'clase de consulta'), {
       dia,
       horario,
       materia,
