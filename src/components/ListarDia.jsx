@@ -52,11 +52,6 @@ export default function ListarDia() {
                                     <>
                                         <span> Dia: {item.dia} </span>
                                         <span>Mes: {item.mes} </span>
-                                        <span>
-                                            <Link to={`/detallealumno/${item.id}`} style={{ textDecoration: "none", color: "#1976d2" }}>
-                                                Ver detalle
-                                            </Link>
-                                        </span>
                                     </>
                                 }
                             />

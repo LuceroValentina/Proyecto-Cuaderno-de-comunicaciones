@@ -53,7 +53,7 @@ export default function ListarClasedeConsulta() {
                                         <span>Dia y Horario: {`${item.dia} ${item.horario}`} </span>
                                         <span>Materia: {item.materia} </span>
                                         <span>
-                                            <Link to={`/detallealumno/${item.id}`} style={{ textDecoration: "none", color: "#1976d2" }}>
+                                            <Link to={`/detalleclasedeconsulta/${item.id}`} style={{ textDecoration: "none", color: "#1976d2" }}>
                                                 Ver detalle
                                             </Link>
                                         </span>
