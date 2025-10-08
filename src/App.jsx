@@ -32,50 +32,53 @@ import ListarDia from './components/ListarDia';
 import ListarCalendario from './components/ListarCalendario';
 import ListarClasedeConsulta from './components/ListarClasedeConsulta';
 import { AuthProvider } from './context/AuthContext';
-
-
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
 
   return (
     <div className='fondo'>
       &nbsp;
-      <AuthProvider> 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<PantallaInicio />} />
-          <Route path="/secciones" element={<PantallaSecciones />} />
-          <Route path="/seccion_teoria" element={<PantallaTeoria />} />
-          <Route path="/seccion_taller" element={<PantallaTaller />} />
-          <Route path="/seccion_biblioteca" element={<PantallaBiblioteca />} />
-          <Route path="/seccion_edfisica" element={<PantallaEducacionFisica />} />
-          <Route path="/horariosteoria" element={<PantallaHorarioClases />} />
-          <Route path="/horarioscontraturnos" element={<PantallaHorarioContraturno />} />
-          <Route path="/horariosclasesconsultas" element={<PantallaClaseConsultas />} />
-          <Route path="/seccion_contactos" element={<Contactos />} />
-          <Route path="/crear_nota" element={<FormularioMensaje />} />
-          <Route path="/registro_firmas" element={<Registrodefirmas />} />
-          <Route path="/altapreceptor" element={< AltaPreceptor />} />
-          <Route path="/altaalumno" element={< AltaAlumno />} />
-          <Route path="/altaprofesor" element={< AltaProfesor />} />
-          <Route path="/altaclasedeconsulta" element={< AltaClasedeConsulta />} />
-          <Route path="/altadia" element={< AltaDia />} />
-          <Route path="/altacalendario" element={< AltaCalendario />} />
-          <Route path="/listaralumno" element={< ListarAlumnos />} />
-          <Route path="/listarprofesor" element={< ListarProfesores />} />
-          <Route path="/listarpreceptor" element={< ListarPreceptores />} />
-          <Route path="/detallealumno/:id" element={<DetalleAlumnos />} />
-          <Route path="/detallepreceptor/:id" element={<DetallePreceptores />} />
-          <Route path="/detalleprofesor/:id" element={<DetalleProfesores />} />
-          <Route path="/detallecalendario/:id" element={<DetalleCalendario />} />
-          <Route path="/detalleprofesor/:id" element={<DetalleProfesores />} />
-          <Route path="/detalleclasedeconsulta/:id" element={<DetalleClasedeConsulta />} />
-          <Route path="/listardia" element={< ListarDia />} />
-          <Route path="/listarcalendario" element={< ListarCalendario />} />
-          <Route path="/listarclasedeconsulta" element={< ListarClasedeConsulta />} />
-        </Routes>
-      </BrowserRouter>
-      </AuthProvider> 
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={<PantallaInicio />} />
+            <Route path="/secciones" element={<PantallaSecciones />} />
+            <Route path="/seccion_teoria" element={<PantallaTeoria />} />
+            <Route path="/seccion_taller" element={<PantallaTaller />} />
+            <Route path="/seccion_biblioteca" element={
+              <ProtectedRoute>
+                <PantallaBiblioteca />
+              </ProtectedRoute>
+            } />          
+            <Route path="/seccion_edfisica" element={<PantallaEducacionFisica />} />
+            <Route path="/horariosteoria" element={<PantallaHorarioClases />} />
+            <Route path="/horarioscontraturnos" element={<PantallaHorarioContraturno />} />
+            <Route path="/horariosclasesconsultas" element={<PantallaClaseConsultas />} />
+            <Route path="/seccion_contactos" element={<Contactos />} />
+            <Route path="/crear_nota" element={<FormularioMensaje />} />
+            <Route path="/registro_firmas" element={<Registrodefirmas />} />
+            <Route path="/altapreceptor" element={< AltaPreceptor />} />
+            <Route path="/altaalumno" element={< AltaAlumno />} />
+            <Route path="/altaprofesor" element={< AltaProfesor />} />
+            <Route path="/altaclasedeconsulta" element={< AltaClasedeConsulta />} />
+            <Route path="/altadia" element={< AltaDia />} />
+            <Route path="/altacalendario" element={< AltaCalendario />} />
+            <Route path="/listaralumno" element={< ListarAlumnos />} />
+            <Route path="/listarprofesor" element={< ListarProfesores />} />
+            <Route path="/listarpreceptor" element={< ListarPreceptores />} />
+            <Route path="/detallealumno/:id" element={<DetalleAlumnos />} />
+            <Route path="/detallepreceptor/:id" element={<DetallePreceptores />} />
+            <Route path="/detalleprofesor/:id" element={<DetalleProfesores />} />
+            <Route path="/detallecalendario/:id" element={<DetalleCalendario />} />
+            <Route path="/detalleprofesor/:id" element={<DetalleProfesores />} />
+            <Route path="/detalleclasedeconsulta/:id" element={<DetalleClasedeConsulta />} />
+            <Route path="/listardia" element={< ListarDia />} />
+            <Route path="/listarcalendario" element={< ListarCalendario />} />
+            <Route path="/listarclasedeconsulta" element={< ListarClasedeConsulta />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

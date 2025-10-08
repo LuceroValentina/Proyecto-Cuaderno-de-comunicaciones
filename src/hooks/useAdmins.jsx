@@ -1,17 +1,19 @@
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, onSnapshot, doc  } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 
-export const crearAdmin = async ({ nombre, apellido, dni, telefono, direccion, rol }) => {
+
+export const crearAdmin = async ({ nombre, apellido, dni, correo, telefono, direccion, rol }) => {
     try {
-        await addDoc(collection(db, 'admins'), {
+        const docRef = await addDoc(collection(db, 'administradores'), {
             nombre,
             apellido,
             dni,
+            correo,
             telefono,
             direccion, 
             rol
         });
-        console.log("Admin creado bajo el id:", docRef.id);
+        console.log("Admin creado con ID:", docRef.id);
         return true;
     } catch (error) {
         console.error("Error al crear Admin:", error);
@@ -19,7 +21,7 @@ export const crearAdmin = async ({ nombre, apellido, dni, telefono, direccion, r
     }
 };
 function listenById(id, cb, errCb) {
-    const ref = doc(db, "admins", id);
+    const ref = doc(db, "admin", id);
     return onSnapshot(ref, (d) => {
         cb(d.exists() ? { id: d.id, ...d.data() } : null);
     }, errCb);
