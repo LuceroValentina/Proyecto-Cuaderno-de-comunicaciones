@@ -31,6 +31,8 @@ import DetalleClasedeConsulta from './components/DetalleClasedeConsulta';
 import ListarDia from './components/ListarDia';
 import ListarCalendario from './components/ListarCalendario';
 import ListarClasedeConsulta from './components/ListarClasedeConsulta';
+import { AuthProvider } from './context/AuthContext';
+
 
 
 function App() {
@@ -38,6 +40,7 @@ function App() {
   return (
     <div className='fondo'>
       &nbsp;
+      <AuthProvider> 
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<PantallaInicio />} />
@@ -70,9 +73,9 @@ function App() {
           <Route path="/listardia" element={< ListarDia />} />
           <Route path="/listarcalendario" element={< ListarCalendario />} />
           <Route path="/listarclasedeconsulta" element={< ListarClasedeConsulta />} />
-
         </Routes>
       </BrowserRouter>
+      </AuthProvider> 
     </div>
   );
 }
