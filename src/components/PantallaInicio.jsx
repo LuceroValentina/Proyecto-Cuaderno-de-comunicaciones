@@ -12,17 +12,17 @@ import {
 } from "firebase/auth";
 
 const PantallaInicio = () => {
+    const { loginWithGoogle, loginWithEmail, user } = useAuth();
+    const [credenciales, setCredenciales] = useState({ usuario: "", contrasena: "" });
     const [error, setError] = useState("");
-    const [credenciales, setCredenciales] = useState({
-        usuario: "",
-        contrasena: "",
-    });
-    const [user, setUser] = useState(null);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if (user) navigate("/"); // si ya está logueado, redirigir al home
+    }, [user, navigate]);
     const handleGoogleLogin = async () => {
         setError("");
-            const provider = new GoogleAuthProvider();
+        const provider = new GoogleAuthProvider();
 
         try {
             const result = await signInWithPopup(auth, provider);
@@ -92,7 +92,7 @@ const PantallaInicio = () => {
             {error && <p style={{ color: "red" }}>{error}</p>}
 
             <div className="contenido">
-                
+
                 <button className="btn_google" onClick={handleGoogleLogin}>
                     <img
                         className="logo"
