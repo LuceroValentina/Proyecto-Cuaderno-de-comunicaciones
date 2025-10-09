@@ -46,11 +46,14 @@ function App() {
             <Route path="/secciones" element={<PantallaSecciones />} />
             <Route path="/seccion_teoria" element={<PantallaTeoria />} />
             <Route path="/seccion_taller" element={<PantallaTaller />} />
-            <Route path="/seccion_biblioteca" element={
-              <ProtectedRoute>
-                <PantallaBiblioteca />
-              </ProtectedRoute>
-            } />          
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute rolesPermitidos={["admins"]}>
+                  <PantallaBiblioteca />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/seccion_edfisica" element={<PantallaEducacionFisica />} />
             <Route path="/horariosteoria" element={<PantallaHorarioClases />} />
             <Route path="/horarioscontraturnos" element={<PantallaHorarioContraturno />} />

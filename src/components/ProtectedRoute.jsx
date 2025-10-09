@@ -1,24 +1,17 @@
+import React from "react";
 import { Navigate } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
 import { useAuth } from "../context/AuthContext";
 
-const ProtectedRoute = ({ allowedRoles = [], children }) => {
-  const { user, loading } = useAuth();
-
-  if (loading) return <p>Cargando...</p>; // opcional
+const ProtectedRoute = ({ children, rolesPermitidos }) => {
+  const { user, rol, cargando } = useAuth();
+ if (cargando) return null;
 
   if (!user) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" replace />;
   }
 
-  if (allowedRoles.length > 0 && !allowedRoles.includes(user.rol)) {
-    return (
-      <Box p={4}>
-        <Typography variant="h5" color="error">
-          No tenés permisos para acceder a esta ruta.
-        </Typography>
-      </Box>
-    );
+   if (rolesPermitidos && !rolesPermitidos.includes(rol)) {
+    return <Navigate to="/sin-permiso" replace />;
   }
 
   return children;
