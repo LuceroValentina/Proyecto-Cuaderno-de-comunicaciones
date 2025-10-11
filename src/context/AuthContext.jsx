@@ -14,6 +14,10 @@ export const AuthProvider = ({ children }) => {
   const [cargando, setCargando] = useState(true);
 
   const loginConGoogle = async () => {
+    if (auth.currentUser) {
+      alert("Ya estás logueado");
+      return;
+    }
     const provider = new GoogleAuthProvider();
     await signInWithPopup(auth, provider);
   };
@@ -38,17 +42,17 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const obtenerRolUsuario = async (email) => {
-    const colecciones = ["admins", "profesores", "alumnos", "preceptores", "tutores"];
+    const colecciones = ["administradores", "profesores", "alumnos", "preceptores", "tutores"];
     for (const col of colecciones) {
       const ref = doc(db, col, email);
       const snap = await getDoc(ref);
-      if (snap.exists()) return col; 
+      if (snap.exists()) return col;
     }
-    return null; 
+    return null;
   };
 
   return (
-    <AuthContext.Provider value={{ usuario, rol, loginConGoogle, logout, cargando }}>
+    <AuthContext.Provider value={{ usuario, rol, loginWithGoogle: loginConGoogle, logout, cargando }}>
       {!cargando && children}
     </AuthContext.Provider>
   );

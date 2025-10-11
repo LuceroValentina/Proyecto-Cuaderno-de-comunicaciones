@@ -11,7 +11,7 @@ const PantallaInicio = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (user) navigate("/"); // si ya está logueado, redirigir al home
+        if (user) navigate("/"); 
     }, [user, navigate]);
 
     const handleGoogleLogin = async () => {

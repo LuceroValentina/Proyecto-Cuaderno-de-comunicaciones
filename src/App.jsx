@@ -15,6 +15,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FormularioMensaje from './components/FormularioCrearNota';
 import Registrodefirmas from './components/Registrodefirmas';
 import AltaPreceptor from './components/AltaPreceptor';
+import AltaAdmins from './components/AltaAdmin';
 import AltaAlumno from './components/AltaAlumno';
 import AltaProfesor from './components/AltaProfesor';
 import AltaClasedeConsulta from './components/AltaClasedeConsulta';
@@ -49,7 +50,7 @@ function App() {
             <Route
               path="/admin"
               element={
-                <ProtectedRoute rolesPermitidos={["admins"]}>
+                <ProtectedRoute rolesPermitidos={["administradores"]}>
                   <PantallaBiblioteca />
                 </ProtectedRoute>
               }
@@ -63,6 +64,7 @@ function App() {
             <Route path="/registro_firmas" element={<Registrodefirmas />} />
             <Route path="/altapreceptor" element={< AltaPreceptor />} />
             <Route path="/altaalumno" element={< AltaAlumno />} />
+            <Route path="/altaadmin" element={< AltaAdmins />} />
             <Route path="/altaprofesor" element={< AltaProfesor />} />
             <Route path="/altaclasedeconsulta" element={< AltaClasedeConsulta />} />
             <Route path="/altadia" element={< AltaDia />} />
