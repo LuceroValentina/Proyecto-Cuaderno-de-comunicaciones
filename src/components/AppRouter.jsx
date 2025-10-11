@@ -22,6 +22,9 @@ import AltaNota from './AltaNota';
 import AltaTutores from './AltaTutores';
 import ProfesorDashboard from './ProfesorDashboard';
 import ProtectedRoute from './ProtectedRoute';
+import DashboardProfesor from './DashboardProfesor';
+import PantallaEducacionFisica from './PantallaEducacionFisica';
+import PantallaTeoria from './PantallaTeoria';
 
 const AppRouter = ({ user }) => {
     const { rol } = user || {};
@@ -60,21 +63,54 @@ const AppRouter = ({ user }) => {
     return (
         <Routes>
             {rol === 'admin' && (
-                <ProtectedRoute user={user}>
-                    <>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/alta-profesor" element={<AltaProfesor />} />
-                        <Route path="/alta-preceptor" element={<AltaPreceptor />} />
-                        <Route path="/alta-alumno" element={<AltaAlumno />} />
-                        <Route path="/alta-materia" element={<AltaMateria />} />
-                        <Route path="/alta-turno" element={<AltaTurno />} />
-                        <Route path="/alta-tutores" element={<AltaTutores />} />
-                        <Route path="/alta-admin" element={<AltaAdmin />} />
-                        <Route path="/alta-tema" element={<AltaTema />} />
-                        <Route path="/alta-firma" element={<AltaFirma />} />
-                        <Route path="/alta-nota" element={<AltaNota />} />
-                    </>
-                </ProtectedRoute>
+                <>
+                    <Route path="/login" element={<PantallaInicio />} />
+                    <Route
+                        path="/alta-profesor"
+                        element={
+                            <ProtectedRoute allowedRoles={['admin']}>
+                                <AltaProfesor />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/alta-preceptor"
+                        element={
+                            <ProtectedRoute allowedRoles={['admin']}>
+                                <AltaPreceptor />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/alta-alumno"
+                        element={
+                            <ProtectedRoute allowedRoles={['admin']}>
+                                <AltaAlumno />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/alta-tutores"
+                        element={
+                            <ProtectedRoute allowedRoles={['admin']}>
+                                <AltaTutores />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/alta-admin"
+                        element={
+                            <ProtectedRoute allowedRoles={['admin']}>
+                                <AltaAdmin />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route path="/alta-materia" element={<AltaMateria />} />
+                    <Route path="/alta-turno" element={<AltaTurno />} />
+                    <Route path="/alta-tema" element={<AltaTema />} />
+                    <Route path="/alta-firma" element={<AltaFirma />} />
+                    <Route path="/alta-nota" element={<AltaNota />} />
+                </>
             )}
 
             {rol === 'preceptor' && (
@@ -93,17 +129,58 @@ const AppRouter = ({ user }) => {
             )}
 
             {rol === 'profesor' && (
-                <ProtectedRoute user={user}>
-                    <>
-                        <Route path="/alta-calendario" element={<AltaCalendario />} />
-                        <Route path="/alta-horario" element={<AltaHorario />} />
-                        <Route path="/alta-claseconsulta" element={<AltaClasedeConsulta />} />
-                        <Route path="/alta-tema" element={<AltaTema />} />
-                        <Route path="/alta-calificacion" element={<AltaCalificacion />} />
-                        <Route path="/alta-firma" element={<AltaFirma />} />
-                        <Route path="/alta-nota" element={<AltaNota />} />
-                    </>
-                </ProtectedRoute>
+                <>
+                    <Route path="/login" element={<PantallaInicio />} />
+                    <Route
+                        path="/dashboard-profesor"
+                        element={
+                            <ProtectedRoute allowedRoles={['profesor']}>
+                                <DashboardProfesor />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/profesor-edfisica"
+                        element={
+                            <ProtectedRoute allowedRoles={['profesor']}>
+                                <PantallaEducacionFisica />
+                            </ProtectedRoute>
+                        }
+                    />
+                    {/* despues tenemos que ver como dividir las pantallas si son profesores de distintas areas  */}
+                    <Route
+                        path="/profesor-teoria"
+                        element={
+                            <ProtectedRoute allowedRoles={['profesor']}>
+                                <PantallaTeoria />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/profesor-taller"
+                        element={
+                            <ProtectedRoute allowedRoles={['profesor']}>
+                                <PantallaTaller />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/alta-firma"
+                        element={
+                            <ProtectedRoute allowedRoles={['profesor']}>
+                                <AltaFirma />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/alta-nota"
+                        element={
+                            <ProtectedRoute allowedRoles={['profesor']}>
+                                <AltaNota />
+                            </ProtectedRoute>
+                        }
+                    />
+                </>
             )}
 
             {rol === 'alumno' && (

@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import "../css/PantallaTeoria.css";
 import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 
 const PantallaTeoria = () => {
     const navigate = useNavigate();
     const [activo, setActivo] = useState(false);
+    const { userData } = useAuth();
+    const rol = userData?.rol;
     return (
         <div className="container">
             <h1 className="titulo">Teoría</h1>
@@ -62,10 +65,15 @@ const PantallaTeoria = () => {
                     <img src="/imagenes/flecha_menucerrar.png" alt="" />
                 </button>
             </div>
-            <div className="botonesClaros">
-                <button className="botonClaro">Crear</button>
-                <button className="botonClaro">Firmar</button>
-            </div>
+            {rol === "profesor" && (
+                <>
+                    <div className="botonesClaros">
+                        <button className="botonClaro">Crear</button>
+                        <button className="botonClaro">Firmar</button>
+                    </div>
+                </>
+            )}
+
             <button
                 onClick={() => navigate("/secciones")}
                 className="fixed top-6 right-6 px-6 py-3 bg-[#3d6490] text-white rounded-lg shadow-lg cursor-pointer"
