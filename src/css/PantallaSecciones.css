@@ -1,23 +1,22 @@
-
 .container-secciones {
-    display: flex;              
+    display: flex;
     flex-direction: column;
-    align-items: center;       
-    justify-content: center;   
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     width: 100%;
 }
 
 .container-botones {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: repeat(2, auto);   
-    gap: 20px;  
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
 }
 
-.contactanos{
-   margin-top: 20px;
-   width: 200px;
+.contactanos {
+    margin-top: 20px;
+    width: 200px;
     height: 60px;
     background-color: #180F7D;
     color: #ffffff;
@@ -27,13 +26,14 @@
     border: none;
     border-radius: 15px;
 }
+
 .contactanos:hover {
     box-shadow: 5px 5px 5px rgba(255, 255, 255);
 }
+
 .titulo {
     margin-left: 50px;
     font-weight: bold;
     margin-bottom: 30px;
     color: #0d0b4d;
 }
-

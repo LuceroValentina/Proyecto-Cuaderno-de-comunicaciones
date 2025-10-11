@@ -36,6 +36,7 @@ import ListarCalendario from './components/ListarCalendario';
 import ListarClasedeConsulta from './components/ListarClasedeConsulta';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import DashboardAdmin from './components/DashboardAdmin';
 
 function App() {
 
@@ -85,6 +86,7 @@ function App() {
             <Route path="/listardia" element={< ListarDia />} />
             <Route path="/listarcalendario" element={< ListarCalendario />} />
             <Route path="/listarclasedeconsulta" element={< ListarClasedeConsulta />} />
+            <Route path="/dashboard-admin" element={< DashboardAdmin />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
