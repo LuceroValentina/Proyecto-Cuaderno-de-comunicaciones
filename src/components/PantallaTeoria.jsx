@@ -10,6 +10,10 @@ const PantallaTeoria = () => {
     const [activo, setActivo] = useState(false);
     const { userData } = useAuth();
     const rol = userData?.rol;
+    const alumno = {
+        ciclo: "superior", 
+    };
+
     return (
         <div className="container">
             <h1 className="titulo">Teoría</h1>
@@ -36,14 +40,24 @@ const PantallaTeoria = () => {
                         <li className="lista"><a href="#" className="item">Inasistencias</a></li>
                         <li className="container-submenu">Resumen Cuatrimestre
                             <ul className="submenu">
-                                <li className="lista-submenu"><a href="/materiasprimercuatri" className="item">1er Cuatrimestre</a></li>
-                                <li className="lista-submenu"><a href="#" className="item">2do Cuatrimestre</a></li>
+                                <li className="lista-submenu"><a href="/materiasprimercuatri" className="item">Primero</a></li>
+                                <li className="lista-submenu"><a href="#" className="item">Segundo</a></li>
+                                {alumno.ciclo === "basico" && (
+                                    <>
+                                        <li className="lista-submenu"><a href="#" className="item">Areas</a></li>
+                                    </>
+                                )}
                             </ul>
                         </li>
                         <li className="container-submenu">Calificaciones
                             <ul className="submenu">
-                                <li><a href="#" className="item">Evaluaciones</a></li>
-                                <li><a href="#" className="item">Láminas</a></li>
+                                <li><a href="#" className="item">Evaluaciones</a></li>       
+                                {alumno.ciclo === "basico" && (
+                                    <>
+                                        <li><a href="#" className="item">Láminas</a></li>
+                                    </>
+                                )}
+                                
                             </ul>
                         </li>
                         <li className="container-submenu">Periodos Exámenes
