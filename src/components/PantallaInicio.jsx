@@ -11,7 +11,7 @@ const PantallaInicio = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (user) navigate("/"); 
+        if (user) navigate("/login"); 
     }, [user, navigate]);
 
     const handleGoogleLogin = async () => {
