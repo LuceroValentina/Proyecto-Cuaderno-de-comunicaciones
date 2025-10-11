@@ -1,0 +1,65 @@
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/firebase";
+import { Box, Paper, Typography, List, ListItem, ListItemText } from "@mui/material";
+
+
+export default function ListarAreas() {
+    const [datos, setDatos] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(db, "areas"));
+                const listado = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setDatos(listado);
+            } catch (error) {
+                console.error("Error leyendo datos:", error);
+
+            }
+        };
+
+        fetchData();
+
+    }, []);
+
+    return (
+        <Box
+            sx={{
+                minHeight: "100vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+        >
+            <Paper sx={{
+                p: 4,
+                width: "50vw",
+                height: "60vh",
+                backgroundColor: "white",
+                overflow: "auto",
+            }}>
+                < Typography textAlign="center" variant="h6" gutterBottom>Lista de Areas</Typography>
+                <List>
+                    {datos.map((item) => (
+                        <ListItem
+                            key={item.id}
+                            sx={{ bgcolor: "grey.100", borderRadius: 2, mb: 1 }} 
+                        >
+                            <ListItemText
+                                secondary={
+                                    <>
+                                        Nombre del area: {item.nombre} <br />
+                                        Materia: {item.materia} <br />
+
+                                    </>
+                                }
+                            />
+                        </ListItem>
+                    ))}
+                </List>
+            </Paper></Box >
+
+    );
+
+}
