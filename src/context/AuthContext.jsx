@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/firebase";
-
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
@@ -12,26 +11,39 @@ export const AuthProvider = ({ children }) => {
   const [rol, setRol] = useState(null);
   const [cargando, setCargando] = useState(true);
 
-  const loginConGoogle = async () => {
-    if (auth.currentUser) {
-      alert("Ya estás logueado");
-      return;
+  const loginWithGoogle = async () => {
+    try {
+      if (usuario) {
+        alert("Ya estás logueado");
+        return;
+      }
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error("Error en login con Google:", error);
     }
-    const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider);
   };
 
+
   const logout = async () => {
-    await signOut(auth);
+    try {
+      await signOut(auth);
+      setUsuario(null);
+      setRol(null);
+    } catch (error) {
+      console.error("Error al cerrar sesión:", error);
+    }
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      setUsuario(user);
+      setCargando(true);
       if (user) {
+        setUsuario(user);
         const rolDetectado = await obtenerRolUsuario(user.email);
         setRol(rolDetectado);
       } else {
+        setUsuario(null);
         setRol(null);
       }
       setCargando(false);
@@ -51,7 +63,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ usuario, rol, loginWithGoogle: loginConGoogle, logout, cargando }}>
+    <AuthContext.Provider value={{ usuario, rol, loginWithGoogle, logout, cargando }}>
       {!cargando && children}
     </AuthContext.Provider>
   );
