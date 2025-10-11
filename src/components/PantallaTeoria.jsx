@@ -41,7 +41,7 @@ const PantallaTeoria = () => {
                         <li className="container-submenu">Resumen Cuatrimestre
                             <ul className="submenu">
                                 <li className="lista-submenu"><a href="/materiasprimercuatri" className="item">Primero</a></li>
-                                <li className="lista-submenu"><a href="#" className="item">Segundo</a></li>
+                                <li className="lista-submenu"><a href="/materiassegundocuatri" className="item">Segundo</a></li>
                                 {alumno.ciclo === "basico" && (
                                     <>
                                         <li className="lista-submenu"><a href="#" className="item">Areas</a></li>

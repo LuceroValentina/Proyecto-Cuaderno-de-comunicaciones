@@ -10,6 +10,7 @@ import PantallaHorarioClases from './components/PantallaHorarioClases';
 import PantallaHorarioContraturno from './components/PantallaHorarioContraturno';
 import PantallaClaseConsultas from './components/PantallaClaseConsultas';
 import PantallaPCuatri from './components/PantallaPCuatri';
+import PantallaSCuatri from './components/PantallaSCuatri';
 import Contactos from './components/Contactos';
 import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -60,7 +61,8 @@ function App() {
             <Route path="/horariosteoria" element={<PantallaHorarioClases />} />
             <Route path="/horarioscontraturnos" element={<PantallaHorarioContraturno />} />
             <Route path="/horariosclasesconsultas" element={<PantallaClaseConsultas />} />
-            <Route path="/materiassprimercuatri" element={<PantallaPCuatri />} />
+            <Route path="/materiasprimercuatri" element={<PantallaPCuatri />} />
+            <Route path="/materiassegundocuatri" element={<PantallaSCuatri />} />
             <Route path="/seccion_contactos" element={<Contactos />} />
             <Route path="/crear_nota" element={<FormularioMensaje />} />
             <Route path="/registro_firmas" element={<Registrodefirmas />} />

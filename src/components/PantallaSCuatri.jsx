@@ -4,7 +4,7 @@ import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 /* HACER CSS ESPECIFICO PARA LA PANTALLA (bri) */
 
-const PantallaPCuatri = () => {
+const PantallaSCuatri = () => {
     const navigate = useNavigate();
 
     return (
@@ -56,4 +56,4 @@ const PantallaPCuatri = () => {
         </div>
     );
 }
-export default PantallaPCuatri;
+export default PantallaSCuatri;
