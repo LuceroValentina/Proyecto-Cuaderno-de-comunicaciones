@@ -18,13 +18,13 @@ const AltaArea = () => {
         e.preventDefault();
         const areaGuardado = await crearArea(form);
         if (areaGuardado) {
-            alert("Mesa cargada correctamente");
+            alert("Area cargada correctamente");
             setForm({
                 nombre: "",
                 materia: ""
             });
         } else {
-            alert("Error al cargar mesa");
+            alert("Error al cargar area");
         }
     };
 
