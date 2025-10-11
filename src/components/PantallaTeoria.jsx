@@ -33,7 +33,7 @@ const PantallaTeoria = () => {
                         <li className="lista"><a href="#" className="item">Inasistencias</a></li>
                         <li className="container-submenu">Resumen Cuatrimestre
                             <ul className="submenu">
-                                <li className="lista-submenu"><a href="#" className="item">1er Cuatrimestre</a></li>
+                                <li className="lista-submenu"><a href="/materiasprimercuatri" className="item">1er Cuatrimestre</a></li>
                                 <li className="lista-submenu"><a href="#" className="item">2do Cuatrimestre</a></li>
                             </ul>
                         </li>
