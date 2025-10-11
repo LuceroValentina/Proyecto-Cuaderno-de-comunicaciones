@@ -1,9 +1,22 @@
 import { db } from '../firebase/firebase';
-import { collection, addDoc, onSnapshot, doc } from 'firebase/firestore';
+import { doc, setDoc, onSnapshot } from "firebase/firestore";
 
-export const crearPreceptor = async ({ nombre, apellido, dni, telefono, direccion, genero, curso, turno }) => {
+export const crearPreceptor = async ({
+    nombre,
+    apellido,
+    dni,
+    telefono,
+    direccion,
+    genero,
+    curso,
+    turno,
+    correo
+}) => {
     try {
-        const docRef = await addDoc(collection(db, 'preceptores'), {
+        if (!correo) throw new Error("El correo es obligatorio como ID.");
+
+        const ref = doc(db, "preceptores", correo);
+        await setDoc(ref, {
             nombre,
             apellido,
             dni,
@@ -11,19 +24,26 @@ export const crearPreceptor = async ({ nombre, apellido, dni, telefono, direccio
             direccion,
             genero,
             curso,
-            turno
+            turno,
+            correo
         });
-        console.log("Preceptor creado con ID:", docRef.id);
+
+        console.log("Preceptor creado con ID:", correo);
         return true;
     } catch (error) {
         console.error("Error al crear Preceptor:", error);
         return false;
     }
 };
-function listenById(id, cb, errCb) {
+
+export function listenById(id, cb, errCb) {
     const ref = doc(db, "preceptores", id);
-    return onSnapshot(ref, (d) => {
-        cb(d.exists() ? { id: d.id, ...d.data() } : null);
-    }, errCb);
+    return onSnapshot(
+        ref,
+        (d) => {
+            cb(d.exists() ? { id: d.id, ...d.data() } : null);
+        },
+        errCb
+    );
 }
 

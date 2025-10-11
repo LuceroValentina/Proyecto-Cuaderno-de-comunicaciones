@@ -6,13 +6,15 @@ import { Box, Paper, Typography } from "@mui/material";
 
 const DetallePreceptores = () => {
     const { id } = useParams();
+    const correo = decodeURIComponent(id);
     const [preceptor, setPreceptor] = useState(null);
     const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         const fetchPreceptor = async () => {
             try {
-                const docRef = doc(db, "preceptores", id);
+                const docRef = doc(db, "preceptores", correo);
                 const docSnap = await getDoc(docRef);
 
 
@@ -22,7 +24,7 @@ const DetallePreceptores = () => {
                     setPreceptor(null);
                 }
             } catch (error) {
-                console.error("Error obteniendo preceptor:", error);
+                console.error("Error obteniendo preceptores:", error);
             } finally {
                 setLoading(false);
             }
@@ -30,7 +32,7 @@ const DetallePreceptores = () => {
         };
 
         fetchPreceptor();
-    }, [id]);
+    }, [correo]);
 
     if (loading) return <h2>Cargando...</h2>
     if (!preceptor) return <h2>No se encontró el preceptor</h2>
@@ -58,7 +60,7 @@ const DetallePreceptores = () => {
                     Detalle del preceptor
                 </Typography>
 
-                <Typography>ID: {preceptor.id}</Typography>
+                <Typography>ID: {preceptor.correo}</Typography>
                 <Typography>Nombre: {preceptor.nombre}</Typography>
                 <Typography>Apellido: {preceptor.apellido}</Typography>
                 <Typography>DNI: {preceptor.dni}</Typography>

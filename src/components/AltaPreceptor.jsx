@@ -13,8 +13,10 @@ const AltaPreceptor = () => {
         direccion: "",
         genero: "",
         curso: "",
-        turno: ""
+        turno: "",
+        correo: ""
     });
+    const validarEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,8 +24,12 @@ const AltaPreceptor = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const preceptorGuardado = await crearPreceptor(form);
-        if (preceptorGuardado) {
+        if (!validarEmail(form.correo)) {
+            alert("Ingrese un correo válido");
+            return;
+        }
+        const ok = await crearPreceptor(form);
+        if (ok) {
             alert("Preceptor dado de alta correctamente");
             setForm({
                 nombre: "",
@@ -33,7 +39,8 @@ const AltaPreceptor = () => {
                 direccion: "",
                 genero: "",
                 curso: "",
-                turno: ""
+                turno: "",
+                correo: ""
             });
         } else {
             alert("Error al dar de alta al preceptor");
@@ -41,11 +48,11 @@ const AltaPreceptor = () => {
     };
 
     return (
-        <Paper sx={{ p: 2, mt: 3, maxWidth: 500, margin: 'auto', backgroundColor: 'white' }}>
+        <Paper sx={{ p: 2, mt: 3, maxWidth: 450, margin: 'auto', backgroundColor: 'white' }}>
             <Typography textAlign="center" variant="h6" gutterBottom>Alta de Preceptor</Typography>
             <form onSubmit={handleSubmit}>
-                <Stack spacing={2}  alignItems="center">
-                    {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'genero', 'curso', 'turno'].map((field) => (
+                <Stack spacing={2} alignItems="center">
+                    {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'genero', 'curso', 'turno', 'correo'].map((field) => (
                         <TextField
                             key={field}
                             label={field.charAt(0).toUpperCase() + field.slice(1)}

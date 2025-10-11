@@ -13,8 +13,10 @@ const AltaProfesor = () => {
         direccion: "",
         genero: "",
         materia: "",
-        curso: ""
+        curso: "",
+        correo: ""
     });
+    const validarEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,8 +24,12 @@ const AltaProfesor = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const profesorGuardado = await crearProfesor(form);
-        if (profesorGuardado) {
+        if (!validarEmail(form.correo)) {
+            alert("Ingrese un correo válido");
+            return;
+        }
+        const ok = await crearProfesor(form);
+        if (ok) {
             alert("Profesor dado de alta correctamente");
             setForm({
                 nombre: "",
@@ -33,7 +39,8 @@ const AltaProfesor = () => {
                 direccion: "",
                 genero: "",
                 materia: "",
-                curso: ""
+                curso: "",
+                correo: ""
             });
         } else {
             alert("Error al dar de alta al profesor");
@@ -41,26 +48,26 @@ const AltaProfesor = () => {
     };
 
     return (
-        <Paper sx={{ p: 2, mt: 3, maxWidth: 500, margin: 'auto', backgroundColor: 'white' }}>
-                    <Typography textAlign="center" variant="h6" gutterBottom>Alta de Profesor</Typography>
-                    <form onSubmit={handleSubmit}>
-                        <Stack spacing={2}  alignItems="center">
-                            {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'genero', 'materia','curso'].map((field) => (
-                                <TextField
-                                    key={field}
-                                    label={field.charAt(0).toUpperCase() + field.slice(1)}
-                                    name={field}
-                                    value={form[field]}
-                                    onChange={handleChange}
-                                    fullWidth
-                                    required
-                                    sx={{ backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 1, width: 300, '& .MuiInputBase-root': { height: 40 } }}
-                                />
-                            ))}
-                            <Button type="submit" variant="contained" color="primary">Guardar</Button>
-                        </Stack>
-                    </form>
-                </Paper>
+        <Paper sx={{ p: 2, mt: 3, maxWidth: 450, margin: 'auto', backgroundColor: 'white' }}>
+            <Typography textAlign="center" variant="h6" gutterBottom>Alta de Profesor</Typography>
+            <form onSubmit={handleSubmit}>
+                <Stack spacing={2} alignItems="center">
+                    {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'genero', 'materia', 'curso', 'correo'].map((field) => (
+                        <TextField
+                            key={field}
+                            label={field.charAt(0).toUpperCase() + field.slice(1)}
+                            name={field}
+                            value={form[field]}
+                            onChange={handleChange}
+                            fullWidth
+                            required
+                            sx={{ backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 1, width: 300, '& .MuiInputBase-root': { height: 40 } }}
+                        />
+                    ))}
+                    <Button type="submit" variant="contained" color="primary">Guardar</Button>
+                </Stack>
+            </form>
+        </Paper>
     );
 };
 

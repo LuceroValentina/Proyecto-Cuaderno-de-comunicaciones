@@ -5,7 +5,6 @@ import { Box, Paper, Typography, List, ListItem, ListItemText } from "@mui/mater
 import { Link } from "react-router-dom";
 
 
-
 export default function ListarProfesores() {
     const [datos, setDatos] = useState([]);
 
@@ -54,7 +53,7 @@ export default function ListarProfesores() {
                                         <span> Nombre y Apellido: {`${item.nombre} ${item.apellido}`} </span>
                                         <span>Curso: {item.curso} </span>
                                         <span>
-                                            <Link to={`/detalleprofesor/${item.id}`} style={{ textDecoration: "none", color: "#1976d2" }}>
+                                            <Link to={`/detalleprofesor/${encodeURIComponent(item.id)}`} style={{ textDecoration: "none", color: "#1976d2" }}>
                                                 Ver detalle
                                             </Link>
                                         </span>

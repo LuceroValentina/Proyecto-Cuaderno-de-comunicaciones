@@ -6,13 +6,15 @@ import { Box, Paper, Typography } from "@mui/material";
 
 const DetalleProfesores = () => {
     const { id } = useParams();
+    const correo = decodeURIComponent(id);
     const [profesor, setProfesor] = useState(null);
     const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         const fetchProfesor = async () => {
             try {
-                const docRef = doc(db, "profesores", id);
+                const docRef = doc(db, "profesores", correo);
                 const docSnap = await getDoc(docRef);
 
 
@@ -22,7 +24,7 @@ const DetalleProfesores = () => {
                     setProfesor(null);
                 }
             } catch (error) {
-                console.error("Error obteniendo profesor:", error);
+                console.error("Error obteniendo profesores:", error);
             } finally {
                 setLoading(false);
             }
@@ -30,7 +32,7 @@ const DetalleProfesores = () => {
         };
 
         fetchProfesor();
-    }, [id]);
+    }, [correo]);
 
     if (loading) return <h2>Cargando...</h2>
     if (!profesor) return <h2>No se encontró el profesor</h2>
@@ -57,8 +59,16 @@ const DetalleProfesores = () => {
                 <Typography textAlign="center" variant="h6" gutterBottom>
                     Detalle del profesor
                 </Typography>
-
-                <Typography>ID: {profesor.id}</Typography>
+                nombre: "",
+                apellido: "",
+                dni: "",
+                telefono: "",
+                direccion: "",
+                genero: "",
+                materia: "",
+                curso: "",
+                correo: ""
+                <Typography>ID: {profesor.correo}</Typography>
                 <Typography>Nombre: {profesor.nombre}</Typography>
                 <Typography>Apellido: {profesor.apellido}</Typography>
                 <Typography>DNI: {profesor.dni}</Typography>
