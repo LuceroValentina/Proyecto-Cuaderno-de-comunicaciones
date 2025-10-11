@@ -1,0 +1,39 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-botones {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+
+}
+
+.listar,
+.altas {
+    width: 100%;
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-dashboard {
+    border: 2px solid white;
+    color: #56595e;
+    font-weight: bold;
+    height: 55px;
+    width: 140px;
+    border-radius: 15px;
+    cursor: pointer;
+}
