@@ -14,15 +14,21 @@ const AltaAdmin = () => {
         direccion: "",
         rol: ""
     });
+    const validarEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const adminGuardado = await crearAdmin(form);
-        if (adminGuardado) {
+        if (!validarEmail(form.correo)) {
+            alert("Ingrese un correo válido");
+            return;
+        }
+        const ok = await crearAdmin(form);
+        if (ok) {
             alert("Admin dado de alta correctamente");
             setForm({
                 nombre: "",
@@ -37,13 +43,12 @@ const AltaAdmin = () => {
             alert("Error al dar de alta al admin");
         }
     };
-
     return (
         <Paper sx={{ p: 2, mt: 3, maxWidth: 500, margin: 'auto', backgroundColor: 'white' }}>
             <Typography textAlign="center" variant="h6" gutterBottom>Alta de Admin</Typography>
             <form onSubmit={handleSubmit}>
                 <Stack spacing={2} alignItems="center">
-                    {['nombre', 'apellido', 'dni', 'correo','telefono', 'direccion', 'rol'].map((field) => (
+                    {['nombre', 'apellido', 'dni', 'correo', 'telefono', 'direccion', 'rol'].map((field) => (
                         <TextField
                             key={field}
                             label={field.charAt(0).toUpperCase() + field.slice(1)}

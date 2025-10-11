@@ -6,14 +6,16 @@ import { Box, Paper, Typography } from "@mui/material";
 
 const DetalleAlumnos = () => {
     const { id } = useParams();
+    const correo = decodeURIComponent(id);
     const [alumno, setAlumno] = useState(null);
     const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         const fetchAlumno = async () => {
             try {
-                const docRef = doc(db, "alumnos", id);
-                const docSnap = await getDoc(docRef);
+                const docRef = doc(db, "alumnos", correo);
+                 const docSnap = await getDoc(docRef);
 
 
                 if (docSnap.exists()) {
@@ -30,7 +32,7 @@ const DetalleAlumnos = () => {
         };
 
         fetchAlumno();
-    }, [id]);
+    }, [correo]);
 
     if (loading) return <h2>Cargando...</h2>
     if (!alumno) return <h2>No se encontró el alumno</h2>

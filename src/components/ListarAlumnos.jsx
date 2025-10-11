@@ -53,7 +53,7 @@ export default function ListarAlumnos() {
                                         <span> Nombre y Apellido: {`${item.nombre} ${item.apellido}`} </span>
                                         <span>Curso: {item.curso} </span>
                                         <span>
-                                            <Link to={`/detallealumno/${item.id}`} style={{ textDecoration: "none", color: "#1976d2" }}>
+                                            <Link to={`/detallealumno/${encodeURIComponent(item.id)}`} style={{ textDecoration: "none", color: "#1976d2" }}>
                                                 Ver detalle
                                             </Link>
                                         </span>

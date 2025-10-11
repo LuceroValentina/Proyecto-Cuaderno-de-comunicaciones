@@ -14,8 +14,10 @@ const AltaAlumno = () => {
         genero: "",
         ciclo: "",
         turno: "",
-        curso: ""
+        curso: "",
+        correo: ""
     });
+    const validarEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -23,8 +25,12 @@ const AltaAlumno = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const alumnoGuardado = await crearAlumno(form);
-        if (alumnoGuardado) {
+        if (!validarEmail(form.correo)) {
+            alert("Ingrese un correo válido");
+            return;
+        }
+        const ok = await crearAlumno(form);
+        if (ok) {
             alert("Alumno dado de alta correctamente");
             setForm({
                 nombre: "",
@@ -35,7 +41,8 @@ const AltaAlumno = () => {
                 genero: "",
                 ciclo: "",
                 turno: "",
-                curso: ""
+                curso: "",
+                correo: ""
             });
         } else {
             alert("Error al dar de alta al alumno");
@@ -46,8 +53,8 @@ const AltaAlumno = () => {
         <Paper sx={{ p: 2, mt: 3, maxWidth: 450, margin: 'auto', backgroundColor: 'white' }}>
             <Typography textAlign="center" variant="h6" gutterBottom>Alta de Alumno</Typography>
             <form onSubmit={handleSubmit}>
-                <Stack spacing={2}  alignItems="center">
-                    {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'genero','ciclo', 'turno', 'curso'].map((field) => (
+                <Stack spacing={2} alignItems="center">
+                    {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'genero', 'ciclo', 'turno', 'curso', 'correo'].map((field) => (
                         <TextField
                             key={field}
                             label={field.charAt(0).toUpperCase() + field.slice(1)}
