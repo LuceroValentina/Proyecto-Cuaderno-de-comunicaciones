@@ -4,7 +4,7 @@ import { TextField, Button, Typography, Stack, Paper } from '@mui/material';
 //import { db } from '../firebase/firebase';
 import { crearMesa } from '../hooks/useMaterias';
 
-const AltaMesa = () => {
+const AltaMaterias = () => {
     const [form, setForm] = useState({
         nombre: "",
         correlativa: "",      
