@@ -1,8 +1,8 @@
 import React from "react";
-import "../css/pantallaEditar.css";
+import "../css/PantallasCuatrimestre.css";
 import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
-/* HACER CSS ESPECIFICO PARA LA PANTALLA (bri) */
+
 
 const PantallaSCuatri = () => {
     const navigate = useNavigate();

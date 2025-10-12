@@ -1,8 +1,7 @@
 import React from "react";
-import "../css/pantallaEditar.css";
+import "../css/PantallasCutrimestre.css";
 import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
-/* HACER CSS ESPECIFICO PARA LA PANTALLA (bri) */
 
 const PantallaPCuatri = () => {
     const navigate = useNavigate();
@@ -28,25 +27,29 @@ const PantallaPCuatri = () => {
                 </div>
             
                 <div className="fila">
-                    <div className="celda">12345678</div>
-                    <div className="celda">Pedro Enrique</div>
-                    <div className="celda">Herrera</div>
+                    <div className="celda">.</div>
+                    <div className="celda"></div>
+                    <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             
                 <div className="fila">
                     <div className="celda">.</div>
                     <div className="celda"></div>
                     <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             
                 <div className="fila">
                     <div className="celda">.</div>
                     <div className="celda"></div>
                     <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             
                 <div className="fila">
                     <div className="celda">.</div>
+                    <div className="celda"></div>
                     <div className="celda"></div>
                     <div className="celda"></div>
                 </div>
