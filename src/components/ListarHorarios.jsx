@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { Box, Paper, Typography, List, ListItem, ListItemText } from "@mui/material";
-
+import { Link } from "react-router-dom";
 
 export default function ListarHorarios() {
     const [datos, setDatos] = useState([]);
@@ -44,15 +44,20 @@ export default function ListarHorarios() {
                     {datos.map((item) => (
                         <ListItem
                             key={item.id}
-                            sx={{ bgcolor: "grey.100", borderRadius: 2, mb: 1 }}
+                            sx={{ bgcolor: "grey.100", borderRadius: 2, mb: 1, textDecoration: "none", color: "inherit" }}
                         >
                             <ListItemText
                                 secondary={
                                     <>
-                                        Hora: {item.hora} <br />
-                                        Turno: {item.turno} <br />
-                                        Dia: {item.dia} <br />
-                                        Materia: {item.materia} <br />
+                                        <span>Hora: {item.hora}</span>
+                                        <span>Turno: {item.turno} </span>
+                                        <span>Dia: {item.dia}</span>
+                                        <span>Materia: {item.materia}</span>
+                                        <span>
+                                            <link to={`/detallehorarios/${item.id}`}style={{ textDecoration: "none", color:"#1976d2"}}>
+                                            Ver detalle
+                                            </link>
+                                        </span>
                                     </>
                                 }
                             />
