@@ -1,213 +1,208 @@
-import React, { useEffect } from 'react';
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
-import { Typography, Box } from '@mui/material';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import ProtectedRoute from './ProtectedRoute';
 
 import PantallaInicio from './PantallaInicio';
-import Home from './Home';
-import AltaProfesor from './AltaProfesor';
+import PantallaSecciones from './PantallaSecciones';
+import PantallaTeoria from './PantallaTeoria';
+import PantallaTaller from './PantallaTaller';
+import PantallaEducacionFisica from './PantallaEducacionFisica';
+import PantallaHorarioClases from './PantallaHorarioClases';
+import PantallaHorarioContraturno from './PantallaHorarioContraturno';
+import PantallaClaseConsultas from './PantallaClaseConsultas';
+import PantallaPCuatri from './PantallaPCuatri';
+import PantallaSCuatri from './PantallaSCuatri';
+import Contactos from './Contactos';
+import FormularioMensaje from './FormularioCrearNota';
+import Registrodefirmas from './Registrodefirmas';
 import AltaPreceptor from './AltaPreceptor';
-import AltaMateria from './AltaMateria';
-import AltaCurso from './AltaCurso';
-import AltaHorario from './AltaHorario';
-import AltaTurno from './AltaTurno';
-import AltaTema from './AltaTema';
-import AltaAdmin from './AltaAdmin';
+import AltaAdmins from './AltaAdmin';
 import AltaAlumno from './AltaAlumno';
-import AltaCalendario from './AltaCalendario';
-import AltaCalificacion from './AltaCalificacion';
+import AltaProfesor from './AltaProfesor';
 import AltaClasedeConsulta from './AltaClasedeConsulta';
 import AltaDia from './AltaDia';
-import AltaFirma from './AltaFirma';
-import AltaNota from './AltaNota';
-import AltaTutores from './AltaTutores';
-import ProfesorDashboard from './ProfesorDashboard';
-import ProtectedRoute from './ProtectedRoute';
-import DashboardProfesor from './DashboardProfesor';
-import PantallaEducacionFisica from './PantallaEducacionFisica';
-import PantallaTeoria from './PantallaTeoria';
+import AltaCalendario from './AltaCalendario';
+import ListarAlumnos from './ListarAlumnos';
+import ListarPreceptores from './ListarPreceptores';
+import ListarProfesores from './ListarProfesores';
+import DetalleAlumnos from './DetalleAlumnos';
+import DetallePreceptores from './DetallePreceptores';
+import DetalleProfesores from './DetalleProfesores';
+import DetalleCalendario from './DetalleCalendario';
+import DetalleClasedeConsulta from './DetalleClasedeConsulta';
+import ListarDia from './ListarDia';
+import ListarCalendario from './ListarCalendario';
+import ListarClasedeConsulta from './ListarClasedeConsulta';
+import DashboardAdmin from './DashboardAdmin';
+import PantallaBiblioteca from './PantallaBiblioteca';
 
-const AppRouter = ({ user }) => {
-    const { rol } = user || {};
-    const navigate = useNavigate();
+const ROLES = ["administradores", "preceptores", "profesores", "alumnos", "tutores"];
 
-    if (!user) {
-        return (
-            <Routes>
-                <Route path='/login' element={<PantallaInicio />} />
-                <Route path='*' element={<Navigate to="/login" />} />
-            </Routes>
-        );
-    }
+const AppRouter = () => {
+  return (
+    <Routes>
 
-    useEffect(() => {
-        const handlePopState = () => {
-            if (user && ['admin', 'preceptor', 'profesor', 'alumno', 'tutor'].includes(user.rol)) {
-                navigate(window.location.pathname, { replace: true });
-            }
-        };
-        window.addEventListener('popstate', handlePopState);
-        return () => window.removeEventListener('popstate', handlePopState);
-    }, [user, navigate]);
+      <Route path="/" element={<PantallaInicio />} />
 
-    // Fallback si el rol no es válido
-    if (!rol || !['admin', 'preceptor', 'profesor', 'alumno', 'tutor'].includes(rol)) {
-        return (
-            <Box p={4}>
-                <Typography variant="h5" color="error">
-                    No tenés permisos para acceder. Por favor cerrá sesión e intentá nuevamente.
-                </Typography>
-            </Box>
-        );
-    }
+      <Route path="/secciones" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaSecciones />
+        </ProtectedRoute>
+      }/>
+      <Route path="/seccion_teoria" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaTeoria />
+        </ProtectedRoute>
+      }/>
+      <Route path="/seccion_taller" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaTaller />
+        </ProtectedRoute>
+      }/>
+      <Route path="/seccion_edfisica" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaEducacionFisica />
+        </ProtectedRoute>
+      }/>
+      <Route path="/horarioscontraturnos" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaHorarioContraturno />
+        </ProtectedRoute>
+      }/>
+      <Route path="/materiasprimercuatri" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaPCuatri />
+        </ProtectedRoute>
+      }/>
+      <Route path="/materiassegundocuatri" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaSCuatri />
+        </ProtectedRoute>
+      }/>
+      <Route path="/seccion_contactos" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <Contactos />
+        </ProtectedRoute>
+      }/>
+      <Route path="/crear_nota" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <FormularioMensaje />
+        </ProtectedRoute>
+      }/>
 
-    return (
-        <Routes>
-            {rol === 'admin' && (
-                <>
-                    <Route path="/login" element={<PantallaInicio />} />
-                    <Route
-                        path="/alta-profesor"
-                        element={
-                            <ProtectedRoute allowedRoles={['admin']}>
-                                <AltaProfesor />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/alta-preceptor"
-                        element={
-                            <ProtectedRoute allowedRoles={['admin']}>
-                                <AltaPreceptor />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/alta-alumno"
-                        element={
-                            <ProtectedRoute allowedRoles={['admin']}>
-                                <AltaAlumno />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/alta-tutores"
-                        element={
-                            <ProtectedRoute allowedRoles={['admin']}>
-                                <AltaTutores />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/alta-admin"
-                        element={
-                            <ProtectedRoute allowedRoles={['admin']}>
-                                <AltaAdmin />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route path="/alta-materia" element={<AltaMateria />} />
-                    <Route path="/alta-turno" element={<AltaTurno />} />
-                    <Route path="/alta-tema" element={<AltaTema />} />
-                    <Route path="/alta-firma" element={<AltaFirma />} />
-                    <Route path="/alta-nota" element={<AltaNota />} />
-                </>
-            )}
+      {/* Rutas específicas según rol */}
+      <Route path="/registro_firmas" element={
+        <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
+          <Registrodefirmas />
+        </ProtectedRoute>
+      }/>
 
-            {rol === 'preceptor' && (
-                <ProtectedRoute user={user}>
-                    <>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/alta-curso" element={<AltaCurso />} />
-                        <Route path="/alta-horario" element={<AltaHorario />} />
-                        <Route path="/alta-calendario" element={<AltaCalendario />} />
-                        <Route path="/alta-dia" element={<AltaDia />} />
-                        <Route path="/alta-firma" element={<AltaFirma />} />
-                        <Route path="/alta-tema" element={<AltaTema />} />
-                        <Route path="/alta-nota" element={<AltaNota />} />
-                    </>
-                </ProtectedRoute>
-            )}
+      <Route path="/altapreceptor" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <AltaPreceptor />
+        </ProtectedRoute>
+      }/>
+      <Route path="/altaalumno" element={
+        <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
+          <AltaAlumno />
+        </ProtectedRoute>
+      }/>
+      <Route path="/altaadmin" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <AltaAdmins />
+        </ProtectedRoute>
+      }/>
+      <Route path="/altaprofesor" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <AltaProfesor />
+        </ProtectedRoute>
+      }/>
+      <Route path="/altaclasedeconsulta" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores","preceptores","alumnos"]}>
+          <AltaClasedeConsulta />
+        </ProtectedRoute>
+      }/>
+      <Route path="/altadia" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <AltaDia />
+        </ProtectedRoute>
+      }/>
+      <Route path="/altacalendario" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <AltaCalendario />
+        </ProtectedRoute>
+      }/>
+     
 
-            {rol === 'profesor' && (
-                <>
-                    <Route path="/login" element={<PantallaInicio />} />
-                    <Route
-                        path="/dashboard-profesor"
-                        element={
-                            <ProtectedRoute allowedRoles={['profesor']}>
-                                <DashboardProfesor />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/profesor-edfisica"
-                        element={
-                            <ProtectedRoute allowedRoles={['profesor']}>
-                                <PantallaEducacionFisica />
-                            </ProtectedRoute>
-                        }
-                    />
-                    {/* despues tenemos que ver como dividir las pantallas si son profesores de distintas areas  */}
-                    <Route
-                        path="/profesor-teoria"
-                        element={
-                            <ProtectedRoute allowedRoles={['profesor']}>
-                                <PantallaTeoria />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/profesor-taller"
-                        element={
-                            <ProtectedRoute allowedRoles={['profesor']}>
-                                <PantallaTaller />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/alta-firma"
-                        element={
-                            <ProtectedRoute allowedRoles={['profesor']}>
-                                <AltaFirma />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/alta-nota"
-                        element={
-                            <ProtectedRoute allowedRoles={['profesor']}>
-                                <AltaNota />
-                            </ProtectedRoute>
-                        }
-                    />
-                </>
-            )}
+      <Route path="/listaralumno" element={
+        <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
+          <ListarAlumnos />
+        </ProtectedRoute>
+      }/>
+      <Route path="/listarprofesor" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <ListarProfesores />
+        </ProtectedRoute>
+      }/>
+      <Route path="/listarpreceptor" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <ListarPreceptores />
+        </ProtectedRoute>
+      }/>
 
-            {rol === 'alumno' && (
-                <ProtectedRoute user={user}>
-                    <>
-                        <Route path="/alta-calendario" element={<AltaCalendario />} />
-                        <Route path="/alta-horario" element={<AltaHorario />} />
-                        <Route path="/alta-claseconsulta" element={<AltaClasedeConsulta />} />
-                    </>
-                </ProtectedRoute>
-            )}
+      <Route path="/detallealumno/:id" element={
+        <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
+          <DetalleAlumnos />
+        </ProtectedRoute>
+      }/>
+      <Route path="/detallepreceptor/:id" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <DetallePreceptores />
+        </ProtectedRoute>
+      }/>
+      <Route path="/detalleprofesor/:id" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <DetalleProfesores />
+        </ProtectedRoute>
+      }/>
+      <Route path="/detallecalendario/:id" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <DetalleCalendario />
+        </ProtectedRoute>
+      }/>
+      <Route path="/detalleclasedeconsulta/:id" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
+          <DetalleClasedeConsulta />
+        </ProtectedRoute>
+      }/>
 
-            {rol === 'tutor' && (
-                <ProtectedRoute user={user}>
-                    <>
-                        <Route path="/alta-horario" element={<AltaHorario />} />
-                        <Route path="/alta-firma" element={<AltaFirma />} />
-                        <Route path="/alta-nota" element={<AltaNota />} />
-                    </>
-                </ProtectedRoute>
-            )}
+      <Route path="/listardia" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <ListarDia />
+        </ProtectedRoute>
+      }/>
+      <Route path="/listarcalendario" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <ListarCalendario />
+        </ProtectedRoute>
+      }/>
+      <Route path="/listarclasedeconsulta" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
+          <ListarClasedeConsulta />
+        </ProtectedRoute>
+      }/>
 
-            {/* Fallback para cualquier ruta no válida */}
-            <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-    );
+      <Route path="/dashboard-admin" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <DashboardAdmin />
+        </ProtectedRoute>
+      }/>
+
+      {/* Fallback */}
+      <Route path="*" element={<Navigate to="/" />} />
+
+    </Routes>
+  );
 };
 
 export default AppRouter;
-
