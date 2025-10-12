@@ -11,7 +11,7 @@ const PantallaSecciones = () => {
     if (cargando) return <p>Cargando...</p>; // espera a que Firebase termine de cargar
 
     return (
-        <div className='container-secciones'>
+        <div className='containerSecciones'>
             <h1 className='titulo'>Seleccione la Sección:</h1>
             <div className='container-botones'>
                 <button className="botonOscuro" onClick={() => navigate("/seccion_teoria")}>

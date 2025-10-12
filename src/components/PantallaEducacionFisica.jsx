@@ -9,7 +9,7 @@ const PantallaEducacionFisica = () => {
     const { rol } = useAuth(); 
 
     return (
-        <div className="container">
+        <div className="containerEdfis">
             <div className="titulo">
                 <h1>Educación Física</h1>
             </div>

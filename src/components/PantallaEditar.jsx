@@ -8,7 +8,7 @@ const PantallaEditar = () => {
         const navigate = useNavigate();
 
     return (
-        <div className="container">
+        <div className="containerEditar">
             <div className="arriba">
 
                 <div className="ingresar">

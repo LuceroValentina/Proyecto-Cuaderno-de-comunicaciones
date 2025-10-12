@@ -6,7 +6,7 @@ import "../css/PantallaSecciones.css";
 const DashboardProfesor = () => {
     const navigate = useNavigate();
     return (
-        <div className='container-secciones'>
+        <div className='containerSecciones'>
             <h1 className='titulo'>Seleccione la Sección a la que pertenece:</h1>
             <div className='container-botones'>
                 <button className="botonOscuro" onClick={() => navigate("/seccion_teoria")}>

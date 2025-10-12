@@ -8,7 +8,7 @@ const PantallaSCuatri = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="container">
+        <div className="containerCuatri">
             <div className="arriba">
 
                 <div className="botonesEd">
