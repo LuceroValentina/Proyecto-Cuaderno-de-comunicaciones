@@ -25,7 +25,7 @@ const PantallaPCuatri = () => {
                     <div className="celda">CALIFICACIÓN</div>
                     <div className="celda">FIRMA</div>
                 </div>
-            
+
                 <div className="fila">
                     <div className="celda">.</div>
                     <div className="celda"></div>

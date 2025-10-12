@@ -28,25 +28,29 @@ const PantallaSCuatri = () => {
                 </div>
             
                 <div className="fila">
-                    <div className="celda">12345678</div>
-                    <div className="celda">Pedro Enrique</div>
-                    <div className="celda">Herrera</div>
+                    <div className="celda">.</div>
+                    <div className="celda"></div>
+                    <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             
                 <div className="fila">
                     <div className="celda">.</div>
                     <div className="celda"></div>
                     <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             
                 <div className="fila">
                     <div className="celda">.</div>
                     <div className="celda"></div>
                     <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             
                 <div className="fila">
                     <div className="celda">.</div>
+                    <div className="celda"></div>
                     <div className="celda"></div>
                     <div className="celda"></div>
                 </div>
