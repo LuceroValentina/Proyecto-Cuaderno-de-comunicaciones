@@ -49,8 +49,8 @@ export default function ListarMaterias() {
                             <ListItemText
                                 secondary={
                                     <>
-                                        Nombre de la materia: {item.tipomesa} <br />
-                                        Indique su correlativa: {item.materia1} <br />
+                                        Nombre de la materia: {item.nombre} <br />
+                                        Indique su correlativa: {item.correlativa} <br />
                                       
                                         
                                     </>
