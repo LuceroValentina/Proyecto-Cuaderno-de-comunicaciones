@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Racing+Sans+One&display=swap');
+body {
+    background-color: #A8CDFF;
+    margin: 0;
+}
+
+.arriba {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.ingresar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.titulo {
+    font-family: "Racing Sans One", sans-serif;
+    color: #0c0555;
+    font-weight: 400;
+    margin-right: 15px;
+}
+
+.buscador {
+    position: relative;
+    border: 1px solid #0c0555;
+    background-color: #ffffff;
+    width: 200px;
+    height: 30px;
+}
+
+.img {
+    position: absolute;
+    right: 5px;
+    top: 20%;
+    width: 20px;
+    height: 20px;
+}
+
+.botonesEd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.botonEd {
+    background-color: #ffffff;
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    font-family: "Noto Sans", sans-serif;
+    color: #A8CDFF;
+    font-weight: bold;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla {
+    width: 90%;
+    max-width: 1280px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr 2fr;
+    gap: 1px;
+    font-family: "Noto Sans", sans-serif;
+    text-align: center;
+}
+
+.fila {
+    display: contents;
+}
+
+.celda {
+    padding: 10px;
+    border: 1px solid #0c0555;
+}
+
+.header .celda {
+    font-weight: bold;
+}

@@ -1,14 +1,14 @@
 import React from "react";
-import "../css/pantallaEditar.css";
+import "../css/PantallasCuatrimestre.css";
 import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
-/* HACER CSS ESPECIFICO PARA LA PANTALLA (bri) */
+
 
 const PantallaSCuatri = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="container">
+        <div className="containerCuatri">
             <div className="arriba">
 
                 <div className="botonesEd">
@@ -28,25 +28,29 @@ const PantallaSCuatri = () => {
                 </div>
             
                 <div className="fila">
-                    <div className="celda">12345678</div>
-                    <div className="celda">Pedro Enrique</div>
-                    <div className="celda">Herrera</div>
+                    <div className="celda">.</div>
+                    <div className="celda"></div>
+                    <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             
                 <div className="fila">
                     <div className="celda">.</div>
                     <div className="celda"></div>
                     <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             
                 <div className="fila">
                     <div className="celda">.</div>
                     <div className="celda"></div>
                     <div className="celda"></div>
+                    <div className="celda"></div>
                 </div>
             
                 <div className="fila">
                     <div className="celda">.</div>
+                    <div className="celda"></div>
                     <div className="celda"></div>
                     <div className="celda"></div>
                 </div>

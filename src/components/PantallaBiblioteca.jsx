@@ -8,7 +8,7 @@ const PantallaBiblioteca = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="container">
+        <div className="containerBiblio">
             <div className="titulo">
                 <h1>
                     Biblioteca

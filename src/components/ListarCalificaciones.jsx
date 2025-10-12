@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { Box, Paper, Typography, List, ListItem, ListItemText } from "@mui/material";
-import { Link } from "react-router-dom";
 
-export default function ListarHorarios() {
+
+export default function ListarCalificaciones() {
     const [datos, setDatos] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const querySnapshot = await getDocs(collection(db, "horarios"));
+                const querySnapshot = await getDocs(collection(db, "calificaciones"));
                 const listado = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                 setDatos(listado);
             } catch (error) {
@@ -39,25 +39,18 @@ export default function ListarHorarios() {
                 backgroundColor: "white",
                 overflow: "auto",
             }}>
-                < Typography textAlign="center" variant="h6" gutterBottom>Lista de datos Horarios</Typography>
+                < Typography textAlign="center" variant="h6" gutterBottom>Lista de datos Calificaciones</Typography>
                 <List>
                     {datos.map((item) => (
                         <ListItem
                             key={item.id}
-                            sx={{ bgcolor: "grey.100", borderRadius: 2, mb: 1, textDecoration: "none", color: "inherit" }}
+                            sx={{ bgcolor: "grey.100", borderRadius: 2, mb: 1 }}
                         >
                             <ListItemText
                                 secondary={
                                     <>
-                                        <span>Hora: {item.hora}</span>
-                                        <span>Turno: {item.turno} </span>
-                                        <span>Dia: {item.dia}</span>
-                                        <span>Materia: {item.materia}</span>
-                                        <span>
-                                            <link to={`/detallehorarios/${item.id}`}style={{ textDecoration: "none", color:"#1976d2"}}>
-                                            Ver detalle
-                                            </link>
-                                        </span>
+                                        Calificacion: {item.calificacion} <br />
+                                        Texto: {item.texto} <br />
                                     </>
                                 }
                             />

@@ -11,7 +11,7 @@ const PantallaTaller = () => {
      const { userData } = useAuth();
         const rol = userData?.rol;
     return (
-        <div className="container">
+        <div className="containerTaller">
             <div className="titulo">
                 <h1>
                     Taller

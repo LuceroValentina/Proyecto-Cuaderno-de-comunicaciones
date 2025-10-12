@@ -15,7 +15,7 @@ const PantallaTeoria = () => {
     };
 
     return (
-        <div className="container">
+        <div className="containerTeoria">
             <h1 className="titulo">Teoría</h1>
             <button className="boton-abrir" onClick={() => setActivo(!activo)}>
                 <img src="/imagenes/flecha_menuabrir.png" alt="" />
