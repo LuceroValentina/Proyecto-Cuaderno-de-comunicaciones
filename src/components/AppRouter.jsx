@@ -29,6 +29,10 @@ import DetalleAlumnos from './DetalleAlumnos';
 import DetallePreceptores from './DetallePreceptores';
 import DetalleProfesores from './DetalleProfesores';
 import DetalleCalendario from './DetalleCalendario';
+import DetalleMesa from './DetalleMesa';
+import DetalleMaterias from './DetalleMaterias';
+import DetalleAreas from './DetalleAreas';
+
 import DetalleClasedeConsulta from './DetalleClasedeConsulta';
 import ListarDia from './ListarDia';
 import ListarCalendario from './ListarCalendario';

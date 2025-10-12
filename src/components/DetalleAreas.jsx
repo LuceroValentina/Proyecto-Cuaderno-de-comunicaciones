@@ -4,36 +4,36 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from '../firebase/firebase';
 import { Box, Paper, Typography } from "@mui/material";
 
-const DetalleMaterias = () => {
+const DetalleAreas = () => {
     const { id } = useParams();
-    const [Materias, setMaterias] = useState(null);
+    const [Areas, setAreas] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchMaterias = async () => {
+        const fetchAreas = async () => {
             try {
-                const docRef = doc(db, "Materias", id);
+                const docRef = doc(db, "Areas", id);
                 const docSnap = await getDoc(docRef);
 
 
                 if (docSnap.exists()) {
-                    setMaterias({ id: docSnap.id, ...docSnap.data() });
+                    setAreas({ id: docSnap.id, ...docSnap.data() });
                 } else {
-                    setMaterias(null);
+                    setAreas(null);
                 }
             } catch (error) {
-                console.error("Error obteniendo las materias:", error);
+                console.error("Error obteniendo las areas:", error);
             } finally {
                 setLoading(false);
             }
 
         };
 
-        fetchMaterias();
+        fetchAreas();
     }, [id]);
 
     if (loading) return <h2>Cargando...</h2>
-    if (!Materias) return <h2>No se encontró la materia de tu busqueda</h2>
+    if (!Areas) return <h2>No se encontró el area de tu busqueda</h2>
 
      return (
         <Box
@@ -55,14 +55,14 @@ const DetalleMaterias = () => {
                 }}
             >
                 <Typography textAlign="center" variant="h6" gutterBottom>
-                    Detalle de la materia:
+                    Detalle del area:
                 </Typography>
 
-                <Typography>Nombre de la materia: {Materias.nombre}</Typography>
-                <Typography>Indique su correlativa: {Materias.correlativa}</Typography>
+                <Typography>Nombre del area: {Areas.nombre}</Typography>
+                <Typography>Materia: {Areas.correlativa}</Typography>
             </Paper>
         </Box>
     );
 }
 
-export default DetalleMaterias;
+export default DetalleAreas;

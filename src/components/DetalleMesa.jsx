@@ -33,7 +33,7 @@ const DetalleMesa = () => {
     }, [id]);
 
     if (loading) return <h2>Cargando...</h2>
-    if (!Mesa) return <h2>No se encontró la mesa de examen</h2>
+    if (!Mesa) return <h2>No se encontró la mesa de examen de tu busqueda</h2>
 
      return (
         <Box
