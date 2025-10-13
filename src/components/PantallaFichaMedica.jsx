@@ -4,9 +4,13 @@ import { useNavigate } from 'react-router-dom';
 export default function FormularioMedico() {
     const navigate = useNavigate();
 
-    const [materia, setMateria] = useState("");
+    const [nombre, setNombre] = useState("");
     const [fecha, setFecha] = useState("");
-    const [calificacion, setCalificacion] = useState("");
+    const [curso, setCurso] = useState("");
+    const [dni, setDni] = useState("");
+    const [edad, setEdad] = useState("");
+    const [domicilio, setDomicilio] = useState("");
+    const [correo, setCorreo] = useState("");
 
     //const handleSubmit = (e) => {
     //    e.preventDefault();

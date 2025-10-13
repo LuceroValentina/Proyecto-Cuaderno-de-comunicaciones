@@ -3,11 +3,8 @@ import "../css/PantallasCuatrimestre.css";
 import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 
-const PantallaPCuatri = () => {
+const PantallaAreas = () => {
     const navigate = useNavigate();
-    const alumno = {
-        ciclo: "basico", 
-    };
 
     return (
         <div className="containerCuatri">
@@ -23,7 +20,7 @@ const PantallaPCuatri = () => {
             
             <div className="tabla">
                 <div className="fila header">
-                    <div className="celda">{alumno.ciclo === "basico" ? "ÁREA" : "MATERIA"}</div>
+                    <div className="celda">MATERIAS</div>
                     <div className="celda">FECHA</div>
                     <div className="celda">CALIFICACIÓN</div>
                     <div className="celda">FIRMA</div>
@@ -62,4 +59,4 @@ const PantallaPCuatri = () => {
         </div>
     );
 }
-export default PantallaPCuatri;
+export default PantallaAreas;
