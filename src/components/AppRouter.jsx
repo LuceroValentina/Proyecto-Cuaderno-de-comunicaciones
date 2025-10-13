@@ -15,6 +15,7 @@ import PantallaSCuatri from './PantallaSCuatri';
 import Contactos from './Contactos';
 import FormularioMensaje from './FormularioCrearNota';
 import Registrodefirmas from './Registrodefirmas';
+import FormularioMedico from './PantallaFichaMedica';
 import AltaPreceptor from './AltaPreceptor';
 import AltaAdmins from './AltaAdmin';
 import AltaAlumno from './AltaAlumno';
@@ -91,6 +92,11 @@ const AppRouter = () => {
       <Route path="/crear_nota" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
           <FormularioMensaje />
+        </ProtectedRoute>
+      }/>
+      <Route path="/fichamedica" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <FormularioMedico />
         </ProtectedRoute>
       }/>
 
