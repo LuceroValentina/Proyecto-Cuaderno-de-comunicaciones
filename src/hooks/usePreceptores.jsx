@@ -25,7 +25,8 @@ export const crearPreceptor = async ({
             genero,
             curso,
             turno,
-            correo
+            correo,
+            rol: "preceptor"
         });
 
         console.log("Preceptor creado con ID:", correo);

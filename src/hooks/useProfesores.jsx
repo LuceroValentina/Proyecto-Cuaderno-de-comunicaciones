@@ -24,7 +24,9 @@ export const crearProfesor = async ({
             direccion,
             genero,
             materia,
-            curso, correo
+            curso, 
+            correo,
+            rol: "profesor"
         });
 
         console.log("Profesor creado con ID:", correo);
