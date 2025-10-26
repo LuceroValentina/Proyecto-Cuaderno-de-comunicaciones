@@ -33,6 +33,7 @@ import DetalleCalendario from './DetalleCalendario';
 import DetalleMesa from './DetalleMesa';
 import DetalleMaterias from './DetalleMaterias';
 import DetalleAreas from './DetalleAreas';
+import RetirosTaller from './RetirosTaller';
 
 import DetalleClasedeConsulta from './DetalleClasedeConsulta';
 import ListarDia from './ListarDia';
@@ -40,6 +41,7 @@ import ListarCalendario from './ListarCalendario';
 import ListarClasedeConsulta from './ListarClasedeConsulta';
 import DashboardAdmin from './DashboardAdmin';
 import PantallaBiblioteca from './PantallaBiblioteca';
+import Vestimenta from './Vestimenta';
 
 const ROLES = ["administradores", "preceptores", "profesores", "alumnos", "tutores"];
 
@@ -99,6 +101,17 @@ const AppRouter = () => {
           <FormularioMedico />
         </ProtectedRoute>
       }/>
+      <Route path="/retirostaller" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <RetirosTaller />
+        </ProtectedRoute>
+      }/>
+      <Route path="/vestimenta" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <Vestimenta />
+        </ProtectedRoute>
+      }/>
+
 
       {/* Rutas específicas según rol */}
       <Route path="/registro_firmas" element={
