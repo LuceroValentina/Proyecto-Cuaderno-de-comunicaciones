@@ -42,6 +42,7 @@ import ListarClasedeConsulta from './ListarClasedeConsulta';
 import DashboardAdmin from './DashboardAdmin';
 import PantallaBiblioteca from './PantallaBiblioteca';
 import Vestimenta from './Vestimenta';
+import ResumenInasistencias from './ResumenInasistencias';
 
 const ROLES = ["administradores", "preceptores", "profesores", "alumnos", "tutores"];
 
@@ -111,6 +112,12 @@ const AppRouter = () => {
           <Vestimenta />
         </ProtectedRoute>
       }/>
+      <Route path="/resumeninasistencias" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <ResumenInasistencias />
+        </ProtectedRoute>
+      }/>
+
 
 
       {/* Rutas específicas según rol */}

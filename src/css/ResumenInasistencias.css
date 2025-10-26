@@ -1,0 +1,240 @@
+/* Contenedor principal */
+.container-inasistencias {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Título */
+.titulo-inasistencias {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Formulario */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Inputs y select */
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Botón agregar */
+.boton {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}
+
+/* Tabla */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado de tabla */
+.th {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    padding: 12px;
+    font-weight: 600;
+}
+
+/* Filas de tabla */
+.tabla tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tabla tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Celdas */
+.tabla td {
+    padding: 10px;
+}
+
+/* Botón borrar */
+.btn-borrar {
+    padding: 6px 12px;
+    background-color: #dc3545;
+    color: white;
+    border: none;/* Contenedor principal */
+.container-inasistencias {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Título */
+.titulo-inasistencias {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Formulario */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Inputs y select */
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Botón agregar */
+.boton {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}
+
+/* Tabla en flex-column */
+.tabla {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Encabezado como fila flex */
+.tabla thead {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Encabezado de tabla */
+.th {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Filas de tabla */
+.tabla tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tabla tbody tr {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.tabla tbody tr:nth-child(even) {
+    background-color: #e9ecef;
+}
+
+/* Celdas */
+.tabla td {
+    padding: 6px 0;
+}
+
+/* Botón borrar */
+.btn-borrar {
+    padding: 6px 12px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+
+.btn-borrar:hover {
+    background-color: #a71d2a;
+}
+
+/* Hacer scroll en pantallas pequeñas */
+@media (max-width: 600px) {
+    .tabla {
+        overflow-x: auto;
+    }
+}
+
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-borrar:hover {
+    background-color: #a71d2a;
+}
+
+/* Hacer que la tabla sea scrollable en pantallas pequeñas */
+@media (max-width: 600px) {
+    .tabla {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
