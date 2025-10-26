@@ -1,4 +1,3 @@
-import "../css/ResumenInasistencias.css";
 import { useState, useEffect } from "react";
 import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
@@ -25,15 +24,8 @@ function ResumenInasistencias() {
     }, []);
 
     const meses = [
-        "Marzo",
-        "Abril",
-        "Mayo",
-        "Junio",
-        "Julio",
-        "Agosto",
-        "Septiembre",
-        "Octubre",
-        "Noviembre",
+        "Marzo", "Abril", "Mayo", "Junio", "Julio",
+        "Agosto", "Septiembre", "Octubre", "Noviembre",
     ];
 
     const handleChange = (e) => {
@@ -45,7 +37,7 @@ function ResumenInasistencias() {
         setRegistros(registros.filter(r => r.id !== id));
     };
 
-    const handleSubmit = async (e) => { 
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (!form.mes || form.total === "") {
@@ -67,73 +59,93 @@ function ResumenInasistencias() {
     };
 
     return (
-        <div className="container-inasistencias">
-            <h2 className="titulo-inasistencias">Resumen de Inasistencias</h2>
+        <div className="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-lg mt-10">
+            <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
+                Resumen de Inasistencias
+            </h2>
 
-            <form onSubmit={handleSubmit} className="formulario">
-                <label>Mes:</label>
-                <select
-                    name="mes"
-                    value={form.mes}
-                    onChange={handleChange}
-                    className="input"
+            <form
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-4 mb-8"
+            >
+                <div className="flex flex-col">
+                    <label className="font-medium text-gray-700 mb-1">Mes:</label>
+                    <select
+                        name="mes"
+                        value={form.mes}
+                        onChange={handleChange}
+                        className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                        <option value="">Seleccionar mes</option>
+                        {meses.map((m) => (
+                            <option key={m} value={m}>{m}</option>
+                        ))}
+                    </select>
+                </div>
+
+                <div className="flex flex-col">
+                    <label className="font-medium text-gray-700 mb-1">Total de inasistencias:</label>
+                    <input
+                        type="number"
+                        name="total"
+                        value={form.total}
+                        onChange={handleChange}
+                        className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                </div>
+
+                <div className="flex flex-col">
+                    <label className="font-medium text-gray-700 mb-1">Firma Preceptor:</label>
+                    <input
+                        type="text"
+                        name="firmaprecep"
+                        value={form.firmaprecep}
+                        onChange={handleChange}
+                        className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                </div>
+
+                <button
+                    type="submit"
+                    className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold transition"
                 >
-                    <option value="">Seleccionar mes</option>
-                    {meses.map((m) => (
-                        <option key={m} value={m}>
-                            {m}
-                        </option>
-                    ))}
-                </select>
-
-                <label>Total de inasistencias:</label>
-                <input
-                    type="number"
-                    name="total"
-                    value={form.total}
-                    onChange={handleChange}
-                    className="input"
-                />
-
-                <label>Firma Preceptor:</label>
-                <input
-                    type="text"
-                    name="firmaprecep"
-                    value={form.firmaprecep}
-                    onChange={handleChange}
-                    className="input"
-                />
-
-                <button type="submit" className="boton">
                     Agregar
                 </button>
             </form>
 
             {registros.length > 0 && (
-                <table className="tabla">
-                    <thead>
-                        <tr>
-                            <th className="th">Mes</th>
-                            <th className="th">Total Inasistencias</th>
-                            <th className="th">Firma Preceptor</th>
-                            <th className="th">Acciones</th> 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {registros.map((r) => (
-                            <tr key={r.id}> 
-                                <td>{r.mes}</td>
-                                <td>{r.total}</td>
-                                <td>{r.firmaprecep}</td>
-                                <td>
-                                    <button className="btn-borrar" onClick={() => borrarRegistro(r.id)}>
-                                        Borrar
-                                    </button>
-                                </td>
+                <div className="overflow-x-auto">
+                    <table className="w-full border-collapse">
+                        <thead>
+                            <tr className="bg-blue-100 text-gray-700">
+                                <th className="p-3 border text-left">Mes</th>
+                                <th className="p-3 border text-left">Total Inasistencias</th>
+                                <th className="p-3 border text-left">Firma Preceptor</th>
+                                <th className="p-3 border text-left">Acciones</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {registros.map((r) => (
+                                <tr
+                                    key={r.id}
+                                    className="hover:bg-gray-50 border-b"
+                                >
+                                    <td className="p-3 border">{r.mes}</td>
+                                    <td className="p-3 border">{r.total}</td>
+                                    <td className="p-3 border">{r.firmaprecep}</td>
+                                    <td className="p-3 border">
+                                        <button
+                                            onClick={() => borrarRegistro(r.id)}
+                                            className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md transition"
+                                        >
+                                            Borrar
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             )}
         </div>
     );
