@@ -12,6 +12,8 @@ import PantallaHorarioContraturno from './PantallaHorarioContraturno';
 import PantallaClaseConsultas from './PantallaClaseConsultas';
 import PantallaPCuatri from './PantallaPCuatri';
 import PantallaSCuatri from './PantallaSCuatri';
+import PantallaPAreas from './PantallaPAreas';
+import PantallaSAreas from './PantallaSAreas';
 import Contactos from './Contactos';
 import FormularioMensaje from './FormularioCrearNota';
 import FormularioCalifica from './CrearCalificación';
@@ -86,6 +88,16 @@ const AppRouter = () => {
       <Route path="/materiassegundocuatri" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
           <PantallaSCuatri />
+        </ProtectedRoute>
+      }/>
+      <Route path="/areasprimercuatri" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaPAreas />
+        </ProtectedRoute>
+      }/>
+      <Route path="/areassegundocuatri" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaSAreas />
         </ProtectedRoute>
       }/>
       <Route path="/seccion_contactos" element={

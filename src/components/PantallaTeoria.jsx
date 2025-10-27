@@ -3,15 +3,35 @@ import "../css/PantallaTeoria.css";
 import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import PantallaPCuatri from "./PantallaPCuatri";
+import PantallaSCuatri from "./PantallaSCuatri";
+import PantallaPAreas from "./PantallaPAreas";
+import PantallaSAreas from "./PantallaSAreas";
 
 
 const PantallaTeoria = () => {
     const navigate = useNavigate();
     const [activo, setActivo] = useState(false);
+    const [contenido, setContenido] = useState(null);
     const { userData } = useAuth();
     const rol = userData?.rol;
     const alumno = {
         ciclo: "superior", 
+    };
+
+    const renderContenido = () => {
+        switch (contenido) {
+        case "materiasprimer":
+            return <PantallaPCuatri />;
+        case "materiassegun":
+            return <PantallaSCuatri />;
+        case "areasprimer":
+            return <PantallaPAreas />;
+        case "areassegun":
+            return <PantallaSAreas />;
+        default:
+            return <p style={{ textAlign: "center", color: "#001366" }}>Seleccioná una sección del menú</p>;
+        }
     };
 
     return (
@@ -40,11 +60,28 @@ const PantallaTeoria = () => {
                         <li className="lista"><a href="#" className="item">Inasistencias</a></li>
                         <li className="container-submenu">Resumen Cuatrimestre
                             <ul className="submenu">
-                                <li className="lista-submenu"><a href="/materiasprimercuatri" className="item">Primero</a></li>
-                                <li className="lista-submenu"><a href="/materiassegundocuatri" className="item">Segundo</a></li>
+                                <li className="lista-submenu">
+                                    <button onClick={() => setContenido("materiasprimer")} className="item">
+                                        Materias Primer
+                                    </button>
+                                </li>
+                                <li className="lista-submenu">
+                                    <button onClick={() => setContenido("materiassegun")} className="item">
+                                        Materias Segundo
+                                    </button>
+                                </li>
                                 {alumno.ciclo === "basico" && (
                                     <>
-                                        <li className="lista-submenu"><a href="#" className="item">Areas</a></li>
+                                        <li className="lista-submenu">
+                                            <button onClick={() => setContenido("areasprimer")} className="item">
+                                                Areas Primer
+                                            </button>
+                                        </li>
+                                        <li className="lista-submenu">
+                                            <button onClick={() => setContenido("materiasprimer")} className="item">
+                                                Areas Segundo
+                                            </button>
+                                        </li>
                                     </>
                                 )}
                             </ul>
@@ -87,6 +124,8 @@ const PantallaTeoria = () => {
                     </div>
                 </>
             )}
+
+            <div className="contenido-principal">{renderContenido()}</div>
 
             <button
                 onClick={() => navigate("/secciones")}

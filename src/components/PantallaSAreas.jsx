@@ -3,7 +3,7 @@ import "../css/PantallasCuatrimestre.css";
 import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 
-const PantallaAreas = () => {
+const PantallaSAreas = () => {
     const navigate = useNavigate();
 
     return (
@@ -58,4 +58,4 @@ const PantallaAreas = () => {
         </div>
     );
 }
-export default PantallaAreas;
+export default PantallaSAreas;
