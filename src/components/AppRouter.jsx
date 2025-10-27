@@ -14,6 +14,7 @@ import PantallaPCuatri from './PantallaPCuatri';
 import PantallaSCuatri from './PantallaSCuatri';
 import Contactos from './Contactos';
 import FormularioMensaje from './FormularioCrearNota';
+import FormularioCalifica from './CrearCalificación';
 import Registrodefirmas from './Registrodefirmas';
 import FormularioMedico from './PantallaFichaMedica';
 import AltaPreceptor from './AltaPreceptor';
@@ -160,6 +161,11 @@ const AppRouter = () => {
       <Route path="/altacalendario" element={
         <ProtectedRoute rolesPermitidos={["administradores"]}>
           <AltaCalendario />
+        </ProtectedRoute>
+      }/>
+      <Route path="/formularioCalificaciones" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores","alumnos"]}>
+          <FormularioCalifica />
         </ProtectedRoute>
       }/>
      

@@ -11,16 +11,15 @@ const PantallaAreas = () => {
             <div className="arriba">
 
                 <div className="botonesEd">
-                    <button className="botonEd">Agregar</button>
+                    <button onClick={() => navigate("/formularioCalificaciones")} className="botonEd">Agregar</button>
                     <button className="botonEd">Modificar</button>
-                    <button className="botonEd">Eliminar</button>
                 </div>
 
             </div>
             
             <div className="tabla">
                 <div className="fila header">
-                    <div className="celda">MATERIAS</div>
+                    <div className="celda">AREAS</div>
                     <div className="celda">FECHA</div>
                     <div className="celda">CALIFICACIÓN</div>
                     <div className="celda">FIRMA</div>

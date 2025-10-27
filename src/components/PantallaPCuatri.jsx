@@ -14,9 +14,8 @@ const PantallaPCuatri = () => {
             <div className="arriba">
 
                 <div className="botonesEd">
-                    <button className="botonEd">Agregar</button>
+                    <button onClick={() => navigate("/formularioCalificaciones")} className="botonEd">Agregar</button>
                     <button className="botonEd">Modificar</button>
-                    <button className="botonEd">Eliminar</button>
                 </div>
 
             </div>
@@ -57,7 +56,7 @@ const PantallaPCuatri = () => {
                     <div className="celda"></div>
                 </div>
             </div>
-            <button onClick={() => navigate("/secciones")}className="absolute bottom-8 right-8 px-6 py-3 bg-[#3d6490] text-white rounded cursor-pointer">Volver</button>
+            <button onClick={() => navigate("/secciones")} className="absolute bottom-8 right-8 px-6 py-3 bg-[#3d6490] text-white rounded cursor-pointer">Volver</button>
 
         </div>
     );

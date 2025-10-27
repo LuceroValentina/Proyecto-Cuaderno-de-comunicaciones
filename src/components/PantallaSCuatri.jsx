@@ -15,9 +15,8 @@ const PantallaSCuatri = () => {
             <div className="arriba">
 
                 <div className="botonesEd">
-                    <button className="botonEd">Agregar</button>
+                    <button onClick={() => navigate("/formularioCalificaciones")} className="botonEd">Agregar</button>
                     <button className="botonEd">Modificar</button>
-                    <button className="botonEd">Eliminar</button>
                 </div>
 
             </div>
