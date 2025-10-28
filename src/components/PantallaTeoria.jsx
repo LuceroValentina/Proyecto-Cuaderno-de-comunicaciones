@@ -55,7 +55,7 @@ const PantallaTeoria = () => {
 
                             </ul>
                         </li>
-                        <li className="lista"><a href="#" className="item">Vestimenta</a></li>
+                        <li className="lista"><a href="/vestimenta" className="item">Vestimenta</a></li>
                         <li className="lista"><a href="#" className="item">Inasistencias</a></li>
                         <li className="container-submenu">Resumen Cuatrimestre
                             <ul className="submenu">

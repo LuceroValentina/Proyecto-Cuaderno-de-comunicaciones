@@ -3,8 +3,8 @@ import "../css/Vestimenta.css";
 import { useNavigate } from "react-router-dom";
 
 const PantallaVestimenta = () => {
-        const navigate = useNavigate();
-    
+    const navigate = useNavigate();
+
     return (
         <div className="container-vestimenta">
             <div>
@@ -24,6 +24,12 @@ const PantallaVestimenta = () => {
                 <p className="texto-teoria">Jean azul o jogging azul.</p>
                 <img src="/imagenes/ropa.png" className="img-vestimenta" alt="" />
             </div>
+            <button
+                onClick={() => navigate("/secciones")}
+                className="volver fixed bottom-6 right-6 w-20 h-8 bg-[#3d6490] text-white rounded cursor-pointer flex items-center justify-center"
+            >
+                Volver
+            </button>
         </div>
     );
 }
