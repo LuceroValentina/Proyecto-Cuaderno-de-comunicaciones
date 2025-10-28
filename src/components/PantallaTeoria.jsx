@@ -15,7 +15,7 @@ const PantallaTeoria = () => {
     const { userData } = useAuth();
     const rol = userData?.rol;
     const alumno = {
-        ciclo: "superior", 
+        ciclo: "basico", 
     };
 
     const renderContenido = () => {
@@ -43,7 +43,7 @@ const PantallaTeoria = () => {
                 <div className="container-items">
                     <h2 className="subtitulo">Menú</h2>
                     <ul>
-                        <li className="lista"><a href="#" className="item">Retiros</a></li>
+                        <li className="lista"><a href="/resumeninasistencias" className="item">Retiros</a></li>
                         <li className="lista"><a href="#" className="item">Evaluaciones y TPS</a></li>
                         <li className="lista"><a href="/crear_nota" className="item">Comunicación General</a></li>
                         <li className="lista"><a href="/registro_firmas" className="item">Registro de firmas</a></li>
@@ -115,7 +115,7 @@ const PantallaTeoria = () => {
                     <img src="/imagenes/flecha_menucerrar.png" alt="" />
                 </button>
             </div>
-            {rol === "profesor" && (
+            {rol === "profesor" || "alumnos" && (
                 <>
                     <div className="botonesClaros">
                         <button className="botonClaro">Crear</button>

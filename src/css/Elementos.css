@@ -40,17 +40,17 @@
     display: grid;
     grid-template-columns: 60px;
     grid-template-rows: 70px 70px;
-    position: fixed;  
-    bottom: 20px;     
-    right: 20px;      
-    gap: 10px;       
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
 }
 
 .botonClaro {
     background-color: #ffffff;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 100%;
     font-family: "Noto Sans", sans-serif;
     color: #A8CDFF;

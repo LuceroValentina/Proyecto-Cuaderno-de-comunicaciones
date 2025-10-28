@@ -24,7 +24,7 @@ const PantallaTaller = () => {
                 <button className="botonOscuro">Calificaciones Generales</button>
             </div>
 
-            {rol === "profesores" && (
+            {rol === "profesores" || "alumnos" && (
                 <>
                     <div className="botonesClaros">
                         <button className="botonClaro">Crear</button>
