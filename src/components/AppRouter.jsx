@@ -51,6 +51,8 @@ import DetalleClasedeConsulta from './DetalleClasedeConsulta';
 import DashboardAdmin from './DashboardAdmin';
 import ResumenInasistencias from './ResumenInasistencias'; //TODOS
 import Calendario from './Calendario'; //TODOS
+import PantallaComunicacionGral from './PantallaComunicacionGral'; //TODOS
+
 
 const ROLES = ["administradores", "preceptores", "profesores", "alumnos", "tutores"];
 
@@ -133,6 +135,11 @@ const AppRouter = () => {
       <Route path="/calendario" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
           <Calendario />
+        </ProtectedRoute>
+      }/>
+      <Route path="/comunicaciongeneral" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaComunicacionGral/>
         </ProtectedRoute>
       }/>
 

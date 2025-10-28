@@ -22,7 +22,7 @@ export default function PantallaComunicacionGral() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gray-50 flex flex-col items-center py-10 px-4">
+        <div className="min-h-screen flex flex-col items-center py-10 px-4">
             <h2 className="text-2xl font-bold mb-6 text-gray-800">Notas Enviadas</h2>
 
             {notas.length === 0 ? (
@@ -42,8 +42,15 @@ export default function PantallaComunicacionGral() {
             )}
 
             <button
-                onClick={() => navigate("/teoria")}
-                className="mt-10 bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg transition"
+                onClick={() => navigate("/crearnota")}
+                className="absolute bottom-6 right-6 bg-white text-sky-600 font-bold w-14 h-14 rounded-full shadow-md hover:bg-sky-50 transition flex items-center justify-center text-xl leading-none"
+            >
+                Crear
+            </button>
+
+            <button
+                onClick={() => navigate("/seccion_teoria")}
+                className="absolute top-6 left-6 bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg shadow-md transition"
             >
                 Volver
             </button>
