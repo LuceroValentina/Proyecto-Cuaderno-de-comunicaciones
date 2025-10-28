@@ -32,7 +32,6 @@ const PantallaSecciones = () => {
                 Contactanos
             </button>
 
-
             {rol === "administradores" && (
                 <button className="contactanos" onClick={() => navigate("/dashboard-admin")}>
                     Panel de control

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function FormularioCalifica() {
+export default function FormCalificacion() {
     const navigate = useNavigate();
 
     const [materia, setMateria] = useState("");

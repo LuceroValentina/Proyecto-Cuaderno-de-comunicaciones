@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function HorarioContraturno() {
+export default function FormHorarioContraturno() {
     const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
     const [selectedDia, setSelectedDia] = useState(dias[0]);
     const [texto, setTexto] = useState("");

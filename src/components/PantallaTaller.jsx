@@ -4,8 +4,6 @@ import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-
-
 const PantallaTaller = () => {
     const navigate = useNavigate();
      const { userData } = useAuth();

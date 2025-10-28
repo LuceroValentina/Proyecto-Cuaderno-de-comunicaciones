@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-export default function HorariodeClases() {
+export default function FormClaseConsultas() {
     const navigate = useNavigate();
     const dpto = ['Ciclo Superior', 'Ciencias Naturales', 'Ciencias Sociales', 'Dibujo', 'Ed.Física', 'Idioma', 'Lengua y Literatura', 'Matemática y Física'];
     const materia = ['De la especialidad', 'Biología y Química', 'Historia, Geografía y Ed.Cívica', 'Dibujo Técnico', 'Ed.Física', 'Inglés', 'Lengua y Literatura', 'Matemática y Física'];

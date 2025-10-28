@@ -61,5 +61,4 @@ const PantallaInicio = () => {
     </div>
   );
 };
-
 export default PantallaInicio;

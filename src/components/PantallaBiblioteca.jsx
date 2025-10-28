@@ -3,7 +3,6 @@ import "../css/PantallaBiblioteca.css";
 import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 
-
 const PantallaBiblioteca = () => {
     const navigate = useNavigate();
 

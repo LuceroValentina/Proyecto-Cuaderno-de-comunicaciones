@@ -144,5 +144,4 @@ const FormRetiros = ({ onAgregar }) => {
     </form>
   );
 };
-
 export default FormRetiros;

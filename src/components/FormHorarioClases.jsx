@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function HorariodeClases() {
+export default function FormHorarioClases() {
     const navigate = useNavigate();
     const horas = ['1', '2', '3', '4', '5', '6', '7'];
     const turnos = ['Turno Mañana', 'Turno Tarde', 'Turno Vespertino'];

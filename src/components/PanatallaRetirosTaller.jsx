@@ -4,7 +4,7 @@ import TablaRetiros from "./TablaRetiros";
 import { db } from "../firebase/firebase";
 import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 
-const RetirosTaller = () => {
+const PantallaRetirosTaller = () => {
   const [retiros, setRetiros] = useState([]);
 
   useEffect(() => {
@@ -36,5 +36,4 @@ const RetirosTaller = () => {
     </div>
   );
 };
-
-export default RetirosTaller;
+export default PantallaRetirosTaller;

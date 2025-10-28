@@ -150,5 +150,4 @@ function ResumenInasistencias() {
         </div>
     );
 }
-
 export default ResumenInasistencias;

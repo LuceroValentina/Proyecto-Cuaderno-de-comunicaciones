@@ -8,7 +8,6 @@ import PantallaSCuatri from "./PantallaSCuatri";
 import PantallaPAreas from "./PantallaPAreas";
 import PantallaSAreas from "./PantallaSAreas";
 
-
 const PantallaTeoria = () => {
     const navigate = useNavigate();
     const [activo, setActivo] = useState(false);

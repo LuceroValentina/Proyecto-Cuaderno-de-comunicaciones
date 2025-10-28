@@ -2,7 +2,7 @@ import React from "react";
 import "../css/Vestimenta.css";
 import { useNavigate } from "react-router-dom";
 
-const Vestimenta = () => {
+const PantallaVestimenta = () => {
         const navigate = useNavigate();
     
     return (
@@ -33,4 +33,4 @@ const Vestimenta = () => {
         </div>
     );
 }
-export default Vestimenta;
+export default PantallaVestimenta;

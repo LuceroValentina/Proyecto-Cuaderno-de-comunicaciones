@@ -3,32 +3,42 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
 
 import PantallaInicio from './PantallaInicio';
-import PantallaSecciones from './PantallaSecciones';
-import PantallaTeoria from './PantallaTeoria';
-import PantallaTaller from './PantallaTaller';
-import PantallaEducacionFisica from './PantallaEducacionFisica';
-import PantallaHorarioClases from './PantallaHorarioClases';
-import PantallaHorarioContraturno from './PantallaHorarioContraturno';
+import PantallaSecciones from './PantallaSecciones'; //TODOS
+import PantallaTeoria from './PantallaTeoria'; //TODOS
+import PantallaTaller from './PantallaTaller'; //TODOS
+import PantallaBiblioteca from './PantallaBiblioteca'; //TODOS
+import PantallaEducacionFisica from './PantallaEducacionFisica'; //TODOS
+import PantallaContactos from './PantallaContactos'; //TODOS
 import PantallaClaseConsultas from './PantallaClaseConsultas';
-import PantallaPCuatri from './PantallaPCuatri';
-import PantallaSCuatri from './PantallaSCuatri';
-import PantallaPAreas from './PantallaPAreas';
-import PantallaSAreas from './PantallaSAreas';
-import Contactos from './Contactos';
-import FormularioMensaje from './FormularioCrearNota';
-import FormularioCalifica from './CrearCalificación';
-import Registrodefirmas from './Registrodefirmas';
-import FormularioMedico from './PantallaFichaMedica';
+import PantallaPCuatri from './PantallaPCuatri'; //TODOS
+import PantallaSCuatri from './PantallaSCuatri'; //TODOS
+import PantallaPAreas from './PantallaPAreas'; //TODOS
+import PantallaSAreas from './PantallaSAreas'; //TODOS
+import PantallaRetirosTaller from './PanatallaRetirosTaller'; //TODOS
+import PantallaVestimenta from './PantallaVestimenta'; //TODOS
+
+import FormHorarioClases from './FormHorarioClases';
+import FormHorarioContraturno from './FormHorarioContraturno'; //TODOS
+import FormCrearNotifica from './FormCrearNotifica'; //PROFES
+import FormCalificacion from './FormCalificacion'; //PROFES
+import FormRegistroFirmas from './FormRegistroFirmas'; //PRECES
+import FormFichaMedica from './FormFichaMedica'; //TUTORES
+
 import AltaPreceptor from './AltaPreceptor';
 import AltaAdmins from './AltaAdmin';
-import AltaAlumno from './AltaAlumno';
+import AltaAlumno from './AltaAlumno'; //PRECES
 import AltaProfesor from './AltaProfesor';
 import AltaClasedeConsulta from './AltaClasedeConsulta';
 import AltaDia from './AltaDia';
 import AltaCalendario from './AltaCalendario';
+
 import ListarAlumnos from './ListarAlumnos';
 import ListarPreceptores from './ListarPreceptores';
 import ListarProfesores from './ListarProfesores';
+import ListarDia from './ListarDia';
+import ListarCalendario from './ListarCalendario';
+import ListarClasedeConsulta from './ListarClasedeConsulta';
+
 import DetalleAlumnos from './DetalleAlumnos';
 import DetallePreceptores from './DetallePreceptores';
 import DetalleProfesores from './DetalleProfesores';
@@ -36,17 +46,11 @@ import DetalleCalendario from './DetalleCalendario';
 import DetalleMesa from './DetalleMesa';
 import DetalleMaterias from './DetalleMaterias';
 import DetalleAreas from './DetalleAreas';
-import RetirosTaller from './RetirosTaller';
-
 import DetalleClasedeConsulta from './DetalleClasedeConsulta';
-import ListarDia from './ListarDia';
-import ListarCalendario from './ListarCalendario';
-import ListarClasedeConsulta from './ListarClasedeConsulta';
+
 import DashboardAdmin from './DashboardAdmin';
-import PantallaBiblioteca from './PantallaBiblioteca';
-import Vestimenta from './Vestimenta';
-import ResumenInasistencias from './ResumenInasistencias';
-import Calendario from './Calendario';
+import ResumenInasistencias from './ResumenInasistencias'; //TODOS
+import Calendario from './Calendario'; //TODOS
 
 const ROLES = ["administradores", "preceptores", "profesores", "alumnos", "tutores"];
 
@@ -71,6 +75,11 @@ const AppRouter = () => {
           <PantallaTaller />
         </ProtectedRoute>
       }/>
+      <Route path="/seccion_biblioteca" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaBiblioteca />
+        </ProtectedRoute>
+      }/>
       <Route path="/seccion_edfisica" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
           <PantallaEducacionFisica />
@@ -78,7 +87,7 @@ const AppRouter = () => {
       }/>
       <Route path="/horarioscontraturnos" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
-          <PantallaHorarioContraturno />
+          <FormHorarioContraturno />
         </ProtectedRoute>
       }/>
       <Route path="/materiasprimercuatri" element={
@@ -103,27 +112,17 @@ const AppRouter = () => {
       }/>
       <Route path="/seccion_contactos" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
-          <Contactos />
-        </ProtectedRoute>
-      }/>
-      <Route path="/crear_nota" element={
-        <ProtectedRoute rolesPermitidos={ROLES}>
-          <FormularioMensaje />
-        </ProtectedRoute>
-      }/>
-      <Route path="/fichamedica" element={
-        <ProtectedRoute rolesPermitidos={ROLES}>
-          <FormularioMedico />
+          <PantallaContactos />
         </ProtectedRoute>
       }/>
       <Route path="/retirostaller" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
-          <RetirosTaller />
+          <PantallaRetirosTaller />
         </ProtectedRoute>
       }/>
       <Route path="/vestimenta" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
-          <Vestimenta />
+          <PantallaVestimenta />
         </ProtectedRoute>
       }/>
       <Route path="/resumeninasistencias" element={
@@ -140,9 +139,9 @@ const AppRouter = () => {
 
 
       {/* Rutas específicas según rol */}
-      <Route path="/registro_firmas" element={
+      <Route path="/registrofirmas" element={
         <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
-          <Registrodefirmas />
+          <FormRegistroFirmas />
         </ProtectedRoute>
       }/>
 
@@ -159,6 +158,11 @@ const AppRouter = () => {
       <Route path="/altaadmin" element={
         <ProtectedRoute rolesPermitidos={["administradores"]}>
           <AltaAdmins />
+        </ProtectedRoute>
+      }/>
+      <Route path="/crearnota" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
+          <FormCrearNotifica />
         </ProtectedRoute>
       }/>
       <Route path="/altaprofesor" element={
@@ -181,12 +185,17 @@ const AppRouter = () => {
           <AltaCalendario />
         </ProtectedRoute>
       }/>
-      <Route path="/formularioCalificaciones" element={
-        <ProtectedRoute rolesPermitidos={["administradores","profesores","alumnos"]}>
-          <FormularioCalifica />
+      <Route path="/subircalificaciones" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
+          <FormCalificacion />
         </ProtectedRoute>
       }/>
      
+      <Route path="/fichamedica" element={
+        <ProtectedRoute rolesPermitidos={["adminitradores","tutores"]}>
+          <FormFichaMedica />
+        </ProtectedRoute>
+      }/>
 
       <Route path="/listaralumno" element={
         <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>

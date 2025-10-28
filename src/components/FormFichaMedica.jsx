@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function FormularioMedico() {
+export default function FormFichaMedica() {
     const navigate = useNavigate();
 
     const [nombre, setNombre] = useState("");

@@ -38,5 +38,4 @@ const PantallaEducacionFisica = () => {
         </div>
     );
 };
-
 export default PantallaEducacionFisica;

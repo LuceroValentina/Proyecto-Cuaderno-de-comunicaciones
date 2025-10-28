@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../css/Registrodefirmas.css";
 //import "../css/Elementos.css";
 
-function Registrodefirmas() {
+function FormRegistroFirmas() {
   const navigate = useNavigate();
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
@@ -79,5 +79,4 @@ function Registrodefirmas() {
     </div>
   );
 }
-
-export default Registrodefirmas;
+export default FormRegistroFirmas;

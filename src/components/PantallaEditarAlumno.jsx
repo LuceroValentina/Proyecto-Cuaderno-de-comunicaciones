@@ -4,7 +4,7 @@ import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 
 
-const PantallaEditar = () => {
+const PantallaEditarAlumno = () => {
         const navigate = useNavigate();
 
     return (
@@ -64,4 +64,4 @@ const PantallaEditar = () => {
         </div>
     );
 }
-export default PantallaEditar;
+export default PantallaEditarAlumno;

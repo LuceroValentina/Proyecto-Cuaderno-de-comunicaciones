@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function FormularioMensaje() {
+export default function FormCrearNotifica() {
     const navigate = useNavigate();
 
     const [nombre, setNombre] = useState("");
@@ -19,7 +19,7 @@ export default function FormularioMensaje() {
                 //onSubmit={handleSubmit}
                 className="w-1/2 min-w-[300px] max-w-sm bg-gray-100 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4">
                 
-                <div className="font-bold text-xl mb-2">Comunicación General</div>
+                <div className="font-bold text-xl mb-2">Notificación Comunicación General</div>
                 <div className="space-y-4 w-60">
 
                     <div>
