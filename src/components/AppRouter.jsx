@@ -9,12 +9,11 @@ import PantallaTaller from './PantallaTaller'; //TODOS
 import PantallaBiblioteca from './PantallaBiblioteca'; //TODOS
 import PantallaEducacionFisica from './PantallaEducacionFisica'; //TODOS
 import PantallaContactos from './PantallaContactos'; //TODOS
-import PantallaClaseConsultas from './PantallaClaseConsultas';
 import PantallaPCuatri from './PantallaPCuatri'; //TODOS
 import PantallaSCuatri from './PantallaSCuatri'; //TODOS
 import PantallaPAreas from './PantallaPAreas'; //TODOS
 import PantallaSAreas from './PantallaSAreas'; //TODOS
-import PantallaRetirosTaller from './PanatallaRetirosTaller'; //TODOS
+import PantallaRetirosTaller from './PantallaRetirosTaller'; //TODOS
 import PantallaVestimenta from './PantallaVestimenta'; //TODOS
 
 import FormHorarioClases from './FormHorarioClases';
@@ -23,6 +22,7 @@ import FormCrearNotifica from './FormCrearNotifica'; //PROFES
 import FormCalificacion from './FormCalificacion'; //PROFES
 import FormRegistroFirmas from './FormRegistroFirmas'; //PRECES
 import FormFichaMedica from './FormFichaMedica'; //TUTORES
+import FormClaseConsultas from './FormClaseConsultas';
 
 import AltaPreceptor from './AltaPreceptor';
 import AltaAdmins from './AltaAdmin';
