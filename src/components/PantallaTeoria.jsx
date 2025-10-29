@@ -3,10 +3,12 @@ import "../css/PantallaTeoria.css";
 import "../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import PantallaPCuatri from "./PantallaPCuatri";
-import PantallaSCuatri from "./PantallaSCuatri";
-import PantallaPAreas from "./PantallaPAreas";
-import PantallaSAreas from "./PantallaSAreas";
+import PantallaComunicacionGral from "./PantallaComunicacionGral";
+import PantallaPrimerCuatri from "./PantallaPrimerCuatri";
+import PantallaSegundoCuatri from "./PantallaSegundoCuatri";
+import RegistroFirmas from "./RegistroFirmas";
+import PantallaVestimenta from "./PantallaVestimenta";
+import ResumenInasistencias from "./ResumenInasistencias";
 
 const PantallaTeoria = () => {
     const navigate = useNavigate();
@@ -20,14 +22,18 @@ const PantallaTeoria = () => {
 
     const renderContenido = () => {
         switch (contenido) {
-        case "materiasprimer":
-            return <PantallaPCuatri />;
-        case "materiassegun":
-            return <PantallaSCuatri />;
-        case "areasprimer":
-            return <PantallaPAreas />;
-        case "areassegun":
-            return <PantallaSAreas />;
+        case "/comunicaciongeneral":
+            return <PantallaComunicacionGral />;
+        case "/registrofirmas":
+            return <RegistroFirmas />;
+        case "/vestimenta":
+            return <PantallaVestimenta />;
+        case "/inasistencias":
+            return <ResumenInasistencias />;
+        case "/primercuatri":
+            return <PantallaPrimerCuatri />;
+        case "/segundocuatri":
+            return <PantallaSegundoCuatri />;
         default:
             return <p style={{ textAlign: "center", color: "#001366" }}>Seleccioná una sección del menú</p>;
         }
@@ -43,46 +49,49 @@ const PantallaTeoria = () => {
                 <div className="container-items">
                     <h2 className="subtitulo">Menú</h2>
                     <ul>
-                        <li className="lista"><a href="/resumeninasistencias" className="item">Retiros</a></li>
+                        <li className="lista"><a href="#" className="item">Retiros</a></li>
                         <li className="lista"><a href="#" className="item">Evaluaciones y TPS</a></li>
-                        <li className="lista"><a href="/comunicaciongeneral" className="item">Comunicación General</a></li>
-                        <li className="lista"><a href="/registrofirmas" className="item">Registro de firmas</a></li>
+                        <li className="lista">
+                            <button onClick={() => setContenido("/comunicaciongeneral")} className="item">
+                                Comunicación General
+                            </button>
+                        </li>
+                        <li className="lista">
+                            <button onClick={() => setContenido("/registrofirmas")} className="item">
+                                Registro de Firmas
+                            </button>
+                        </li>
                         <li className="container-submenu">Horarios de Clase
                             <ul className="submenu">
                                 <li className="lista-submenu"><a href="/horariosteoria" className="item">Horarios de Clase</a></li>
-                                <li className="lista-submenu"><a href="/horarioscontraturnos" className="item">H. Contraturno</a></li>
-                                <li className="lista-submenu"><a href="/horariosclasesconsultas" className="item">H. Consultas</a></li>
+                                <li className="lista-submenu"><a href="/horarioscontraturnos" className="item">Horarios Contraturno</a></li>
+                                <li className="lista-submenu"><a href="/horariosclasesconsultas" className="item">Horarios de Consulta</a></li>
 
                             </ul>
                         </li>
-                        <li className="lista"><a href="/vestimenta" className="item">Vestimenta</a></li>
-                        <li className="lista"><a href="#" className="item">Inasistencias</a></li>
+                        <li className="lista">
+                            <button onClick={() => setContenido("/vestimenta")} className="item">
+                                Vestimenta
+                            </button>
+                        </li>
+                        <li className="lista">
+                            <button onClick={() => setContenido("/inasistencias")} className="item">
+                                Inasistencias 
+                            </button> {/* que no todos vean el formulario */}
+                        </li>
                         <li className="container-submenu">Resumen Cuatrimestre
                             <ul className="submenu">
                                 <li className="lista-submenu">
-                                    <button onClick={() => setContenido("materiasprimer")} className="item">
-                                        Materias Primer
+                                    <button onClick={() => setContenido("/primercuatri")} className="item">
+                                        Primero
                                     </button>
                                 </li>
                                 <li className="lista-submenu">
-                                    <button onClick={() => setContenido("materiassegun")} className="item">
-                                        Materias Segundo
+                                    <button onClick={() => setContenido("/segundocuatri")} className="item">
+                                        Segundo
                                     </button>
                                 </li>
-                                {alumno.ciclo === "basico" && (
-                                    <>
-                                        <li className="lista-submenu">
-                                            <button onClick={() => setContenido("areasprimer")} className="item">
-                                                Areas Primer
-                                            </button>
-                                        </li>
-                                        <li className="lista-submenu">
-                                            <button onClick={() => setContenido("materiasprimer")} className="item">
-                                                Areas Segundo
-                                            </button>
-                                        </li>
-                                    </>
-                                )}
+                                
                             </ul>
                         </li>
                         <li className="container-submenu">Calificaciones

@@ -9,10 +9,8 @@ import PantallaTaller from './PantallaTaller'; //TODOS
 import PantallaBiblioteca from './PantallaBiblioteca'; //TODOS
 import PantallaEducacionFisica from './PantallaEducacionFisica'; //TODOS
 import PantallaContactos from './PantallaContactos'; //TODOS
-import PantallaPCuatri from './PantallaPCuatri'; //TODOS
-import PantallaSCuatri from './PantallaSCuatri'; //TODOS
-import PantallaPAreas from './PantallaPAreas'; //TODOS
-import PantallaSAreas from './PantallaSAreas'; //TODOS
+import PantallaPrimerCuatri from './PantallaPrimerCuatri'; //TODOS
+import PantallaSegundoCuatri from './PantallaSegundoCuatri'; //TODOS
 import PantallaRetirosTaller from './PantallaRetirosTaller'; //TODOS
 import PantallaVestimenta from './PantallaVestimenta'; //TODOS
 
@@ -20,7 +18,7 @@ import FormHorarioClases from './FormHorarioClases';
 import FormHorarioContraturno from './FormHorarioContraturno'; //TODOS
 import FormCrearNotifica from './FormCrearNotifica'; //PROFES
 import FormCalificacion from './FormCalificacion'; //PROFES
-import FormRegistroFirmas from './FormRegistroFirmas'; //PRECES
+import FormRegistroFirmas from './RegistroFirmas'; //PRECES
 import FormFichaMedica from './FormFichaMedica'; //TUTORES
 import FormClaseConsultas from './FormClaseConsultas';
 
@@ -92,24 +90,14 @@ const AppRouter = () => {
           <FormHorarioContraturno />
         </ProtectedRoute>
       }/>
-      <Route path="/materiasprimercuatri" element={
+      <Route path="/notasprimercuatrimestre" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
-          <PantallaPCuatri />
+          <PantallaPrimerCuatri />
         </ProtectedRoute>
       }/>
-      <Route path="/materiassegundocuatri" element={
+      <Route path="/notassegundocuatrimestre" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
-          <PantallaSCuatri />
-        </ProtectedRoute>
-      }/>
-      <Route path="/areasprimercuatri" element={
-        <ProtectedRoute rolesPermitidos={ROLES}>
-          <PantallaPAreas />
-        </ProtectedRoute>
-      }/>
-      <Route path="/areassegundocuatri" element={
-        <ProtectedRoute rolesPermitidos={ROLES}>
-          <PantallaSAreas />
+          <PantallaSegundoCuatri />
         </ProtectedRoute>
       }/>
       <Route path="/seccion_contactos" element={
