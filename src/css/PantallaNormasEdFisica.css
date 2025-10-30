@@ -1,0 +1,48 @@
+.container-normas {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    background-color: #f9fafc;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #333;
+}
+
+.titulo-edfisica {
+    text-align: center;
+    color: #1e3a8a;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtitulo-edfisica {
+    margin-top: 25px;
+    color: #0f172a;
+    font-size: 1.4rem;
+    border-left: 6px solid #2563eb;
+    padding-left: 12px;
+    background-color: #e0e7ff;
+    border-radius: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.lista-edfisica {
+    list-style-type: disc;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.elementos-edfisica {
+    margin-bottom: 8px;
+    text-align: justify;
+}
+
+
+
+
