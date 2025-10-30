@@ -128,7 +128,7 @@ const PantallaTeoria = () => {
                 <>
                     <div className="botonesClaros">
                         <button className="botonClaro">Crear</button>
-                        <button className="botonClaro">Firmar</button>
+                        <button className="botonClaro"  onClick={() => navigate("/firmar")}>Firmar</button>
                     </div>
                 </>
             )}

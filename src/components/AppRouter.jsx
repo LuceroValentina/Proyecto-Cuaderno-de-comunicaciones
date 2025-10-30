@@ -13,6 +13,7 @@ import PantallaPrimerCuatri from './PantallaPrimerCuatri'; //TODOS
 import PantallaSegundoCuatri from './PantallaSegundoCuatri'; //TODOS
 import PantallaRetirosTaller from './PantallaRetirosTaller'; //TODOS
 import PantallaVestimenta from './PantallaVestimenta'; //TODOS
+import Firmar from './Firmar'; //TODOS
 
 import FormHorarioClases from './FormHorarioClases';
 import FormHorarioContraturno from './FormHorarioContraturno'; //TODOS
@@ -130,6 +131,12 @@ const AppRouter = () => {
           <PantallaComunicacionGral/>
         </ProtectedRoute>
       }/>
+        <Route path="/firmar" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <Firmar/>
+        </ProtectedRoute>
+      }/>
+
 
 
 

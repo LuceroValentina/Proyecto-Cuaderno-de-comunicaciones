@@ -1,10 +1,9 @@
 import { Dropbox } from "dropbox";
 
 const dbx = new Dropbox({
-  accessToken:  process.env.REACT_APP_DROPBOX_TOKEN,
-  fetch: fetch,
+  accessToken: process.env.REACT_APP_DROPBOX_TOKEN,
+  fetch, // usa el fetch del navegador
 });
-
 
 export const uploadFile = async (file) => {
   try {
@@ -18,15 +17,3 @@ export const uploadFile = async (file) => {
     throw error;
   }
 };
-
-export const getFiles = async () => {
-  try {
-    const response = await dbx.filesListFolder({ path: "" });
-    return response.result.entries;
-  } catch (error) {
-    console.error("Error obteniendo archivos:", error);
-    throw error;
-  }
-};
-
-export default dbx;
