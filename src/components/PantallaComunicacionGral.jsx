@@ -19,7 +19,7 @@ export default function PantallaComunicacionGral() {
       setNotas(data);
     });
 
-    return () => unsubscribe();
+    return () => unsubscribe(); 
   }, []);
 
   return (
@@ -87,6 +87,8 @@ export default function PantallaComunicacionGral() {
                 setNotaSeleccionada(null);
               }}
             />
+
+            
           </div>
         </div>
       )}
