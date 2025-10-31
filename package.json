@@ -1,6 +1,7 @@
 {
   "name": "cuaderno_proyecto",
   "version": "0.1.0",
+  "homepage": "https://github.com/LuceroValentina/Proyecto-Cuaderno-de-comunicaciones.git",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -26,7 +27,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +52,7 @@
   "devDependencies": {
     "eslint": "^8.57.1",
     "eslint-config-react-app": "^7.0.1",
+    "gh-pages": "^6.3.0",
     "react-app-rewired": "^2.2.1",
     "react-scripts": "^5.0.1",
     "tailwindcss": "^3.4.17"
