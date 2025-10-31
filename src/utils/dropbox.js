@@ -1,30 +1,41 @@
-import { Dropbox } from "dropbox";
+// dropbox.js
+const TOKEN = process.env.REACT_APP_DROPBOX_TOKEN;
 
-const dbx = new Dropbox({
-  accessToken: process.env.REACT_APP_DROPBOX_TOKEN,
-});
+if (!TOKEN) {
+  console.error("No se encontró REACT_APP_DROPBOX_TOKEN en el .env");
+}
 
-export const subirArchivo = async (archivo, nombreArchivo, carpeta = "/") => {
+export const subirArchivo = async (blob, nombreArchivo) => {
+  const url = "https://content.dropboxapi.com/2/files/upload";
+  const headers = {
+    Authorization: `Bearer ${TOKEN}`, // ✅ usar el token real
+    "Content-Type": "application/octet-stream",
+    "Dropbox-API-Arg": JSON.stringify({
+      path: `/firmas/${nombreArchivo}`, // relativo a la carpeta de tu app
+      mode: "add",
+      autorename: true,
+      mute: false,
+    }),
+  };
+
   try {
-    // Subir archivo
-    await dbx.filesUpload({
-      path: `${carpeta}${nombreArchivo}`,
-      contents: archivo,
-      mode: { ".tag": "add" },
+    const response = await fetch(url, {
+      method: "POST",
+      headers,
+      body: blob,
     });
 
-    // Crear link compartido
-    const link = await dbx.sharingCreateSharedLinkWithSettings({
-      path: `${carpeta}${nombreArchivo}`,
-      settings: { requested_visibility: "public" },
-    });
+    const textResponse = await response.text();
+    console.log("Respuesta cruda de Dropbox:", textResponse);
 
-    // Modificar link para que sea directamente la imagen
-    const urlPublica = link.url.replace("?dl=0", "?raw=1"); 
-    return urlPublica;
+    if (!response.ok) {
+      throw new Error("Error al subir el archivo: " + textResponse);
+    }
 
+    const data = JSON.parse(textResponse);
+    return data;
   } catch (error) {
-    console.error("Error subiendo a Dropbox:", error);
+    console.error("Error al subir archivo:", error);
     throw error;
   }
 };

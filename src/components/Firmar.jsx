@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { subirArchivo } from "../utils/dropbox";
 
-export default function ComponenteFirmar() {
+export default function Firmar() {
   const canvasRef = useRef(null);
   const [dibujando, setDibujando] = useState(false);
 
@@ -22,7 +22,7 @@ export default function ComponenteFirmar() {
 
   const guardarFirma = async () => {
     const canvas = canvasRef.current;
-    const dataURL = canvas.toDataURL("image/png"); // Imagen base64
+    const dataURL = canvas.toDataURL("image/png"); 
     const blob = await (await fetch(dataURL)).blob();
     await subirArchivo(blob, `firma_${Date.now()}.png`);
     alert("Firma subida a Dropbox!");
