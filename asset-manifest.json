@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/LuceroValentina/Proyecto-Cuaderno-de-comunicaciones.git/static/css/main.8b380320.css",
+    "main.js": "/LuceroValentina/Proyecto-Cuaderno-de-comunicaciones.git/static/js/main.f9599df7.js",
+    "index.html": "/LuceroValentina/Proyecto-Cuaderno-de-comunicaciones.git/index.html",
+    "main.8b380320.css.map": "/LuceroValentina/Proyecto-Cuaderno-de-comunicaciones.git/static/css/main.8b380320.css.map",
+    "main.f9599df7.js.map": "/LuceroValentina/Proyecto-Cuaderno-de-comunicaciones.git/static/js/main.f9599df7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b380320.css",
+    "static/js/main.f9599df7.js"
+  ]
+}
