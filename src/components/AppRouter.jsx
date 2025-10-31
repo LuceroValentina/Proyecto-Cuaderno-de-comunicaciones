@@ -13,7 +13,10 @@ import PantallaPrimerCuatri from './PantallaPrimerCuatri'; //TODOS
 import PantallaSegundoCuatri from './PantallaSegundoCuatri'; //TODOS
 import PantallaRetirosTaller from './PantallaRetirosTaller'; //TODOS
 import PantallaVestimenta from './PantallaVestimenta'; //TODOS
-import Firmar from './Firmar'; //TODOS
+import PantallaCaliTrabajosPracticos from './PantallaCaliTrabajosPracticos';
+import PantallaCaliEvaluaciones from './PantallaCaliEvaluaciones';
+import PantallaCaliGenerales from './PantallaCaliGenerales';
+
 
 import FormHorarioClases from './FormHorarioClases';
 import FormHorarioContraturno from './FormHorarioContraturno'; //TODOS
@@ -22,6 +25,9 @@ import FormCalificacion from './FormCalificacion'; //PROFES
 import FormRegistroFirmas from './RegistroFirmas'; //PRECES
 import FormFichaMedica from './FormFichaMedica'; //TUTORES
 import FormClaseConsultas from './FormClaseConsultas';
+import FormCaliTrabajosPracticos from './FormCaliTrabajosPracticos';
+import FormCaliEvaluaciones from './FormCaliEvaluaciones';
+import FormCaliGenerales from './FormCaliGenerales';
 
 import AltaPreceptor from './AltaPreceptor';
 import AltaAdmins from './AltaAdmin';
