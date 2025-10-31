@@ -1,7 +1,7 @@
 {
   "name": "cuaderno_proyecto",
   "version": "0.1.0",
-  "homepage": "https://github.com/LuceroValentina/Proyecto-Cuaderno-de-comunicaciones.git",
+  "homepage": "https://lucerovalentina.github.io/Proyecto-Cuaderno-de-comunicaciones",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
