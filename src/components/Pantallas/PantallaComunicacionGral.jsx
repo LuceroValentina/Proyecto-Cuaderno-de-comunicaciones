@@ -101,13 +101,6 @@ export default function PantallaComunicacionGral() {
         Crear
       </button>
 
-      <button
-        type="button"
-        onClick={() => navigate("/seccion_teoria")}
-        className="absolute top-6 left-6 bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg shadow-md transition"
-      >
-        Volver
-      </button>
     </div>
   );
 }

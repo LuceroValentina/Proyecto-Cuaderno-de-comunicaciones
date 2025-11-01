@@ -2,7 +2,7 @@ import React from "react";
 import "../../css/PantallaEducacionFisica.css";
 import "../../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext"; 
+import { useAuth } from "../../context/AuthContext";
 
 const PantallaEducacionFisica = () => {
     const navigate = useNavigate();
