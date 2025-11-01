@@ -2,61 +2,61 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
 
-import PantallaInicio from './PantallaInicio';
-import PantallaSecciones from './PantallaSecciones'; //TODOS
-import PantallaTeoria from './PantallaTeoria'; //TODOS
-import PantallaTaller from './PantallaTaller'; //TODOS
-import PantallaBiblioteca from './PantallaBiblioteca'; //TODOS
-import PantallaEducacionFisica from './PantallaEducacionFisica'; //TODOS
-import PantallaContactos from './PantallaContactos'; //TODOS
-import PantallaPrimerCuatri from './PantallaPrimerCuatri'; //TODOS
-import PantallaSegundoCuatri from './PantallaSegundoCuatri'; //TODOS
-import PantallaRetirosTaller from './PantallaRetirosTaller'; //TODOS
-import PantallaVestimenta from './PantallaVestimenta'; //TODOS
-import PantallaCaliTrabajosPracticos from './PantallaCaliTrabajosPracticos';
-import PantallaCaliEvaluaciones from './PantallaCaliEvaluaciones';
-import PantallaCaliGenerales from './PantallaCaliGenerales';
+import PantallaInicio from './Pantallas/PantallaInicio';
+import PantallaSecciones from './Pantallas/PantallaSecciones'; //TODOS
+import PantallaTeoria from './Pantallas/PantallaTeoria'; //TODOS
+import PantallaTaller from './Pantallas/PantallaTaller'; //TODOS
+import PantallaBiblioteca from './Pantallas/PantallaBiblioteca'; //TODOS
+import PantallaEducacionFisica from './Pantallas/PantallaEducacionFisica'; //TODOS
+import PantallaContactos from './Pantallas/PantallaContactos'; //TODOS
+import PantallaComunicacionGral from './Pantallas/PantallaComunicacionGral'; //TODOS
+import PantallaPrimerCuatri from './Pantallas/PantallaPrimerCuatri'; //TODOS
+import PantallaSegundoCuatri from './Pantallas/PantallaSegundoCuatri'; //TODOS
+import PantallaRetirosTaller from './Pantallas/PantallaRetirosTaller'; //TODOS
+import PantallaVestimenta from './Pantallas/PantallaVestimenta'; //TODOS
+import PantallaCaliTrabajosPracticos from './Pantallas/PantallaCaliTrabajosPracticos';
+import PantallaCaliEvaluaciones from './Pantallas/PantallaCaliEvaluaciones';
+import PantallaCaliGenerales from './Pantallas/PantallaCaliGenerales';
 
 
-import FormHorarioClases from './FormHorarioClases';
-import FormHorarioContraturno from './FormHorarioContraturno'; //TODOS
-import FormCrearNotifica from './FormCrearNotifica'; //PROFES
-import FormCalificacion from './FormCalificacion'; //PROFES
+import FormHorarioClases from './Formularios/FormHorarioClases';
+import FormHorarioContraturno from './Formularios/FormHorarioContraturno'; //TODOS
+import FormCrearNotifica from './Formularios/FormCrearNotifica'; //PROFES
+import FormCalificacion from './Formularios/FormCalificacion'; //PROFES
 import FormRegistroFirmas from './RegistroFirmas'; //PRECES
-import FormFichaMedica from './FormFichaMedica'; //TUTORES
-import FormClaseConsultas from './FormClaseConsultas';
-import FormCaliTrabajosPracticos from './FormCaliTrabajosPracticos';
-import FormCaliEvaluaciones from './FormCaliEvaluaciones';
-import FormCaliGenerales from './FormCaliGenerales';
+import FormFichaMedica from './Formularios/FormFichaMedica'; //TUTORES
+import FormClaseConsultas from './Formularios/FormClaseConsultas';
+import FormCaliTrabajosPracticos from './Formularios/FormCaliTPs';
+import FormCaliEvaluaciones from './Formularios/FormCaliEvaluaciones';
+import FormCaliGenerales from './Formularios/FormCaliGenerales';
 
-import AltaPreceptor from './AltaPreceptor';
-import AltaAdmins from './AltaAdmin';
-import AltaAlumno from './AltaAlumno'; //PRECES
-import AltaProfesor from './AltaProfesor';
-import AltaClasedeConsulta from './AltaClasedeConsulta';
-import AltaDia from './AltaDia';
-import AltaCalendario from './AltaCalendario';
+import AltaPreceptor from './Altas/AltaPreceptor';
+import AltaAdmins from './Altas/AltaAdmin';
+import AltaAlumno from './Altas/AltaAlumno'; //PRECES
+import AltaProfesor from './Altas/AltaProfesor';
+import AltaClasedeConsulta from './Altas/AltaClasedeConsulta';
+import AltaDia from './Altas/AltaDia';
+import AltaCalendario from './Altas/AltaCalendario';
 
-import ListarAlumnos from './ListarAlumnos';
-import ListarPreceptores from './ListarPreceptores';
-import ListarProfesores from './ListarProfesores';
-import ListarDia from './ListarDia';
-import ListarCalendario from './ListarCalendario';
-import ListarClasedeConsulta from './ListarClasedeConsulta';
+import ListarAlumnos from './Listas/ListarAlumnos';
+import ListarPreceptores from './Listas/ListarPreceptores';
+import ListarProfesores from './Listas/ListarProfesores';
+import ListarDia from './Listas/ListarDia';
+import ListarCalendario from './Listas/ListarCalendario';
+import ListarClasedeConsulta from './Listas/ListarClasedeConsulta';
 
-import DetalleAlumnos from './DetalleAlumnos';
-import DetallePreceptores from './DetallePreceptores';
-import DetalleProfesores from './DetalleProfesores';
-import DetalleCalendario from './DetalleCalendario';
-import DetalleMesa from './DetalleMesa';
-import DetalleMaterias from './DetalleMaterias';
-import DetalleAreas from './DetalleAreas';
-import DetalleClasedeConsulta from './DetalleClasedeConsulta';
+import DetalleAlumnos from './Detalles/DetalleAlumnos';
+import DetallePreceptores from './Detalles/DetallePreceptores';
+import DetalleProfesores from './Detalles/DetalleProfesores';
+import DetalleCalendario from './Detalles/DetalleCalendario';
+import DetalleMesa from './Detalles/DetalleMesa';
+import DetalleMaterias from './Detalles/DetalleMaterias';
+import DetalleAreas from './Detalles/DetalleAreas';
+import DetalleClasedeConsulta from './Detalles/DetalleClasedeConsulta';
 
 import DashboardAdmin from './DashboardAdmin';
 import ResumenInasistencias from './ResumenInasistencias'; //TODOS
 import Calendario from './Calendario'; //TODOS
-import PantallaComunicacionGral from './PantallaComunicacionGral'; //TODOS
 
 
 const ROLES = ["administradores", "preceptores", "profesores", "alumnos", "tutores"];
@@ -137,11 +137,13 @@ const AppRouter = () => {
           <PantallaComunicacionGral/>
         </ProtectedRoute>
       }/>
-        <Route path="/firmar" element={
+      {/*
+      <Route path="/firmar" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
-          <Firmar/>
+          <Firmar />
         </ProtectedRoute>
-      }/>
+      }/> 
+      */}
 
 
 
