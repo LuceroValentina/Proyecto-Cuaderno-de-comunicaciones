@@ -16,13 +16,13 @@ const PantallaVestimenta = () => {
                 <h2 >Taller</h2>
                 <p className="texto-taller">Guardapolvo azul obligatorio.</p>
                 <p className="texto-taller">Además los alumnos no podrán asistir con zapatos abiertos, o pantalón corto.</p>
-                <img src="/imagenes/guardapolvo-azul.png" className="img-vestimenta" alt="Guardapolvo azul taller" />
+                <img src={`${process.env.PUBLIC_URL}/imagenes/guardapolvo-azul.png`} className="img-vestimenta" alt="Guardapolvo azul taller" />
             </div>
             <div className="vestimenta-teoria">
                 <h2>Teoría</h2>
                 <p className="texto-teoria">Remera blanca, optativa azul o gris.</p>
                 <p className="texto-teoria">Jean azul o jogging azul.</p>
-                <img src="/imagenes/ropa.png" className="img-vestimenta" alt="" />
+                <img src={`${process.env.PUBLIC_URL}/imagenes/ropa.png`} className="img-vestimenta" alt="" />
             </div>
         </div>
     );

@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 
 const contacts = [
-  { icon: "/imagenes/icono_facebook.png", label: 'EPET20', link: 'https://www.facebook.com/epet20' },
-  { icon: "/imagenes/icono_web.png", label: 'www.epet20.edu.ar', link: 'http://www.epet20.edu.ar' },
-  { icon: "/imagenes/icono_instagram.png", label: '@epet20educacion', link: 'https://www.instagram.com/epet20educacion' },
-  { icon: "/imagenes/icono_ubicacion.png", label: 'Lanín 2020', link: 'https://maps.app.goo.gl/Sxcbmk3Qy5Cx5vhC6' },
-  { icon: "/imagenes/icono_telefono.png", label: '2994478052 (Secretaría) - 2996263648 (Taller)' }
+  { icon: `${process.env.PUBLIC_URL}/imagenes/icono_facebook.png`, label: 'EPET20', link: 'https://www.facebook.com/epet20' },
+  { icon: `${process.env.PUBLIC_URL}/imagenes/icono_web.png`, label: 'www.epet20.edu.ar', link: 'http://www.epet20.edu.ar' },
+  { icon: `${process.env.PUBLIC_URL}/imagenes/icono_instagram.png`, label: '@epet20educacion', link: 'https://www.instagram.com/epet20educacion' },
+  { icon: `${process.env.PUBLIC_URL}/imagenes/icono_ubicacion.png`, label: 'Lanín 2020', link: 'https://maps.app.goo.gl/Sxcbmk3Qy5Cx5vhC6' },
+  { icon: `${process.env.PUBLIC_URL}/imagenes/icono_telefono.png`, label: '2994478052 (Secretaría) - 2996263648 (Taller)' }
+  
 ];
 const PantallaContactos = () => {
   const navigate = useNavigate();

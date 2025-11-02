@@ -17,25 +17,25 @@ const PantallaTeoria = () => {
     const { userData } = useAuth();
     const rol = userData?.rol;
     const alumno = {
-        ciclo: "basico", 
+        ciclo: "basico",
     };
 
     const renderContenido = () => {
         switch (contenido) {
-        case "/comunicaciongeneral":
-            return <PantallaComunicacionGral />;
-        case "/registrofirmas":
-            return <RegistroFirmas />;
-        case "/vestimenta":
-            return <PantallaVestimenta />;
-        case "/inasistencias":
-            return <ResumenInasistencias />;
-        case "/primercuatri":
-            return <PantallaPrimerCuatri />;
-        case "/segundocuatri":
-            return <PantallaSegundoCuatri />;
-        default:
-            return <p style={{ textAlign: "center", color: "#001366" }}>Seleccioná una sección del menú</p>;
+            case "/comunicaciongeneral":
+                return <PantallaComunicacionGral />;
+            case "/registrofirmas":
+                return <RegistroFirmas />;
+            case "/vestimenta":
+                return <PantallaVestimenta />;
+            case "/inasistencias":
+                return <ResumenInasistencias />;
+            case "/primercuatri":
+                return <PantallaPrimerCuatri />;
+            case "/segundocuatri":
+                return <PantallaSegundoCuatri />;
+            default:
+                return <p style={{ textAlign: "center", color: "#001366" }}>Seleccioná una sección del menú</p>;
         }
     };
 
@@ -43,7 +43,7 @@ const PantallaTeoria = () => {
         <div className="containerTeoria">
             <h1 className="titulo">Teoría</h1>
             <button className="boton-abrir" onClick={() => setActivo(!activo)}>
-                <img src="/imagenes/flecha_menuabrir.png" alt="" />
+                <img src={`${process.env.PUBLIC_URL}/imagenes/flecha_menuabrir.png`} alt="flecha para abrir" />
             </button>
             <div className={`container-menu ${activo ? "activo" : ""}`}>
                 <div className="container-items">
@@ -76,7 +76,7 @@ const PantallaTeoria = () => {
                         </li>
                         <li className="lista">
                             <button onClick={() => setContenido("/inasistencias")} className="item">
-                                Inasistencias 
+                                Inasistencias
                             </button> {/* que no todos vean el formulario */}
                         </li>
                         <li className="container-submenu">Resumen Cuatrimestre
@@ -91,18 +91,18 @@ const PantallaTeoria = () => {
                                         Segundo
                                     </button>
                                 </li>
-                                
+
                             </ul>
                         </li>
                         <li className="container-submenu">Calificaciones
                             <ul className="submenu">
-                                <li><a href="#" className="item">Evaluaciones</a></li>       
+                                <li><a href="#" className="item">Evaluaciones</a></li>
                                 {alumno.ciclo === "basico" && (
                                     <>
                                         <li><a href="#" className="item">Láminas</a></li>
                                     </>
                                 )}
-                                
+
                             </ul>
                         </li>
                         <li className="container-submenu">Periodos Exámenes
@@ -121,14 +121,14 @@ const PantallaTeoria = () => {
                     </ul>
                 </div>
                 <button className="boton-cerrar" onClick={() => setActivo(!activo)}>
-                    <img src="/imagenes/flecha_menucerrar.png" alt="" />
+                <img src={`${process.env.PUBLIC_URL}/imagenes/flecha_menucerrar.png`} alt="flecha para cerrar" />
                 </button>
             </div>
             {rol === "profesor" || "alumnos" && (
                 <>
                     <div className="botonesClaros">
                         <button className="botonClaro">Crear</button>
-                        <button className="botonClaro"  onClick={() => navigate("/firmar")}>Firmar</button>
+                        <button className="botonClaro" onClick={() => navigate("/firmar")}>Firmar</button>
                     </div>
                 </>
             )}

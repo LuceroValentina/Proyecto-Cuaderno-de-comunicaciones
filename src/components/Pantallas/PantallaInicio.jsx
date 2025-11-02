@@ -5,14 +5,14 @@ import "../../css/Elementos.css";
 import { useAuth } from "../../context/AuthContext";
 
 const PantallaInicio = () => {
-  const { loginWithGoogle, loginWithEmail, usuario } = useAuth(); 
+  const { loginWithGoogle, loginWithEmail, usuario } = useAuth();
   const [credenciales, setCredenciales] = useState({ usuario: "", contrasena: "" });
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     if (usuario) {
-      navigate("/secciones"); 
+      navigate("/secciones");
     }
   }, [usuario, navigate]);
 
@@ -20,7 +20,7 @@ const PantallaInicio = () => {
     setError("");
     try {
       await loginWithGoogle();
-      navigate("/secciones"); 
+      navigate("/secciones");
     } catch (err) {
       console.error("Google Sign-In error:", err?.code, err?.message);
       setError("Error al iniciar sesión con Google");
@@ -50,11 +50,8 @@ const PantallaInicio = () => {
 
       <div className="contenido">
         <button className="btn_google" onClick={handleGoogleLogin}>
-          <img
-            className="logo"
-            src="/imagenes/logoGoogle.png"
-            alt="Logo google"
-          />
+          <img src={`${process.env.PUBLIC_URL}/imagenes/logoGoogle.png`} alt="Logo Google" className="logo" />
+
           Continuar con Google
         </button>
       </div>
