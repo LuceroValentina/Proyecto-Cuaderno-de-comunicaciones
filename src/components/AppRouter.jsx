@@ -57,6 +57,7 @@ import DetalleClasedeConsulta from './Detalles/DetalleClasedeConsulta';
 import DashboardAdmin from './DashboardAdmin';
 import ResumenInasistencias from './ResumenInasistencias'; //TODOS
 import Calendario from './Calendario'; //TODOS
+import PantallaRetirosTeoria from './Pantallas/PantallaRetirosTeoria';
 
 
 const ROLES = ["administradores", "preceptores", "profesores", "alumnos", "tutores"];
@@ -271,6 +272,11 @@ const AppRouter = () => {
         </ProtectedRoute>
       }/>
 
+      <Route path="/retirosteoria" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <PantallaRetirosTeoria />
+        </ProtectedRoute>
+      }/>
       {/* Fallback */}
       <Route path="*" element={<Navigate to="/" />} />
 

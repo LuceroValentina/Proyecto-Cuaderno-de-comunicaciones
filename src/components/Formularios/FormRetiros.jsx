@@ -66,7 +66,7 @@ const FormRetiros = ({ onAgregar }) => {
       onSubmit={handleSubmit}
     >
       <h2 className="text-xl font-semibold text-blue-800 text-center mb-2">
-        Registrar Retiro de Taller
+        Registrar Retiros
       </h2>
 
       {error && (
