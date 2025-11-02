@@ -124,14 +124,6 @@ const PantallaTeoria = () => {
                 <img src={`${process.env.PUBLIC_URL}/imagenes/flecha_menucerrar.png`} alt="flecha para cerrar" />
                 </button>
             </div>
-            {rol === "profesor" || "alumnos" && (
-                <>
-                    <div className="botonesClaros">
-                        <button className="botonClaro">Crear</button>
-                        <button className="botonClaro" onClick={() => navigate("/firmar")}>Firmar</button>
-                    </div>
-                </>
-            )}
 
             <div className="contenido-principal">{renderContenido()}</div>
 

@@ -1,11 +1,21 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { db } from "../../firebase/firebase";
-import { collection, onSnapshot, query, orderBy, doc, setDoc } from "firebase/firestore";
-import Firmar from "../Firmar";
+import React, { useEffect, useState } from "react"; 
+import { useNavigate } from "react-router-dom";    
+import { useAuth } from "../../context/AuthContext"; 
+import { db } from "../../firebase/firebase";       
+import {
+  collection,
+  query,
+  orderBy,
+  onSnapshot,
+  doc,
+  setDoc
+} from "firebase/firestore";                       
+import Firmar from "../Firmar";                     
+
 
 export default function PantallaComunicacionGral() {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [notas, setNotas] = useState([]);
   const [notaSeleccionada, setNotaSeleccionada] = useState(null);
 
@@ -19,8 +29,25 @@ export default function PantallaComunicacionGral() {
       setNotas(data);
     });
 
-    return () => unsubscribe(); 
+    return () => unsubscribe();
   }, []);
+
+  const handleCrear = () => {
+    if (user?.rol === "alumno") {
+      alert("No tienes permiso para crear notas");
+      return;
+    }
+    navigate("/crearnota");
+  };
+
+
+  const handleFirmarNota = (nota) => {
+    if (user?.rol === "alumno") {
+      alert("No tienes permiso para firmar esta nota");
+      return;
+    }
+    setNotaSeleccionada(nota);
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center py-10 px-4 relative">
@@ -51,7 +78,7 @@ export default function PantallaComunicacionGral() {
               ) : (
                 <button
                   type="button"
-                  onClick={() => setNotaSeleccionada(nota)}
+                  onClick={() => handleFirmarNota(nota)}
                   className="mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
                 >
                   Firmar
@@ -87,20 +114,20 @@ export default function PantallaComunicacionGral() {
                 setNotaSeleccionada(null);
               }}
             />
-
-            
           </div>
         </div>
       )}
 
-      <button
-        type="button"
-        onClick={() => navigate("/crearnota")}
-        className="absolute bottom-6 right-6 bg-white text-sky-600 font-bold w-14 h-14 rounded-full shadow-md hover:bg-sky-50 transition flex items-center justify-center text-xl leading-none"
-      >
-        Crear
-      </button>
+      <div className="botonesClaros">
+        <button
+          type="button"
+          onClick={handleCrear}
+          className="absolute bottom-6 right-6 bg-white text-sky-600 font-bold w-14 h-14 rounded-full shadow-md hover:bg-sky-50 transition flex items-center justify-center text-xl leading-none"
+        >
+          Crear
+        </button>
 
+      </div>
     </div>
   );
 }
