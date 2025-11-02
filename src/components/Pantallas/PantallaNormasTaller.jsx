@@ -6,7 +6,7 @@ const PantallaNormasTaller = () => {
     const [file, setFile] = useState(null);
     const [contratos, setContratos] = useState([]);
 
-    // Cargar contratos existentes
+
     useEffect(() => {
         const fetchContratos = async () => {
             const q = query(collection(db, "contratosPedagogicos"), orderBy("creadoEn", "desc"));
