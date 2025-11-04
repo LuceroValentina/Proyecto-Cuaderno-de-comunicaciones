@@ -7,8 +7,8 @@ const DashboardAdmin = () => {
 
   return (
     <div className="dashboard-container">
-      <h1>Panel de Administración</h1>
-      <p>Seleccioná una acción para continuar:</p>
+      <h1 className="titulo-panel">Panel de Administración</h1>
+      <p className="texto-panel">Seleccioná una acción para continuar:</p>
 
       <div className="dashboard-botones">
         <div className="altas">
@@ -26,6 +26,12 @@ const DashboardAdmin = () => {
           <button onClick={() => navigate("/listartutores")} className="boton-dashboard">Listar Tutores y ver detalle</button>
         </div>
       </div>
+      <button
+        onClick={() => navigate("/secciones")}
+        className="fixed top-6 right-6 px-6 py-3 bg-[#3d6490] text-white rounded-lg shadow-lg cursor-pointer"
+      >
+        Volver
+      </button>
     </div>
   );
 };
