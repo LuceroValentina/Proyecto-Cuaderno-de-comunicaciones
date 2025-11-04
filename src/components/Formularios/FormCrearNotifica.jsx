@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { db } from "../../firebase/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function FormCrearNotifica() {
   const navigate = useNavigate();
-  const { coleccion } = useParams(); 
   const [nombre, setNombre] = useState("");
   const [fecha, setFecha] = useState("");
   const [mensaje, setMensaje] = useState("");
@@ -14,29 +13,29 @@ export default function FormCrearNotifica() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!nombre || !fecha || !mensaje) {
+    if (!nombre.trim() || !fecha.trim() || !mensaje.trim()) {
       alert("Completá todos los campos");
       return;
     }
 
+
     setLoading(true);
 
     try {
-      const docRef = await addDoc(collection(db, coleccion), {
+      const docRef = await addDoc(collection(db, "notas"), {
         nombre,
-        fecha,
-        mensaje,
-        creadoEn: new Date(),
+        fecha: new Date(fecha),
+        creadoEn: serverTimestamp(),
         firmaUrl: ""
       });
 
-      console.log(`Nota creada en ${coleccion} con ID:`, docRef.id);
+      console.log("Nota creada con ID:", docRef.id);
 
       setNombre("");
       setFecha("");
       setMensaje("");
       alert("Nota enviada correctamente");
-      navigate(-1); 
+      navigate(-1);
     } catch (error) {
       console.error("Error al enviar:", error);
       alert("Ocurrió un error al enviar la nota");
@@ -45,6 +44,7 @@ export default function FormCrearNotifica() {
     }
   };
 
+
   return (
     <div className='flex items-center justify-center min-h-screen'>
       <form
@@ -52,7 +52,7 @@ export default function FormCrearNotifica() {
         className="w-1/2 min-w-[300px] max-w-sm bg-gray-100 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4"
       >
         <h2 className="font-bold text-2xl mb-2 text-gray-800">
-          Crear nota en {coleccion.replace('notas_', '').toUpperCase()}
+          Crear nota
         </h2>
 
         <div className="space-y-4 w-60">

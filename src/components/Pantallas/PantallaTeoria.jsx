@@ -3,7 +3,7 @@ import "../../css/PantallaTeoria.css";
 import "../../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import PantallaComunicacionGral from "./PantallaComGralTeoria";
+import PantallaComunicacionGral from "./PantallaComunicacionGral";
 import PantallaPrimerCuatri from "./PantallaPrimerCuatri";
 import PantallaSegundoCuatri from "./PantallaSegundoCuatri";
 import RegistroFirmas from "../RegistroFirmas";
