@@ -177,7 +177,8 @@ const AppRouter = () => {
           <FormRegistroFirmas />
         </ProtectedRoute>
       }/>
-      <Route path="/crearnota" element={
+
+      <Route path="/crearnota/:coleccion" element={
         <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
           <FormCrearNotifica />
         </ProtectedRoute>
