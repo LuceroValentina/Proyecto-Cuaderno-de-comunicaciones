@@ -22,6 +22,7 @@ const PantallaCaliGenerales = () => {
                     <div className="celda">FECHA</div>
                     <div className="celda">TALLER</div>
                     <div className="celda">CALIFICACIÓN DEL TALLER</div>
+                    <div className="celda">FIRMA</div>
                 </div>
 
                 <div className="fila">

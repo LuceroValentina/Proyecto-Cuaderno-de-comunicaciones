@@ -22,6 +22,7 @@ const PantallaCaliEvaluaciones = () => {
                     <div className="celda">FECHA</div>
                     <div className="celda">TALLER</div>
                     <div className="celda">CALIFICACIÓN DE LA EVALUACIÓN</div>
+                    <div className="celda">FIRMA</div>
                 </div>
 
                 <div className="fila">
