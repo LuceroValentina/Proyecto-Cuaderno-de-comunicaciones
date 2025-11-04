@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import TablaComunicacionGral from "../TablaComunicacionGral";
 
 
-export default function PantallaComunicacionGral() {
+export default function PantallaComGralTeoria() {
   const navigate = useNavigate();
 
   return (

@@ -5,7 +5,7 @@ import { collection, addDoc } from "firebase/firestore";
 
 export default function FormCrearNotifica() {
   const navigate = useNavigate();
-  const { coleccion } = useParams(); // ← colección dinámica desde la URL
+  const { coleccion } = useParams(); 
   const [nombre, setNombre] = useState("");
   const [fecha, setFecha] = useState("");
   const [mensaje, setMensaje] = useState("");
@@ -22,7 +22,7 @@ export default function FormCrearNotifica() {
     setLoading(true);
 
     try {
-      const docRef = await addDoc(collection(db, coleccion), { // 👈 cambia "mensaje" por la colección dinámica
+      const docRef = await addDoc(collection(db, coleccion), {
         nombre,
         fecha,
         mensaje,
@@ -36,7 +36,7 @@ export default function FormCrearNotifica() {
       setFecha("");
       setMensaje("");
       alert("Nota enviada correctamente");
-      navigate(-1); // vuelve a la pantalla anterior
+      navigate(-1); 
     } catch (error) {
       console.error("Error al enviar:", error);
       alert("Ocurrió un error al enviar la nota");

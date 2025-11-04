@@ -9,7 +9,7 @@ import PantallaTaller from './Pantallas/PantallaTaller'; //TODOS
 import PantallaBiblioteca from './Pantallas/PantallaBiblioteca'; //TODOS
 import PantallaEducacionFisica from './Pantallas/PantallaEducacionFisica'; //TODOS
 import PantallaContactos from './Pantallas/PantallaContactos'; //TODOS
-import PantallaComunicacionGral from './Pantallas/PantallaComunicacionGral'; //TODOS
+import PantallaComGralTeoria from './Pantallas/PantallaComGralTeoria'; //TODOS
 import PantallaPrimerCuatri from './Pantallas/PantallaPrimerCuatri'; //TODOS
 import PantallaSegundoCuatri from './Pantallas/PantallaSegundoCuatri'; //TODOS
 import PantallaRetirosTaller from './Pantallas/PantallaRetirosTaller'; //TODOS
@@ -95,7 +95,7 @@ const AppRouter = () => {
       }/>
       <Route path="/comunicaciongeneral" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
-          <PantallaComunicacionGral/>
+          <PantallaComGralTeoria/>
         </ProtectedRoute>
       }/>
       <Route path="/notasprimercuatrimestre" element={
