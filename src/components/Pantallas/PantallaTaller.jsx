@@ -3,11 +3,29 @@ import "../../css/PantallaTaller.css";
 import "../../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import PantallaCaliTPs from "./PantallaCaliTPs";
+import PantallaCaliEvaluaciones from "./PantallaCaliEvaluaciones";
+import PantallaCaliGenerales from "./PantallaCaliGenerales";
 
 const PantallaTaller = () => {
     const navigate = useNavigate();
-     const { userData } = useAuth();
-        const rol = userData?.rol;
+    const { userData } = useAuth();
+    const rol = userData?.rol;
+
+    
+    const renderContenido = () => {
+        switch (contenido) {
+            case "/calificacionestps":
+                return <PantallaCaliTPs />;
+            case "/calificacionesevaluaciones":
+                return <PantallaCaliEvaluaciones />;
+            case "/calificacionestaller":
+                return <PantallaCaliGenerales />;
+            default:
+                return <p style={{ textAlign: "center", color: "#001366" }}>Seleccioná una sección del menú</p>;
+        }
+    };
+
     return (
         <div className="containerTaller">
             <div className="titulo">
@@ -19,9 +37,15 @@ const PantallaTaller = () => {
                 <button className="botonOscuro">Comunicacion General</button>
                 <button className="botonOscuro">Normas</button>
                 <button className="botonOscuro">Retiros</button>
-                <button className="botonOscuro">Calificaciones Evaluaciones</button>
-                <button className="botonOscuro">Calificaciones TPS</button>
-                <button className="botonOscuro">Calificaciones Generales</button>
+                <button onClick={() => setContenido("/calificacionesevaluaciones")} className="botonOscuro">
+                    Calificaciones Evaluaciones
+                </button>
+                <button onClick={() => setContenido("/calificacionestps")} className="botonOscuro">
+                    Calificaciones TPS
+                </button>
+                <button onClick={() => setContenido("/calificacionestaller")} className="botonOscuro">
+                    Calificaciones Generales
+                </button>
             </div>
 
             {rol === "profesores" || "alumnos" && (

@@ -14,7 +14,7 @@ import PantallaPrimerCuatri from './Pantallas/PantallaPrimerCuatri'; //TODOS
 import PantallaSegundoCuatri from './Pantallas/PantallaSegundoCuatri'; //TODOS
 import PantallaRetirosTaller from './Pantallas/PantallaRetirosTaller'; //TODOS
 import PantallaVestimenta from './Pantallas/PantallaVestimenta'; //TODOS
-import PantallaCaliTrabajosPracticos from './Pantallas/PantallaCaliTrabajosPracticos';
+import PantallaCaliTPs from './Pantallas/PantallaCaliTPs';
 import PantallaCaliEvaluaciones from './Pantallas/PantallaCaliEvaluaciones';
 import PantallaCaliGenerales from './Pantallas/PantallaCaliGenerales';
 
@@ -26,9 +26,9 @@ import FormCalificacion from './Formularios/FormCalificacion'; //PROFES
 import FormRegistroFirmas from './RegistroFirmas'; //PRECES
 import FormFichaMedica from './Formularios/FormFichaMedica'; //TUTORES
 import FormClaseConsultas from './Formularios/FormClaseConsultas';
-import FormCaliTrabajosPracticos from './Formularios/FormCaliTPs';
-import FormCaliEvaluaciones from './Formularios/FormCaliEvaluaciones';
-import FormCaliGenerales from './Formularios/FormCaliGenerales';
+import FormCaliTPs from './Formularios/FormCaliTPs'; //PROFES
+import FormCaliEvaluaciones from './Formularios/FormCaliEvaluaciones'; //PROFES
+import FormCaliGenerales from './Formularios/FormCaliGenerales'; //PROFES
 
 import AltaPreceptor from './Altas/AltaPreceptor';
 import AltaAdmins from './Altas/AltaAdmin';
@@ -93,9 +93,9 @@ const AppRouter = () => {
           <PantallaEducacionFisica />
         </ProtectedRoute>
       }/>
-      <Route path="/horarioscontraturnos" element={
+      <Route path="/comunicaciongeneral" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
-          <FormHorarioContraturno />
+          <PantallaComunicacionGral/>
         </ProtectedRoute>
       }/>
       <Route path="/notasprimercuatrimestre" element={
@@ -123,6 +123,27 @@ const AppRouter = () => {
           <PantallaVestimenta />
         </ProtectedRoute>
       }/>
+      <Route path="/calificacionestps" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaCaliTPs />
+        </ProtectedRoute>
+      }/>
+      <Route path="/calificacionesevaluaciones" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaCaliEvaluaciones />
+        </ProtectedRoute>
+      }/>
+      <Route path="/calificacionestaller" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaCaliGenerales />
+        </ProtectedRoute>
+      }/>
+
+      <Route path="/horarioscontraturnos" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <FormHorarioContraturno />
+        </ProtectedRoute>
+      }/>
       <Route path="/resumeninasistencias" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
           <ResumenInasistencias />
@@ -131,11 +152,6 @@ const AppRouter = () => {
       <Route path="/calendario" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
           <Calendario />
-        </ProtectedRoute>
-      }/>
-      <Route path="/comunicaciongeneral" element={
-        <ProtectedRoute rolesPermitidos={ROLES}>
-          <PantallaComunicacionGral/>
         </ProtectedRoute>
       }/>
       {/*
@@ -150,9 +166,45 @@ const AppRouter = () => {
 
 
       {/* Rutas específicas según rol */}
+      <Route path="/retirosteoria" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <PantallaRetirosTeoria />
+        </ProtectedRoute>
+      }/>
+
       <Route path="/registrofirmas" element={
         <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
           <FormRegistroFirmas />
+        </ProtectedRoute>
+      }/>
+      <Route path="/crearnota" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
+          <FormCrearNotifica />
+        </ProtectedRoute>
+      }/>
+      <Route path="/subircalificaciones" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
+          <FormCalificacion />
+        </ProtectedRoute>
+      }/>
+      <Route path="/subircalistpstaller" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
+          <FormCaliTPs />
+        </ProtectedRoute>
+      }/>
+      <Route path="/subircalievtaller" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
+          <FormCaliEvaluaciones />
+        </ProtectedRoute>
+      }/>
+      <Route path="/subircalisgenerales" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
+          <FormCaliGenerales />
+        </ProtectedRoute>
+      }/>
+      <Route path="/fichamedica" element={
+        <ProtectedRoute rolesPermitidos={["adminitradores","tutores"]}>
+          <FormFichaMedica />
         </ProtectedRoute>
       }/>
 
@@ -169,11 +221,6 @@ const AppRouter = () => {
       <Route path="/altaadmin" element={
         <ProtectedRoute rolesPermitidos={["administradores"]}>
           <AltaAdmins />
-        </ProtectedRoute>
-      }/>
-      <Route path="/crearnota" element={
-        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
-          <FormCrearNotifica />
         </ProtectedRoute>
       }/>
       <Route path="/altaprofesor" element={
@@ -196,17 +243,6 @@ const AppRouter = () => {
           <AltaCalendario />
         </ProtectedRoute>
       }/>
-      <Route path="/subircalificaciones" element={
-        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
-          <FormCalificacion />
-        </ProtectedRoute>
-      }/>
-     
-      <Route path="/fichamedica" element={
-        <ProtectedRoute rolesPermitidos={["adminitradores","tutores"]}>
-          <FormFichaMedica />
-        </ProtectedRoute>
-      }/>
 
       <Route path="/listaralumno" element={
         <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
@@ -221,6 +257,21 @@ const AppRouter = () => {
       <Route path="/listarpreceptor" element={
         <ProtectedRoute rolesPermitidos={["administradores"]}>
           <ListarPreceptores />
+        </ProtectedRoute>
+      }/>
+      <Route path="/listardia" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <ListarDia />
+        </ProtectedRoute>
+      }/>
+      <Route path="/listarcalendario" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <ListarCalendario />
+        </ProtectedRoute>
+      }/>
+      <Route path="/listarclasedeconsulta" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
+          <ListarClasedeConsulta />
         </ProtectedRoute>
       }/>
 
@@ -250,33 +301,12 @@ const AppRouter = () => {
         </ProtectedRoute>
       }/>
 
-      <Route path="/listardia" element={
-        <ProtectedRoute rolesPermitidos={["administradores"]}>
-          <ListarDia />
-        </ProtectedRoute>
-      }/>
-      <Route path="/listarcalendario" element={
-        <ProtectedRoute rolesPermitidos={["administradores"]}>
-          <ListarCalendario />
-        </ProtectedRoute>
-      }/>
-      <Route path="/listarclasedeconsulta" element={
-        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
-          <ListarClasedeConsulta />
-        </ProtectedRoute>
-      }/>
-
       <Route path="/dashboard-admin" element={
         <ProtectedRoute rolesPermitidos={["administradores"]}>
           <DashboardAdmin />
         </ProtectedRoute>
       }/>
 
-      <Route path="/retirosteoria" element={
-        <ProtectedRoute rolesPermitidos={["administradores"]}>
-          <PantallaRetirosTeoria />
-        </ProtectedRoute>
-      }/>
       {/* Fallback */}
       <Route path="*" element={<Navigate to="/" />} />
 
