@@ -6,7 +6,7 @@ export default function PantallaComGralTeoria() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col items-center py-10 px-4 relative">
+    <div className="min-h-screen flex flex-col items-center py-10 px-4">
       <TablaComunicacionGral coleccion="notas_teoria" />
 
       <button

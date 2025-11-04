@@ -46,7 +46,7 @@ function RegistroFirmas() {
   };
 
   return (
-    <div className="contenedor flex flex-col items-center justify-center min-h-screen relative">
+    <div className="contenedor flex flex-col items-center justify-center min-h-screen">
       <div className="Registrodefirmas w-full max-w-md rounded-xl shadow-lg p-6">
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <h2 className="text-2xl font-bold text-center text-white mb-4">

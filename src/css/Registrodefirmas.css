@@ -1,10 +1,10 @@
-
-form, h2 {
-  margin: 0;
-  padding: 0;
+form,
+h2 {
+    margin: 0;
+    padding: 0;
 }
 
-.contenedor{
+.contenedor {
     display: flex;
     width: 100%;
     height: 100vh;
@@ -13,61 +13,61 @@ form, h2 {
 }
 
 .Registrodefirmas {
-  background-color: #180f7d; /* azul sólido */
-  padding: 40px 35px;
-  border-radius: 16px;
-  width: 360px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  color: #fff;
+    background-color: #180f7d;
+    /* azul sólido */
+    padding: 40px 35px;
+    border-radius: 16px;
+    width: 360px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    color: #fff;
 }
 
 .Registrodefirmas h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 24px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
 }
 
 .Registro {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .Registro label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
 }
 
 .Registro input {
-  width: 100%;
-  padding: 12px 14px;
-  border: none;
-  border-radius: 8px;
-  background-color: #ffffff;
-  color: #333;
-  font-size: 15px;
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 15px;
 }
 
 .Registro input::placeholder {
-  color: #aaa;
+    color: #aaa;
 }
 
 .boton_enviar {
-  width: 100%;
-  padding-top: 20px;
-  background-color: #3d6490; /* color del botón */
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s ease;
+    width: 100%;
+    padding-top: 20px;
+    background-color: #3d6490;
+    /* color del botón */
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
 }
 
 .Registrodefirmas * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
-
