@@ -4,38 +4,38 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../firebase/firebase';
 import { Box, Paper, Typography } from "@mui/material";
 
-const DetalleProfesores = () => {
+const DetalleTutores = () => {
     const { id } = useParams();
     const correo = decodeURIComponent(id);
-    const [profesor, setProfesor] = useState(null);
+    const [tutor, setTutor] = useState(null);
     const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
-        const fetchProfesor = async () => {
+        const fetchTutor = async () => {
             try {
-                const docRef = doc(db, "profesores", correo);
+                const docRef = doc(db, "tutores", correo);
                 const docSnap = await getDoc(docRef);
 
 
                 if (docSnap.exists()) {
-                    setProfesor({ id: docSnap.id, ...docSnap.data() });
+                    setTutor({ id: docSnap.id, ...docSnap.data() });
                 } else {
-                    setProfesor(null);
+                    setTutor(null);
                 }
             } catch (error) {
-                console.error("Error obteniendo profesores:", error);
+                console.error("Error obteniendo tutor:", error);
             } finally {
                 setLoading(false);
             }
 
         };
 
-        fetchProfesor();
+        fetchTutor();
     }, [correo]);
 
     if (loading) return <h2>Cargando...</h2>
-    if (!profesor) return <h2>No se encontró el profesor</h2>
+    if (!tutor) return <h2>No se encontró el tutor</h2>
 
     return (
         <Box
@@ -57,20 +57,18 @@ const DetalleProfesores = () => {
                 }}
             >
                 <Typography textAlign="center" variant="h6" gutterBottom>
-                    Detalle del profesor
+                    Detalle del tutor
                 </Typography>
-                <Typography>ID: {profesor.correo}</Typography>
-                <Typography>Nombre: {profesor.nombre}</Typography>
-                <Typography>Apellido: {profesor.apellido}</Typography>
-                <Typography>DNI: {profesor.dni}</Typography>
-                <Typography>Teléfono: {profesor.telefono}</Typography>
-                <Typography>Dirección: {profesor.direccion}</Typography>
-                <Typography>Género: {profesor.genero}</Typography>
-                <Typography>Materia: {profesor.materia}</Typography>
-                <Typography>Curso: {profesor.curso}</Typography>
+                <Typography>ID: {tutor.id}</Typography>
+                <Typography>Nombre: {tutor.nombre}</Typography>
+                <Typography>Apellido: {tutor.apellido}</Typography>
+                <Typography>Teléfono: {tutor.telefono}</Typography>
+                <Typography>Dirección: {tutor.direccion}</Typography>
+                <Typography>Parentesco: {tutor.parentesco}</Typography>
+
             </Paper>
         </Box>
     );
 };
 
-export default DetalleProfesores;
+export default DetalleTutores;

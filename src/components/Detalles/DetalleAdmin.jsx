@@ -59,17 +59,14 @@ const DetalleAdmins = () => {
                 <Typography textAlign="center" variant="h6" gutterBottom>
                     Detalle del admin
                 </Typography>
-
                 <Typography>ID: {admin.id}</Typography>
                 <Typography>Nombre: {admin.nombre}</Typography>
                 <Typography>Apellido: {admin.apellido}</Typography>
                 <Typography>DNI: {admin.dni}</Typography>
                 <Typography>Teléfono: {admin.telefono}</Typography>
                 <Typography>Dirección: {admin.direccion}</Typography>
-                <Typography>Género: {admin.genero}</Typography>
-                <Typography>Ciclo: {admin.ciclo}</Typography>
-                <Typography>Turno: {admin.turno}</Typography>
-                <Typography>Curso: {admin.curso}</Typography>
+                <Typography>Rol: {admin.rol}</Typography>
+            
             </Paper>
         </Box>
     );

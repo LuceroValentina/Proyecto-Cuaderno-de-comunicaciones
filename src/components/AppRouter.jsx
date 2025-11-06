@@ -37,6 +37,8 @@ import AltaProfesor from './Altas/AltaProfesor';
 import AltaClasedeConsulta from './Altas/AltaClasedeConsulta';
 import AltaDia from './Altas/AltaDia';
 import AltaCalendario from './Altas/AltaCalendario';
+import AltaTutor from './Altas/AltaTutor';
+
 
 import ListarAlumnos from './Listas/ListarAlumnos';
 import ListarPreceptores from './Listas/ListarPreceptores';
@@ -44,6 +46,8 @@ import ListarProfesores from './Listas/ListarProfesores';
 import ListarDia from './Listas/ListarDia';
 import ListarCalendario from './Listas/ListarCalendario';
 import ListarClasedeConsulta from './Listas/ListarClasedeConsulta';
+import ListarTutores from './Listas/ListarTutores';
+
 
 import DetalleAlumnos from './Detalles/DetalleAlumnos';
 import DetallePreceptores from './Detalles/DetallePreceptores';
@@ -53,11 +57,15 @@ import DetalleMesa from './Detalles/DetalleMesa';
 import DetalleMaterias from './Detalles/DetalleMaterias';
 import DetalleAreas from './Detalles/DetalleAreas';
 import DetalleClasedeConsulta from './Detalles/DetalleClasedeConsulta';
+import DetalleAdmin from './Detalles/DetalleAdmin';
+
 
 import DashboardAdmin from './DashboardAdmin';
 import ResumenInasistencias from './ResumenInasistencias'; //TODOS
 import Calendario from './Calendario'; //TODOS
 import PantallaRetirosTeoria from './Pantallas/PantallaRetirosTeoria';
+import DetalleTutores from './Detalles/DetalleTutor';
+import ListarAdmins from './Listas/ListarAdmin';
 
 
 const ROLES = ["administradores", "preceptores", "profesores", "alumnos", "tutores"];
@@ -214,6 +222,12 @@ const AppRouter = () => {
           <AltaPreceptor />
         </ProtectedRoute>
       }/>
+       
+       <Route path="/altatutor" element={
+        <ProtectedRoute rolesPermitidos={["administradores"]}>
+          <AltaTutor />
+        </ProtectedRoute>
+      }/>
       <Route path="/altaalumno" element={
         <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
           <AltaAlumno />
@@ -250,6 +264,11 @@ const AppRouter = () => {
           <ListarAlumnos />
         </ProtectedRoute>
       }/>
+      <Route path="/listartutor" element={
+        <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
+          <ListarTutores />
+        </ProtectedRoute>
+      }/>
       <Route path="/listarprofesor" element={
         <ProtectedRoute rolesPermitidos={["administradores"]}>
           <ListarProfesores />
@@ -275,10 +294,25 @@ const AppRouter = () => {
           <ListarClasedeConsulta />
         </ProtectedRoute>
       }/>
+       <Route path="/listaradmin" element={
+        <ProtectedRoute rolesPermitidos={["administradores","profesores"]}>
+          <ListarAdmins />
+        </ProtectedRoute>
+      }/>
 
       <Route path="/detallealumno/:id" element={
         <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
           <DetalleAlumnos />
+        </ProtectedRoute>
+      }/>
+      <Route path="/detalleadmin/:id" element={
+        <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
+          <DetalleAdmin />
+        </ProtectedRoute>
+      }/>
+      <Route path="/detalletutor/:id" element={
+        <ProtectedRoute rolesPermitidos={["administradores","preceptores"]}>
+          <DetalleTutores />
         </ProtectedRoute>
       }/>
       <Route path="/detallepreceptor/:id" element={
