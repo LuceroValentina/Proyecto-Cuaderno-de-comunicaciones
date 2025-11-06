@@ -1,11 +1,31 @@
+/**
+ * @file PantallaEditarAlumno.jsx
+ * @description Componente que representa la pantalla de gestión de alumnos.
+ * Permite ingresar el DNI de un alumno para buscarlo y ofrece opciones para agregar, modificar
+ * o eliminar registros. También muestra una tabla con datos de ejemplo y un botón para volver 
+ * al menú principal de secciones.
+ */
 import React from "react";
 import "../../css/pantallaEditar.css";
 import "../../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 
 
+/**
+ * @component PantallaEditarAlumno
+ * @description Renderiza la interfaz para editar información de alumnos.
+ * Incluye un campo de búsqueda, botones de acciones CRUD (Agregar, Modificar, Eliminar)
+ * y una tabla con datos simulados de alumnos.
+ * 
+ * @returns {JSX.Element} Estructura visual de la pantalla de edición de alumnos.
+ */
 const PantallaEditarAlumno = () => {
-        const navigate = useNavigate();
+    /**
+     * @constant navigate
+     * @type {Function}
+     * @description Hook de React Router utilizado para navegar programáticamente entre rutas.
+     */
+    const navigate = useNavigate();
 
     return (
         <div className="containerEditar">

@@ -1,11 +1,36 @@
+/**
+ * @file PantallaEducacionFisica.jsx
+ * @description Componente que representa la pantalla principal de la sección "Educación Física".
+ * Muestra información general, normas y ficha médica. Si el usuario tiene rol de "profesor",
+ * se habilitan opciones adicionales como "Crear" y "Firmar".
+ */
 import React from "react";
 import "../../css/PantallaEducacionFisica.css";
 import "../../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
+/**
+ * @component PantallaEducacionFisica
+ * @description Renderiza la pantalla de la sección de Educación Física,
+ * mostrando opciones según el rol del usuario autenticado.
+ * Los profesores disponen de botones adicionales para crear o firmar registros.
+ * 
+ * @returns {JSX.Element} Estructura visual de la pantalla de Educación Física.
+ */
 const PantallaEducacionFisica = () => {
+    /**
+     * @constant navigate
+     * @type {Function}
+     * @description Hook de React Router que permite la navegación programática entre rutas.
+     */
     const navigate = useNavigate();
+    /**
+     * @constant rol
+     * @type {string}
+     * @description Rol actual del usuario obtenido desde el contexto de autenticación.
+     * Define los permisos y opciones visibles en la interfaz.
+     */
     const { rol } = useAuth(); 
 
     return (

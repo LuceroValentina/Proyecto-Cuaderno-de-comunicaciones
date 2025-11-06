@@ -1,9 +1,24 @@
+/**
+ * @file PantallaContactos.jsx
+ * @description Componente que muestra la pantalla de "Contactos" de la institución.
+ * Presenta una lista de medios de comunicación oficiales, con íconos y enlaces hacia redes sociales, 
+ * sitio web, ubicación y números telefónicos.
+ */
 import React from 'react';
 import "../../css/Contactos.css";
 import "../../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 
-
+/**
+ * @constant contacts
+ * @type {Array<Object>}
+ * @description Arreglo de objetos que contiene la información de contacto de la institución.
+ * Cada objeto puede incluir un ícono, un texto descriptivo y opcionalmente un enlace externo.
+ * 
+ * @property {string} icon - Ruta del ícono representativo del medio de contacto.
+ * @property {string} label - Texto visible que describe el medio de contacto.
+ * @property {string} [link] - Enlace URL opcional que se abre en una nueva pestaña.
+ */
 const contacts = [
   { icon: `${process.env.PUBLIC_URL}/imagenes/icono_facebook.png`, label: 'EPET20', link: 'https://www.facebook.com/epet20' },
   { icon: `${process.env.PUBLIC_URL}/imagenes/icono_web.png`, label: 'www.epet20.edu.ar', link: 'http://www.epet20.edu.ar' },
@@ -12,7 +27,21 @@ const contacts = [
   { icon: `${process.env.PUBLIC_URL}/imagenes/icono_telefono.png`, label: '2994478052 (Secretaría) - 2996263648 (Taller)' }
   
 ];
+
+/**
+ * @component PantallaContactos
+ * @description Renderiza la pantalla de contactos de la institución educativa.
+ * Muestra los diferentes medios de contacto (redes, web, ubicación y teléfono)
+ * y un botón para regresar al menú de secciones.
+ * 
+ * @returns {JSX.Element} Estructura visual de la pantalla de contactos.
+ */
 const PantallaContactos = () => {
+  /**
+   * @constant navigate
+   * @type {Function}
+   * @description Hook de React Router para la navegación programática entre rutas.
+   */
   const navigate = useNavigate();
 return(
   <div className="seccion-contactos">

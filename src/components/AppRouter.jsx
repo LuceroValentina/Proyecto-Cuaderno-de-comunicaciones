@@ -1,7 +1,13 @@
+/**
+ * @file AppRouter.jsx
+ * @description Archivo que define todas las rutas de la aplicación. 
+ * Incluye la protección de rutas según los roles de usuario mediante el componente ProtectedRoute.
+ */
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
 
+//Import de pantallas generales.
 import PantallaInicio from './Pantallas/PantallaInicio';
 import PantallaSecciones from './Pantallas/PantallaSecciones'; //TODOS
 import PantallaTeoria from './Pantallas/PantallaTeoria'; //TODOS
@@ -19,7 +25,7 @@ import PantallaCaliEvaluaciones from './Pantallas/PantallaCaliEvaluaciones';
 import PantallaCaliGenerales from './Pantallas/PantallaCaliGenerales';
 import PantallaNormasTaller from './Pantallas/PantallaNormasTaller';
 
-
+//Import de los formularios generales.
 import FormHorarioClases from './Formularios/FormHorarioClases';
 import FormHorarioContraturno from './Formularios/FormHorarioContraturno'; //TODOS
 import FormCrearNotifica from './Formularios/FormCrearNotifica'; //PROFES
@@ -31,6 +37,7 @@ import FormCaliTPs from './Formularios/FormCaliTPs'; //PROFES
 import FormCaliEvaluaciones from './Formularios/FormCaliEvaluaciones'; //PROFES
 import FormCaliGenerales from './Formularios/FormCaliGenerales'; //PROFES
 
+//Import de los formularios de altas.
 import AltaPreceptor from './Altas/AltaPreceptor';
 import AltaAdmins from './Altas/AltaAdmin';
 import AltaAlumno from './Altas/AltaAlumno'; //PRECES
@@ -40,7 +47,7 @@ import AltaDia from './Altas/AltaDia';
 import AltaCalendario from './Altas/AltaCalendario';
 import AltaTutor from './Altas/AltaTutor';
 
-
+//Import de los componentes para listar.
 import ListarAlumnos from './Listas/ListarAlumnos';
 import ListarPreceptores from './Listas/ListarPreceptores';
 import ListarProfesores from './Listas/ListarProfesores';
@@ -48,8 +55,9 @@ import ListarDia from './Listas/ListarDia';
 import ListarCalendario from './Listas/ListarCalendario';
 import ListarClasedeConsulta from './Listas/ListarClasedeConsulta';
 import ListarTutores from './Listas/ListarTutores';
+import ListarAdmins from './Listas/ListarAdmin';
 
-
+//Import de los componentes de detalle.
 import DetalleAlumnos from './Detalles/DetalleAlumnos';
 import DetallePreceptores from './Detalles/DetallePreceptores';
 import DetalleProfesores from './Detalles/DetalleProfesores';
@@ -59,22 +67,34 @@ import DetalleMaterias from './Detalles/DetalleMaterias';
 import DetalleAreas from './Detalles/DetalleAreas';
 import DetalleClasedeConsulta from './Detalles/DetalleClasedeConsulta';
 import DetalleAdmin from './Detalles/DetalleAdmin';
+import DetalleTutores from './Detalles/DetalleTutor';
 
-
+//Import de otras pantallas.
 import DashboardAdmin from './DashboardAdmin';
 import ResumenInasistencias from './ResumenInasistencias'; //TODOS
 import Calendario from './Calendario'; //TODOS
 import PantallaRetirosTeoria from './Pantallas/PantallaRetirosTeoria';
-import DetalleTutores from './Detalles/DetalleTutor';
-import ListarAdmins from './Listas/ListarAdmin';
 
-
+/** 
+ * @constant ROLES
+ * @type {Array<string>}
+ * @description Lista de roles de usuario válidos dentro de la aplicación.
+ */
 const ROLES = ["administradores", "preceptores", "profesores", "alumnos", "tutores"];
 
+/**
+ * @component AppRouter
+ * @description Componente que define todas las rutas principales de la aplicación.
+ * Utiliza ProtectedRoute para bloquear el acceso según el rol del usuario.
+ * Incluye rutas específicas para administradores, profesores, preceptores, alumnos y tutores.
+ * En el mismo orden de los import de arriba: Pantallas, Formularios, Altas, Listas, Detalles, Otras
+ * 
+ * @returns {JSX.Element} Estructura de rutas de la aplicación.
+ */
 const AppRouter = () => {
   return (
     <Routes>
-
+      {/*Permitidos para todos */}
       <Route path="/" element={<PantallaInicio />} />
 
       <Route path="/secciones" element={
@@ -348,7 +368,7 @@ const AppRouter = () => {
         </ProtectedRoute>
       }/>
 
-      {/* Fallback */}
+      {/*Fallback */}
       <Route path="*" element={<Navigate to="/" />} />
 
     </Routes>

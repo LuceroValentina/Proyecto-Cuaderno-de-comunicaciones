@@ -1,8 +1,24 @@
+/**
+ * @file PantallaComGralTeoria.jsx
+ * @description Componente que representa la pantalla de comunicación general para la sección de Teoría.
+ * Muestra una tabla con la información general de comunicación y un botón para crear nuevas notas o mensajes.
+ */
 import { useNavigate } from "react-router-dom";
 import TablaComunicacionGral from "../TablaComunicacionGral";
 
-
+/**
+ * @component PantallaComGralTeoria
+ * @description Renderiza la interfaz de comunicación general del área de Teoría.
+ * Permite visualizar una tabla de comunicaciones y acceder a un formulario de creación de nuevas notas.
+ * 
+ * @returns {JSX.Element} Estructura visual de la pantalla de comunicación general de Teoría.
+ */
 export default function PantallaComGralTeoria() {
+  /**
+   * @constant navigate
+   * @type {Function}
+   * @description Hook de React Router que permite navegar programáticamente a otras rutas.
+   */
   const navigate = useNavigate();
 
   return (
