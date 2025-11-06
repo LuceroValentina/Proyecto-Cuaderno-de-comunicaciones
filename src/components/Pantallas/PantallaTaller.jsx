@@ -3,6 +3,8 @@ import "../../css/PantallaTaller.css";
 import "../../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import PantallaNormasTaller from "./PantallaNormasTaller";
+import PantallaRetirosTaller from "./PantallaRetirosTaller";
 import PantallaCaliTPs from "./PantallaCaliTPs";
 import PantallaCaliEvaluaciones from "./PantallaCaliEvaluaciones";
 import PantallaCaliGenerales from "./PantallaCaliGenerales";
@@ -16,6 +18,10 @@ const PantallaTaller = () => {
     
     const renderContenido = () => {
         switch (contenido) {
+            case "/retirostaller":
+                return <PantallaRetirosTaller />;
+            case "/normastaller":
+                return <PantallaNormasTaller />;
             case "/calificacionestps":
                 return <PantallaCaliTPs />;
             case "/calificacionesevaluaciones":
@@ -36,8 +42,12 @@ const PantallaTaller = () => {
             </div>
             <div className="botonesOscuros">
                 <button className="botonOscuro">Comunicacion General</button>
-                <button className="botonOscuro">Normas</button>
-                <button className="botonOscuro">Retiros</button>
+                <button onClick={() => setContenido("/normastaller")} className="botonOscuro">
+                    Normas
+                </button>
+                <button onClick={() => setContenido("/retirostaller")} className="botonOscuro">
+                    Retiros
+                </button>
                 <button onClick={() => setContenido("/calificacionesevaluaciones")} className="botonOscuro">
                     Calificaciones Evaluaciones
                 </button>

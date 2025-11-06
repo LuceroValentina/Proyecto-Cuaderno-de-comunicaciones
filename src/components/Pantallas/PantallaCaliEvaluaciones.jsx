@@ -1,7 +1,9 @@
-import React from "react";
-//import "../css/PantallasCaliEvaluaciones.css";
+import React, { useEffect, useState } from "react";
+import "../../css/PantallasCuatrimestre.css";
 import "../../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 
 const PantallaCaliEvaluaciones = () => {
     const navigate = useNavigate();

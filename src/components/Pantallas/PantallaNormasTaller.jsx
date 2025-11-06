@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { db } from "../firebase/firebase";
+import { db } from "../../firebase/firebase";
 import { collection, addDoc, getDocs, orderBy, query, serverTimestamp, deleteDoc, doc } from "firebase/firestore";
 
 const PantallaNormasTaller = () => {

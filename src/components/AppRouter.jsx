@@ -17,6 +17,7 @@ import PantallaVestimenta from './Pantallas/PantallaVestimenta'; //TODOS
 import PantallaCaliTPs from './Pantallas/PantallaCaliTPs';
 import PantallaCaliEvaluaciones from './Pantallas/PantallaCaliEvaluaciones';
 import PantallaCaliGenerales from './Pantallas/PantallaCaliGenerales';
+import PantallaNormasTaller from './Pantallas/PantallaNormasTaller';
 
 
 import FormHorarioClases from './Formularios/FormHorarioClases';
@@ -144,6 +145,11 @@ const AppRouter = () => {
       <Route path="/calificacionestaller" element={
         <ProtectedRoute rolesPermitidos={ROLES}>
           <PantallaCaliGenerales />
+        </ProtectedRoute>
+      }/>
+      <Route path="/normastaller" element={
+        <ProtectedRoute rolesPermitidos={ROLES}>
+          <PantallaNormasTaller />
         </ProtectedRoute>
       }/>
 

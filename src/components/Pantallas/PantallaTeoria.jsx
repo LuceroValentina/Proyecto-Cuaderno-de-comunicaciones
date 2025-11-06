@@ -3,6 +3,7 @@ import "../../css/PantallaTeoria.css";
 import "../../css/Elementos.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import PantallaRetirosTeoria from "./PantallaRetirosTeoria";
 import PantallaComunicacionGral from "./PantallaComunicacionGral";
 import PantallaPrimerCuatri from "./PantallaPrimerCuatri";
 import PantallaSegundoCuatri from "./PantallaSegundoCuatri";
@@ -22,6 +23,8 @@ const PantallaTeoria = () => {
 
     const renderContenido = () => {
         switch (contenido) {
+            case "/retirosteoria":
+                return <PantallaRetirosTeoria />;
             case "/comunicaciongeneral":
                 return <PantallaComunicacionGral />;
             case "/registrofirmas":
@@ -49,7 +52,11 @@ const PantallaTeoria = () => {
                 <div className="container-items">
                     <h2 className="subtitulo">Menú</h2>
                     <ul>
-                        <li className="lista"><a href="#" className="item">Retiros</a></li>
+                        <li className="lista"><a href="#" className="item">
+                            <button onClick={() => setContenido("/retirosteoria")} className="item">
+                                Retiros
+                            </button>
+                        </a></li>
                         <li className="lista"><a href="#" className="item">Evaluaciones y TPS</a></li>
                         <li className="lista">
                             <button onClick={() => setContenido("/comunicaciongeneral")} className="item">
