@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../firebase/firebase';
 
 export default function FormCalificacion() {
     const navigate = useNavigate();
@@ -8,15 +10,26 @@ export default function FormCalificacion() {
     const [fecha, setFecha] = useState("");
     const [calificacion, setCalificacion] = useState("");
 
-    //const handleSubmit = (e) => {
-    //    e.preventDefault();
-    //    console.log({ nombre, fecha, mensaje });
-    //}; manejar el formulario despues cuando se conecte mejor
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!materia || !fecha || !calificacion) return;
+        const nuevaCalificacion = {
+            materia,
+            fecha,
+            calificacion
+        };
+        try {
+            await addDoc(collection(db, "calificaciones"), nuevaCalificacion);
+            navigate("/pantallaPrimerCuatri");
+        } catch (error) {
+            console.error("Error al guardar:", error);
+        }
+    }
 
     return (
         <div className='flex items-center justify-center min-h-screen'>
             <form 
-                //onSubmit={handleSubmit}
+                onSubmit={handleSubmit}
                 className="w-1/2 min-w-[300px] max-w-sm bg-gray-100 rounded overflow-hidden shadow-lg flex flex-col items-center justify-center p-4 space-y-4">
                 
                 <div className="font-bold text-xl mb-2">Calificación</div>
@@ -53,7 +66,9 @@ export default function FormCalificacion() {
                             Ingresa la calificación:
                         </label>
                         <input
-                            type="text"
+                            type="number"
+                            min={1}
+                            max={10}
                             value={calificacion}
                             onChange={(e) => setCalificacion(e.target.value)}
                             className="block w-full rounded-md border border-gray-300 bg-white py-2 px-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 focus:outline-none"
