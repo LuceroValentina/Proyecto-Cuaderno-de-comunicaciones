@@ -29,7 +29,7 @@ const PantallaRetirosTaller = () => {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold text-center mb-6 text-blue-800">
-        Retiros de Taller, colocar boton firmar
+        Retiros de Taller
       </h1>
       <FormRetiros onAgregar={agregarRetiro} />
       <TablaRetiros retiros={retiros} onEliminar={eliminarRetiro} />

@@ -17,6 +17,7 @@ import { db } from "../firebase/firebase";
  * @param {string} params.turno Turno del alumno.
  * @param {string} params.curso Curso del alumno.
  * @param {string} params.correo Correo del alumno (usado como ID del documento en Firestore).
+ * @param {string} params.correoTutor Correo del tutor principal del alumno (sirvo para la entrega de notas).
  * @returns {Promise<boolean>} Retorna true si el alumno se creó correctamente o false si ocurrió un error.
  */
 export const crearAlumno = async ({
@@ -30,6 +31,7 @@ export const crearAlumno = async ({
   turno,
   curso,
   correo,
+  correoTutor,
 }) => {
   try {
     // Si no hay correo tira un error.
@@ -50,6 +52,7 @@ export const crearAlumno = async ({
       turno,
       curso,
       correo,
+      correoTutor,
       rol: "alumnos", // Se asigna el rol alumnos automáticamente para los permisos en la app.
     });
 

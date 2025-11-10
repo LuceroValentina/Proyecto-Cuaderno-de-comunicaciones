@@ -15,7 +15,8 @@ const AltaAlumno = () => {
         ciclo: "",
         turno: "",
         curso: "",
-        correo: ""
+        correo: "",
+        correoTutor: ""
     });
     const validarEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
@@ -42,7 +43,8 @@ const AltaAlumno = () => {
                 ciclo: "",
                 turno: "",
                 curso: "",
-                correo: ""
+                correo: "",
+                correoTutor: ""
             });
         } else {
             alert("Error al dar de alta al alumno");
@@ -54,7 +56,7 @@ const AltaAlumno = () => {
             <Typography textAlign="center" variant="h6" gutterBottom>Alta de Alumno</Typography>
             <form onSubmit={handleSubmit}>
                 <Stack spacing={2} alignItems="center">
-                    {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'genero', 'ciclo', 'turno', 'curso', 'correo'].map((field) => (
+                    {['nombre', 'apellido', 'dni', 'telefono', 'direccion', 'genero', 'ciclo', 'turno', 'curso', 'correo', 'correoTutor'].map((field) => (
                         <TextField
                             key={field}
                             label={field.charAt(0).toUpperCase() + field.slice(1)}
