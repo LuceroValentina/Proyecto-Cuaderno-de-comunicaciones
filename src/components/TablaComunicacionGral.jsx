@@ -4,7 +4,6 @@ import {
   collection,
   doc,
   onSnapshot,
-  deleteDoc,
   updateDoc,
   serverTimestamp,
 } from "firebase/firestore";
@@ -25,20 +24,15 @@ const TablaComunicacionGral = () => {
     return () => unsubscribe();
   }, []);
 
-  const eliminarNota = async (id) => {
-    const confirmar = window.confirm("¿Estás seguro de que querés eliminar esta nota?");
-    if (!confirmar) return;
+  const eliminarNota = (id) => {
+  const confirmar = window.confirm("¿Estás seguro de que querés eliminar esta nota?");
+  if (!confirmar) return;
 
-    try {
-      const docRef = doc(db, "notas", id);
-      await deleteDoc(docRef);
-      setNotas((prev) => prev.filter((nota) => nota.id !== id));
-      alert("Nota eliminada correctamente");
-    } catch (error) {
-      console.error("Error eliminando la nota:", error);
-      alert("Hubo un error al eliminar la nota.");
-    }
-  };
+  setNotas((prev) => prev.filter((nota) => nota.id !== id));
+
+  alert("Nota eliminada del listado.");
+};
+
 
   const editarNota = async (id, nuevosDatos) => {
     try {

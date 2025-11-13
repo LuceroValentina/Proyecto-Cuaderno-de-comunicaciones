@@ -20,7 +20,8 @@ export const crearTutor = async ({
   telefono,
   correo,
   direccion,
-  parentesco
+  parentesco,
+  correohijos
 }) => {
   try {
     // Verifica que se haya proporcionado un correo electronico como ID
@@ -37,6 +38,7 @@ export const crearTutor = async ({
       correo,
       direccion,
       parentesco,
+      correohijos,
       rol: "tutor"
     });
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Stack, Paper } from '@mui/material';
-//import { collection, addDoc } from 'firebase/firestore';
-//import { db } from '../firebase/firebase';
 import { crearAlumno } from '../../hooks/useAlumnos';
+import { db } from '../../firebase/firebase';
+import { doc, getDoc, updateDoc, arrayUnion } from 'firebase/firestore';
 
 const AltaAlumno = () => {
     const [form, setForm] = useState({
@@ -18,6 +18,7 @@ const AltaAlumno = () => {
         correo: "",
         correoTutor: ""
     });
+
     const validarEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
     const handleChange = (e) => {
@@ -26,13 +27,33 @@ const AltaAlumno = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!validarEmail(form.correo)) {
-            alert("Ingrese un correo válido");
+
+        if (!validarEmail(form.correo) || !validarEmail(form.correoTutor)) {
+            alert("Ingresá correos válidos para el alumno y el tutor");
             return;
         }
+
         const ok = await crearAlumno(form);
-        if (ok) {
-            alert("Alumno dado de alta correctamente");
+
+        if (!ok) {
+            alert("Error al dar de alta al alumno");
+            return;
+        }
+
+        try {
+            const tutorRef = doc(db, "tutores", form.correoTutor);
+            const tutorSnap = await getDoc(tutorRef);
+
+            if (!tutorSnap.exists()) {
+                alert("Tutor no encontrado. Primero debés registrar al tutor antes de asignarle alumnos.");
+            } else {
+                await updateDoc(tutorRef, {
+                    correohijos: arrayUnion(form.correo)
+                });
+                console.log("Alumno vinculado correctamente al tutor:", form.correoTutor);
+                alert("Alumno creado y vinculado con su tutor correctamente");
+            }
+
             setForm({
                 nombre: "",
                 apellido: "",
@@ -46,8 +67,10 @@ const AltaAlumno = () => {
                 correo: "",
                 correoTutor: ""
             });
-        } else {
-            alert("Error al dar de alta al alumno");
+
+        } catch (error) {
+            console.error("Error al vincular tutor con alumno:", error);
+            alert("Error al vincular el tutor con el alumno");
         }
     };
 
@@ -65,7 +88,12 @@ const AltaAlumno = () => {
                             onChange={handleChange}
                             fullWidth
                             required
-                            sx={{ backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 1, width: 300, '& .MuiInputBase-root': { height: 40 } }}
+                            sx={{
+                                backgroundColor: 'rgba(255,255,255,0.1)',
+                                borderRadius: 1,
+                                width: 300,
+                                '& .MuiInputBase-root': { height: 40 }
+                            }}
                         />
                     ))}
                     <Button type="submit" variant="contained" color="primary">Guardar</Button>
